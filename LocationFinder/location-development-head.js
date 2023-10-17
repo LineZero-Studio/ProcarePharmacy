@@ -90,13 +90,13 @@
   	
 		setScrollToZero();
   
-  	// Constant for how many locations to pull
-  	const numberOfLocations = 10;
     displayedLocations = [];
     
     locationList = document.getElementsByClassName("location-list")[0];
     const listItems = document.getElementsByClassName("location-item");
     
+    let numberOfLocations = locationList.length() < 10 ? locationList.length() : 10;
+
     const locationListLength = locationList.childNodes.length;
     
     for(i=0;i<locationListLength;i++) {
