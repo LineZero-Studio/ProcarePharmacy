@@ -173,7 +173,7 @@
         .catch(err => console.log('Request failed', err))
         
        // Create an object to store relevant data from ipRegistry API
-      ipRegistryPromise.then((locationData) => {
+      ipRegistryPromise.then(async (locationData) => {
         ipLocationCache = {
         		timeStamp: new Date(locationData.time_zone.current_time).toUTCString(),
             lat:locationData.location.latitude,
@@ -185,15 +185,15 @@
         // Stores ip location data into localStorage
         createIPLocationCache();
         ipLocationCacheExists = true;
-        initMap();
+        await initMap();
         
         findClosestLocations({lat:ipLocationCache.lat,lng:ipLocationCache.lng}, true);
         createMapBounds();
         return;
       })
-      .catch(err => {
+      .catch(async (err) => {
       	console.log("Invalid API result, can't create cache", err);
-        initMap();
+        await initMap();
         findClosestLocations({lat:defaultCenterPosition.lat,lng:defaultCenterPosition.lng},true);
         createMapBounds();
       });
