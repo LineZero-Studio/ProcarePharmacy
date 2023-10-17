@@ -95,7 +95,7 @@
     locationList = document.getElementsByClassName("location-list")[0];
     const listItems = document.getElementsByClassName("location-item");
     
-    let numberOfLocations = locationList.length() < 10 ? locationList.length() : 10;
+    let numberOfLocations = locationList.length < 10 ? locationList.length : 10;
 
     const locationListLength = locationList.childNodes.length;
     
