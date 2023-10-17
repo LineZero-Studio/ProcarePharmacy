@@ -5,6 +5,12 @@
     // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
   });
 
+  // CDN Script for Before Body
+  //<script src="https://cdn.jsdelivr.net/gh/PierreRamzyy/ProcarePharmacy@***commitId***/LocationFinder/location-development-before-body.min.js"></script>
+
+  // CDN Script for Inside Head
+  //<script src="https://cdn.jsdelivr.net/gh/PierreRamzyy/ProcarePharmacy@***commitId***/LocationFinder/location-development-head.min.js"></script>
+
     let map;
   
   // List of locations created from Locations collection
