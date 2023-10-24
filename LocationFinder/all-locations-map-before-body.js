@@ -13,10 +13,9 @@ function setLocationMarkers() {
 
   // Create markers for all locations.
   locations.forEach((location) => {
-    let iconElem = markerPathStart + markerExtensions[i];
     let marker = new google.maps.Marker({
       map,
-      icon: iconElem,
+      icon: allMapMarkerPath,
       title: location.name,
       position: {
         lat: Number(location.lat),
