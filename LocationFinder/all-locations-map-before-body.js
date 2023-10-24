@@ -1,14 +1,9 @@
-// Start of marker image path
-const markerPathStart =
-  "https://uploads-ssl.webflow.com/64fa7d1f00d18f244fdb3270/65";
 let activeMarker;
 
 $(".locationpage").on("click", function (evt) {
   const location = evt.currentTarget.dataset.location;
   window.location.replace(`${window.location.origin}/location/${location}`);
 });
-
-setDisplayedLocationMarkers(false);
 
 // Function to display markers of displayed locations
 function setLocationMarkers() {
