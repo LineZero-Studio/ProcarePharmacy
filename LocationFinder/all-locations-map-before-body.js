@@ -31,7 +31,7 @@ function setLocationMarkers() {
       clearActiveMarker();
 
       // Set new active marker
-      marker.setIcon(markerPathStart + selectedMarkerExtensions[currentIndex]);
+      marker.setIcon(allMapMarkerPath);
       activeMarker = marker;
 
       // Create info window for marker
