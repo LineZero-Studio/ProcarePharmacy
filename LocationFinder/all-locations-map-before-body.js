@@ -76,7 +76,6 @@ function clearActiveMarker() {
       iwindow.close();
     });
     infoWindows = [];
-    infoWindowArea.close();
   }
 }
 
