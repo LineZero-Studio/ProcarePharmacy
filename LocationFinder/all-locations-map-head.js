@@ -117,6 +117,5 @@ function retrieveLocationData() {
 
 function findCenter() {
   // Implement feature later, this is a placeholder for testing
-  // Maybe this will fix it?
   return defaultCenterPosition;
 }
