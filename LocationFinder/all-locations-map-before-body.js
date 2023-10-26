@@ -31,7 +31,7 @@ function setLocationMarkers() {
       clearActiveMarker();
 
       // Set new active marker
-      marker.setIcon(allMapMarkerPath);
+      marker.setIcon(allMapMarkerSelectedPath);
       activeMarker = marker;
 
       // Create info window for marker
@@ -80,6 +80,7 @@ function clearActiveMarker() {
 }
 
 // Function to make sure every location fits on the map
+// As well as center it between all the locations
 function createMapBounds() {
   const bounds = new google.maps.LatLngBounds();
   bounds.extend(map.getCenter());
