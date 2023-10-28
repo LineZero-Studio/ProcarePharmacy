@@ -212,6 +212,11 @@ function clearActiveMarker() {
     });
     infoWindows = [];
     infoWindowArea.close();
+
+    // Hide POI info windows
+    document.getElementsByClassName("poi-info-window").forEach((window) => {
+      window.style.display = "none";
+    });
   }
 }
 
