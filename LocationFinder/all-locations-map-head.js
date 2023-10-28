@@ -64,8 +64,9 @@ const locationSearchZoom = 12;
 const markerClickZoom = 14;
 
 const allMapMarkerPath =
-  "https://uploads-ssl.webflow.com/64fa7d1f00d18f244fdb3270/65373f3fd38967c933f9bdc7_allMapMarker.svg";
-
+  "https://uploads-ssl.webflow.com/64fa7d1f00d18f244fdb3270/6539ac993eadca2a7cc44912_nonNumberMarker.svg";
+const allMapMarkerSelectedPath =
+  "https://uploads-ssl.webflow.com/64fa7d1f00d18f244fdb3270/6539ac9c4bbeeede6b1bbeac_nonNumberMarkerSelected.svg";
 let _ipAddress;
 let ipLocationCache = {};
 let ipLocationCacheExists = false;
