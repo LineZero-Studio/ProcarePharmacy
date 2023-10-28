@@ -214,7 +214,7 @@ function clearActiveMarker() {
     infoWindowArea.close();
 
     // Hide POI info windows
-    document.getElementsByClassName("poi-info-window").forEach((window) => {
+    document.getElementsByClassName("poi-info-window").forEach((iwindow) => {
       window.style.display = "none";
     });
   }
