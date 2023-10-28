@@ -91,7 +91,7 @@ function createMapBounds() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const maxCharacters = 40, // whatever max charachter you like to display
+  const maxCharacters = 40, // whatever max character you like to display
     targets = document.getElementsByClassName("location-adress-item-mobile");
 
   Array.from(targets).forEach((target) => {
