@@ -218,7 +218,7 @@ function clearActiveMarker() {
     if (!poiWindows) return;
 
     Array.from(poiWindows).forEach((iwindow) => {
-      window.style.display = "none";
+      iwindow.style.display = "none";
     });
   }
 }
