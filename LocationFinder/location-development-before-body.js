@@ -29,7 +29,7 @@ const selectedMarkerExtensions = [
 ];
 
 const searchingAreaMarkerExtension =
-  "653ac42a93859d3f6fd2c7c4_SearchingHerePin.svg";
+  "653ac42a93859d3f6fd2c7c4_Searching Here Pin.svg";
 
 locationList = document.getElementsByClassName("location-item");
 Array.from(locationList).forEach((node) =>
@@ -212,14 +212,6 @@ function clearActiveMarker() {
     });
     infoWindows = [];
     infoWindowArea.close();
-
-    // Hide POI info windows
-    var poiWindows = document.getElementsByClassName("poi-info-window");
-    if (!poiWindows) return;
-
-    Array.from(poiWindows).forEach((iwindow) => {
-      iwindow.style.display = "none";
-    });
   }
 }
 
