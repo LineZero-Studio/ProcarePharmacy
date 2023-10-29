@@ -86,6 +86,7 @@ async function initMap() {
     center: findCenter(),
     mapTypeControl: false,
     mapId: "LOCATION_MAP_ID",
+    clickableIcons: false,
   });
 
   // Clear active marker and info window on map click
