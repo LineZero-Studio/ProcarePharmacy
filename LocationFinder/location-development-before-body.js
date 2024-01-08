@@ -131,7 +131,9 @@ async function setDisplayedLocationMarkers(placeSearchingThisAreaPin) {
 
       // Create info window for marker
       const contentString =
-        '<div id="info-window">' +
+        '<div id="info-window" onclick="redirectToLocation(' +
+        displayedLocations[currentIndex].slug +
+        ")>" +
         `<div id="info-window-background" style="background-image:url('` +
         displayedLocations[currentIndex].exterior +
         `');"></div>` +
@@ -157,15 +159,6 @@ async function setDisplayedLocationMarkers(placeSearchingThisAreaPin) {
         map,
       });
     });
-
-    // Add click listener to redirect to location page
-    document
-      .getElementById("info-window")
-      .addEventListener("click", function () {
-        window.location.href =
-          "https://www.procare-pharmacy.ca/locations/" +
-          displayedLocations[currentIndex].slug;
-      });
 
     // Link list entry to marker
     locationList.childNodes[i].addEventListener("click", function (evt) {
@@ -222,6 +215,10 @@ function clearActiveMarker() {
     infoWindows = [];
     infoWindowArea.close();
   }
+}
+
+function redirectToLocation(slug) {
+  window.location.href = "https://www.procare-pharmacy.ca/locations/" + slug;
 }
 
 // Get distance from one point on Earth to another
