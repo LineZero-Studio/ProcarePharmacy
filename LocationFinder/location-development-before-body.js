@@ -131,6 +131,9 @@ async function setDisplayedLocationMarkers(placeSearchingThisAreaPin) {
 
       // Create info window for marker
       const contentString =
+        '<a href="https://www.procare-pharmacy.ca/locations/' +
+        displayedLocations[currentIndex].slug +
+        '">' +
         '<div id="info-window">' +
         `<div id="info-window-background" style="background-image:url('` +
         displayedLocations[currentIndex].exterior +
@@ -144,7 +147,8 @@ async function setDisplayedLocationMarkers(placeSearchingThisAreaPin) {
         displayedLocations[currentIndex].address +
         "</p>" +
         "</div>" +
-        "</div>";
+        "</div>" +
+        "</a>";
       const infoWindow = new google.maps.InfoWindow({
         content: contentString,
         ariaLabel: displayedLocations[currentIndex].name,
