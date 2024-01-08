@@ -131,9 +131,9 @@ async function setDisplayedLocationMarkers(placeSearchingThisAreaPin) {
 
       // Create info window for marker
       const contentString =
-        '<div id="info-window" onclick="redirectToLocation(' +
+        `<div id="info-window" onclick="redirectToLocation('` +
         displayedLocations[currentIndex].slug +
-        ')">' +
+        `')">` +
         `<div id="info-window-background" style="background-image:url('` +
         displayedLocations[currentIndex].exterior +
         `');"></div>` +
