@@ -133,7 +133,7 @@ async function setDisplayedLocationMarkers(placeSearchingThisAreaPin) {
       const contentString =
         '<div id="info-window" onclick="redirectToLocation(' +
         displayedLocations[currentIndex].slug +
-        ")>" +
+        ')">' +
         `<div id="info-window-background" style="background-image:url('` +
         displayedLocations[currentIndex].exterior +
         `');"></div>` +
