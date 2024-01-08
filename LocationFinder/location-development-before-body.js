@@ -131,9 +131,6 @@ async function setDisplayedLocationMarkers(placeSearchingThisAreaPin) {
 
       // Create info window for marker
       const contentString =
-        '<a href="https://www.procare-pharmacy.ca/locations/' +
-        displayedLocations[currentIndex].slug +
-        '">' +
         '<div id="info-window">' +
         `<div id="info-window-background" style="background-image:url('` +
         displayedLocations[currentIndex].exterior +
@@ -147,8 +144,7 @@ async function setDisplayedLocationMarkers(placeSearchingThisAreaPin) {
         displayedLocations[currentIndex].address +
         "</p>" +
         "</div>" +
-        "</div>" +
-        "</a>";
+        "</div>";
       const infoWindow = new google.maps.InfoWindow({
         content: contentString,
         ariaLabel: displayedLocations[currentIndex].name,
@@ -161,6 +157,15 @@ async function setDisplayedLocationMarkers(placeSearchingThisAreaPin) {
         map,
       });
     });
+
+    // Add click listener to redirect to location page
+    document
+      .getElementById("info-window")
+      .addEventListener("click", function () {
+        window.location.href =
+          "https://www.procare-pharmacy.ca/locations/" +
+          displayedLocations[currentIndex].slug;
+      });
 
     // Link list entry to marker
     locationList.childNodes[i].addEventListener("click", function (evt) {
