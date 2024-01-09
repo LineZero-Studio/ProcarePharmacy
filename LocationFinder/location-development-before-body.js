@@ -131,7 +131,7 @@ async function setDisplayedLocationMarkers(placeSearchingThisAreaPin) {
 
       // Create info window for marker
       const contentString =
-        `<div id="info-window" onclick="redirectToLocation('` +
+        `<div id="info-window" onclick="redirectToLocation(this,'` +
         displayedLocations[currentIndex].slug +
         `')">` +
         `<div id="info-window-background" style="background-image:url('` +
@@ -217,8 +217,9 @@ function clearActiveMarker() {
   }
 }
 
-function redirectToLocation(slug) {
-  window.location.href = "https://www.procare-pharmacy.ca/locations/" + slug;
+function redirectToLocation(element, slug) {
+  if (element.className != "location-window-close-div")
+    window.location.href = "https://www.procare-pharmacy.ca/locations/" + slug;
 }
 
 // Get distance from one point on Earth to another
@@ -301,10 +302,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const text = target.textContent,
       truncate = text.substring(0, maxCharacters);
     target.textContent = `${truncate}...`;
-  });
-
-  $(".location-window-close-div").click(function (e) {
-    e.stopPropagation();
   });
 });
 // Check for IP Location data
