@@ -36,17 +36,19 @@ function setLocationMarkers() {
 
       // Create info window for marker
       const contentString =
-        '<div id="info-window">' +
+        `<div id="info-window" onclick="redirectToLocation(event,'` +
+        displayedLocations[currentIndex].slug +
+        `')">` +
         `<div id="info-window-background" style="background-image:url('` +
-        locations[currentIndex].exterior +
+        displayedLocations[currentIndex].exterior +
         `');"></div>` +
         createCloseLocationWindowButton() +
         '<div id="info-window-text">' +
         '<h3 id="info-window-location-name">' +
-        locations[currentIndex].loclabel +
+        displayedLocations[currentIndex].loclabel +
         "</h3>" +
         '<p id="info-window-location-address">' +
-        locations[currentIndex].address +
+        displayedLocations[currentIndex].address +
         "</p>" +
         "</div>" +
         "</div>";
@@ -77,6 +79,11 @@ function clearActiveMarker() {
     });
     infoWindows = [];
   }
+}
+
+function redirectToLocation(ev, slug) {
+  if (!ev.target.className.includes("closeBtn"))
+    window.location.href = "https://www.procare-pharmacy.ca/locations/" + slug;
 }
 
 // Function to make sure every location fits on the map

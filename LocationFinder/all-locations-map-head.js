@@ -113,6 +113,7 @@ function retrieveLocationData() {
       distance: -1,
       address: element.dataset.address,
       exterior: element.dataset.exterior,
+      slug: element.dataset.slug,
     })
   );
 }
