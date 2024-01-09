@@ -131,7 +131,7 @@ async function setDisplayedLocationMarkers(placeSearchingThisAreaPin) {
 
       // Create info window for marker
       const contentString =
-        `<div id="info-window" onclick="redirectToLocation(this,'` +
+        `<div id="info-window" onclick="redirectToLocation(event,'` +
         displayedLocations[currentIndex].slug +
         `')">` +
         `<div id="info-window-background" style="background-image:url('` +
@@ -217,8 +217,8 @@ function clearActiveMarker() {
   }
 }
 
-function redirectToLocation(element, slug) {
-  if (element.className != "location-window-close-div")
+function redirectToLocation(ev, slug) {
+  if (ev.target.className != "location-window-close-div")
     window.location.href = "https://www.procare-pharmacy.ca/locations/" + slug;
 }
 
