@@ -218,7 +218,7 @@ function clearActiveMarker() {
 }
 
 function redirectToLocation(ev, slug) {
-  if (ev.target.className != "location-window-close-div")
+  if (!ev.target.className.includes("closeBtn"))
     window.location.href = "https://www.procare-pharmacy.ca/locations/" + slug;
 }
 
