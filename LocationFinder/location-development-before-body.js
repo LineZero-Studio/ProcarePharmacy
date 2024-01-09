@@ -302,6 +302,10 @@ document.addEventListener("DOMContentLoaded", () => {
       truncate = text.substring(0, maxCharacters);
     target.textContent = `${truncate}...`;
   });
+
+  $("#location-window-close-div").click(function (e) {
+    e.stopPropagation();
+  });
 });
 // Check for IP Location data
 getIPLocationData();
