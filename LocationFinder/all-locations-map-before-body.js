@@ -37,18 +37,18 @@ function setLocationMarkers() {
       // Create info window for marker
       const contentString =
         `<div id="info-window" onclick="redirectToLocation(event,'` +
-        displayedLocations[currentIndex].slug +
+        locations[currentIndex].slug +
         `')">` +
         `<div id="info-window-background" style="background-image:url('` +
-        displayedLocations[currentIndex].exterior +
+        locations[currentIndex].exterior +
         `');"></div>` +
         createCloseLocationWindowButton() +
         '<div id="info-window-text">' +
         '<h3 id="info-window-location-name">' +
-        displayedLocations[currentIndex].loclabel +
+        locations[currentIndex].loclabel +
         "</h3>" +
         '<p id="info-window-location-address">' +
-        displayedLocations[currentIndex].address +
+        locations[currentIndex].address +
         "</p>" +
         "</div>" +
         "</div>";
