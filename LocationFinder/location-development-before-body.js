@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
     target.textContent = `${truncate}...`;
   });
 
-  $("#location-window-close-div").click(function (e) {
+  $(".location-window-close-div").click(function (e) {
     e.stopPropagation();
   });
 });
