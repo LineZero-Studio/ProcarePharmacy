@@ -10,13 +10,71 @@
 }
 
 .page.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+}
+
+.formTitleSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.formTitleSection .primaryLabel {
+    font-family: "Jost";
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 36.13px;
+}
+
+.formTitleSection .secondaryLabel {
+    font-family: "Jost";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26.01px;
+}
+
+.page select {
+    display: flex;
+    width: 100%;
+    height: 65px;
+    border-radius: 15px;
+    justify-self: space-between;
+    padding: 20px 25px 20px 25px;
+    gap: 10px;
+}
+
+.formPageFooter {
+    display: flex;
+    justify-content: space-between;
 }
 
 button.nextButton {
-    float: right;
+    display: flex;
+    background-color: #00AEEF;
+    color: #F4FBFF;
+    padding: 12px 20px 12px 20px;
+    gap: 10px;
+    border-radius: 48px;
+    font-family: "Jost";
+    height: 46px;
+    width: 191px;
+    align-items: center;
+    justify-content: center;
 }
 
 button.prevButton {
-    float: left;
+    background-color: rgba(0,0,0,0);
+    color: #00AEEF;
+    height: 46px;
+    width: 191px;
+    border: 1px #00AEEF;
+    border-style: solid;
+    border-radius: 48px;
+    padding: 12px 20px 12px 20px;
+    gap: 10px;
+    font-family: "Jost";
+}
+
+.fieldRequiredWarning {
+    float: center;
 }

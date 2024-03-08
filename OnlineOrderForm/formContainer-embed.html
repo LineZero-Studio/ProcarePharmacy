@@ -14,16 +14,18 @@
     <section id="formContainer">
         <form>
             <div class="page selectLocationPage active">
-                <label class="primaryLabel" for="selectLocationDropdown">Select Location</label>
-                <label class="secondaryLabel" for="selectionLocationDropdown">Not sure which location to send to? Find the nearest location here</label>
+                <div class="formTitleSection">
+                    <label class="primaryLabel" for="selectLocationDropdown">Select Location</label>
+                    <label class="secondaryLabel" for="selectionLocationDropdown">Not sure which location to send to? Find the nearest location here</label>
+                </div>
                 <select id="selectionLocationDropdown" name="selectionLocationDropdown" required>
+                    <option value="" selected>Select Location</option>
+                    <option value="test">Test Option</option>
                 </select>
                 <div class="formPageFooter">
-                    <button type="button" class="nextButton">
-                        <p>Next</p><p class="nextArrow">→</p>
-                    </button>
+                    <button type="button" class="prevButton">Back</button>
+                    <button type="button" class="nextButton">Next</button>
                 </div>
-                <button type="submit">Submit</button>
             </div>
             <div class="page compoundingMedicationPage">
                 <label class="primaryLabel" for="compoundingMedicationButtons">Are any of your medications compounding?</label>
@@ -34,12 +36,8 @@
                     <label for="compoundingMedication-no">No</label> 
                 </div>
                 <div class="formPageFooter">
-                    <button type="button" class="prevButton">
-                        <p>Previous</p><p class="prevArrow">←</p>
-                    </button>
-                    <button type="button" class="nextButton">
-                        <p>Next</p><p class="nextArrow">→</p>
-                    </button>
+                    <button type="button" class="prevButton">Previous</button>
+                    <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
             <div class="page whatToDoPage">
@@ -55,18 +53,14 @@
                     <label for="whatToDo-anotherPharmacy">My prescription is with another pharmacy</label>
                 </div>
                 <div class="formPageFooter">
-                    <button type="button" class="prevButton">
-                        <p>Previous</p><p class="prevArrow">←</p>
-                    </button>
+                    <button type="button" class="prevButton">Previous</button>
                     <h3 class="fieldRequiredWarning">This field is required.</h3>
-                    <button type="button" class="nextButton">
-                        <p>Next</p><p class="nextArrow">→</p>
-                    </button>
+                    <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
         </form>
     </section>
 <!-- Don't copy below this line-->
-<script src="online-order-head.js"></script>
+<script src="formControls.js"></script>
 </body>
 </html>
