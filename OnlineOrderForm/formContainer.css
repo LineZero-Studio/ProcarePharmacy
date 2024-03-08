@@ -1,0 +1,22 @@
+/* CANNOT BE USED WITH CDN, STRICTLY FOR COPY/PASTE */
+#formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+button.nextButton {
+    float: right;
+}
+
+button.prevButton {
+    float: left;
+}

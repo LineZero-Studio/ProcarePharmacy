@@ -1,20 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="formContainer.css">
+</head>
+<body>
+<!-- Don't copy above this line -->
+<!-- add form action="https://formsubmit.co/37cb131a01650a3fff7eade378ae7280" method="POST" for testing -->
 <!-- CANNOT BE USED WITH CDN, STRICTLY FOR COPY/PASTE -->
-<section>
-    <form action="https://formsubmit.co/37cb131a01650a3fff7eade378ae7280" method="POST">
-        <div class="selectLocationPage">
-            <label class="primaryLabel" for="selectLocationDropdown">Select Location</label>
-            <label class="secondaryLabel" for="selectionLocationDropdown">Not sure which location to send to? Find the nearest location here</label>
-            <select id="selectionLocationDropdown" name="selectionLocationDropdown" required>
-                <option value="blue">Blue</option>
-                <option value="green">Green</option>
-                <option value="red">Red</option>
-            </select>
-            <div class="formPageFooter">
-                <button class="nextButton">
-                    <p>Next</p><p class="nextArrow">→</p>
-                </button>
+    <section id="formContainer">
+        <form>
+            <div class="page selectLocationPage active">
+                <label class="primaryLabel" for="selectLocationDropdown">Select Location</label>
+                <label class="secondaryLabel" for="selectionLocationDropdown">Not sure which location to send to? Find the nearest location here</label>
+                <select id="selectionLocationDropdown" name="selectionLocationDropdown" required>
+                </select>
+                <div class="formPageFooter">
+                    <button type="button" class="nextButton">
+                        <p>Next</p><p class="nextArrow">→</p>
+                    </button>
+                </div>
+                <button type="submit">Submit</button>
             </div>
-            <button type="submit">Submit</button>
-        </div>
-    </form>
-</section>
+            <div class="page compoundingMedicationPage">
+                <label class="primaryLabel" for="compoundingMedicationButtons">Are any of your medications compounding?</label>
+                <div id="compoundingMedicationButtons">
+                    <input type="radio" id="compoundingMedication-yes" name="compoundingMedicationButtonsGroup" value="Yes"/>
+                    <label for="compoundingMedication-yes">Yes</label>
+                    <input type="radio" id="compoundingMedication-no" name="compoundingMedicationButtonsGroup" value="No"/>
+                    <label for="compoundingMedication-no">No</label> 
+                </div>
+                <div class="formPageFooter">
+                    <button type="button" class="prevButton">
+                        <p>Previous</p><p class="prevArrow">←</p>
+                    </button>
+                    <button type="button" class="nextButton">
+                        <p>Next</p><p class="nextArrow">→</p>
+                    </button>
+                </div>
+            </div>
+            <div class="page whatToDoPage">
+                <label class="primaryLabel" for="whatToDoButtons">What would you like to do?</label>
+                <div id="whatToDoButtons">
+                    <input type="radio" id="whatToDo-newMedication" name="whatToDoButtons" value="New Medication"/>
+                    <label for="whatToDo-newMedication">New Medication</label>
+                    <input type="radio" id="whatToDo-existingRefill" name="whatToDoButtons" value="Existing Medication Refill"/>
+                    <label for="whatToDo-existingRefill">Existing Medication Refill</label>
+                    <input type="radio" id="whatToDo-both" name="whatToDoButtons" value="Both New Medication and Existing Refill"/>
+                    <label for="whatToDo-both">Both New Medication and Existing Refill</label>
+                    <input type="radio" id="whatToDo-anotherPharmacy" name="whatToDoButtons" value="My prescription is with another pharmacy"/>
+                    <label for="whatToDo-anotherPharmacy">My prescription is with another pharmacy</label>
+                </div>
+                <div class="formPageFooter">
+                    <button type="button" class="prevButton">
+                        <p>Previous</p><p class="prevArrow">←</p>
+                    </button>
+                    <h3 class="fieldRequiredWarning">This field is required.</h3>
+                    <button type="button" class="nextButton">
+                        <p>Next</p><p class="nextArrow">→</p>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </section>
+<!-- Don't copy below this line-->
+<script src="online-order-head.js"></script>
+</body>
+</html>
