@@ -27,25 +27,14 @@ function changePage(btn) {
     index = formPages.indexOf(active);
     formPages[index].classList.remove('active');
 
-    if(btn === 'next') {
+    if(btn === 'next' && index + 1 < formPages.length) {
         index++;
-    } else if(btn === 'previous') {
+    } else if(btn === 'previous' && index > 0) {
         index--;
     }
 
     formPages[index].classList.add('active');
     
-}
-
-function clickNextButton() {
-    // validateFormInput
-    // nextTabScrollAnimation
-    currentTab += 1;
-}
-
-function clickPreviousButton() {
-    // previousTabScrollAnimation
-    currentTab -= 1;
 }
 
 // get locations data from the CMS and populate the form

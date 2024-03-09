@@ -16,9 +16,9 @@
             <div class="page selectLocationPage active">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="selectLocationDropdown">Select Location</label>
-                    <label class="secondaryLabel" for="selectionLocationDropdown">Not sure which location to send to? Find the nearest location here</label>
+                    <label class="secondaryLabel" for="selectLocationDropdown">Not sure which location to send to? Find the nearest location here</label>
                 </div>
-                <select id="selectionLocationDropdown" name="selectionLocationDropdown" required>
+                <select id="selectLocationDropdown" name="selectLocationDropdown" required>
                     <option value="" selected>Select Location</option>
                     <option value="test">Test Option</option>
                 </select>
@@ -28,12 +28,18 @@
                 </div>
             </div>
             <div class="page compoundingMedicationPage">
-                <label class="primaryLabel" for="compoundingMedicationButtons">Are any of your medications compounding?</label>
-                <div id="compoundingMedicationButtons">
-                    <input type="radio" id="compoundingMedication-yes" name="compoundingMedicationButtonsGroup" value="Yes"/>
-                    <label for="compoundingMedication-yes">Yes</label>
-                    <input type="radio" id="compoundingMedication-no" name="compoundingMedicationButtonsGroup" value="No"/>
-                    <label for="compoundingMedication-no">No</label> 
+                <div class="formTitleSection">
+                    <label class="primaryLabel" for="compoundingMedicationButtons">Are any of your medications compounding?</label>
+                </div>
+                <div class="formRadioButtons" id="compoundingMedicationButtons">
+                    <div class="buttonLabelPair">
+                        <input type="radio" id="compoundingMedication-yes" name="compoundingMedicationButtonsGroup" value="Yes"/>
+                        <label for="compoundingMedication-yes">Yes</label>
+                    </div>
+                    <div class="buttonLabelPair">
+                        <input type="radio" id="compoundingMedication-no" name="compoundingMedicationButtonsGroup" value="No"/>
+                        <label for="compoundingMedication-no">No</label>
+                    </div> 
                 </div>
                 <div class="formPageFooter">
                     <button type="button" class="prevButton">Previous</button>
@@ -41,20 +47,139 @@
                 </div>
             </div>
             <div class="page whatToDoPage">
-                <label class="primaryLabel" for="whatToDoButtons">What would you like to do?</label>
-                <div id="whatToDoButtons">
-                    <input type="radio" id="whatToDo-newMedication" name="whatToDoButtons" value="New Medication"/>
-                    <label for="whatToDo-newMedication">New Medication</label>
-                    <input type="radio" id="whatToDo-existingRefill" name="whatToDoButtons" value="Existing Medication Refill"/>
-                    <label for="whatToDo-existingRefill">Existing Medication Refill</label>
-                    <input type="radio" id="whatToDo-both" name="whatToDoButtons" value="Both New Medication and Existing Refill"/>
-                    <label for="whatToDo-both">Both New Medication and Existing Refill</label>
-                    <input type="radio" id="whatToDo-anotherPharmacy" name="whatToDoButtons" value="My prescription is with another pharmacy"/>
-                    <label for="whatToDo-anotherPharmacy">My prescription is with another pharmacy</label>
+                <div class="formTitleSection">
+                    <label class="primaryLabel" for="whatToDoButtons">What would you like to do?</label>
+                </div>
+                <div class="formRadioButtons" id="whatToDoButtons">
+                    <div class="buttonLabelPair">
+                        <input type="radio" id="whatToDo-newMedication" name="whatToDoButtons" value="New Medication"/>
+                        <label for="whatToDo-newMedication">New Medication</label>
+                    </div>
+                    <div class="buttonLabelPair">
+                        <input type="radio" id="whatToDo-existingRefill" name="whatToDoButtons" value="Existing Medication Refill"/>
+                        <label for="whatToDo-existingRefill">Existing Medication Refill</label>
+                    </div>
+                    <div class="buttonLabelPair">
+                        <input type="radio" id="whatToDo-both" name="whatToDoButtons" value="Both New Medication and Existing Refill"/>
+                        <label for="whatToDo-both">Both New Medication and Existing Refill</label>
+                    </div>
+                    <div class="buttonLabelPair">
+                        <input type="radio" id="whatToDo-anotherPharmacy" name="whatToDoButtons" value="My prescription is with another pharmacy"/>
+                        <label for="whatToDo-anotherPharmacy">My prescription is with another pharmacy</label>
+                    </div>
                 </div>
                 <div class="formPageFooter">
                     <button type="button" class="prevButton">Previous</button>
-                    <h3 class="fieldRequiredWarning">This field is required.</h3>
+                    <div class="fieldRequiredWarning">This field is required.</div>
+                    <button type="button" class="nextButton">Next</button>
+                </div>
+            </div>
+            <div class="page currentPharmacyPage">
+                <div class="formTitleSection">
+                    <label class="primaryLabel" for="currentPharmacyInput">What is your current pharmacy's name and address?</label>
+                </div>
+                <input type="text" class="formTextInput" id="currentPharmacyInput" name="currentPharmacyInput"/>
+                <div class="formPageFooter">
+                    <button type="button" class="prevButton">Back</button>
+                    <button type="button" class="nextButton">Next</button>
+                </div>
+            </div>
+            <div class="page newExistingPatientPage">
+                <div class="formTitleSection">
+                    <label class="primaryLabel" for="newExistingPatientButtons">Are you a new or existing patient?</label>
+                </div>
+                <div class="formRadioButtons" id="newExistingPatientButtons">
+                    <div class="buttonLabelPair">
+                        <input type="radio" id="newExistingPatient-new" name="newExistingPatientButtons" value="new"/>
+                        <label for="newExistingPatient-new">New Patient</label>
+                    </div>
+                    <div class="buttonLabelPair">
+                        <input type="radio" id="newExistingPatient-existing" name="newExistingPatientButtons" value="existing"/>
+                        <label for="newExistingPatient-new">Existing Patient</label>
+                    </div>
+                </div>
+                <div class="formPageFooter">
+                    <button type="button" class="prevButton">Previous</button>
+                    <button type="button" class="nextButton">Next</button>
+                </div>
+            </div>
+            <div class="page deliveryPickupPage">
+                <div class="formTitleSection">
+                    <label class="primaryLabel" for="deliveryPickupButtons">Delivery or Pick-up in store?</label>
+                </div>
+                <div class="formRadioButtons" id="deliveryPickupButtons">
+                    <div class="buttonLabelPair">
+                        <input type="radio" id="deliveryPickup-delivery" name="deliveryPickupButtons" value="delivery"/>
+                        <label for="deliveryPickup-delivery">Delivery</label>
+                    </div>
+                    <div class="buttonLabelPair">
+                        <input type="radio" id="deliveryPickup-pickup" name="deliveryPickupButtons" value="pickup"/>
+                        <label for="deliveryPickup-pickup">Pickup</label>
+                    </div>
+                </div>
+                <div class="formPageFooter">
+                    <button type="button" class="prevButton">Previous</button>
+                    <div class="fieldRequiredWarning">This field is required.</div>
+                    <button type="button" class="nextButton">Next</button>
+                </div>
+            </div>
+            <div class="page shippingAddressPage">
+                <div class="formTitleSection">
+                    <label class="primaryLabel" for="shippingAddressInputs">What is your shipping address?</label>
+                </div>
+                <div id="shippingAddressInputs" class="formInputList">
+                    <div class="formInputLabelPair">
+                        <label class="formInputLabel" for="shippingAddress-fullName">Full Name</label>
+                        <input type="text" class="formTextInput" id="shippingAddress-fullName" name="shippingAddress-fullName"/>
+                    </div>
+                    <div class="formInputLabelPair">
+                        <label class="formInputLabel" for="shippingAddress-street">Street & Apt Number, suite, etc.</label>
+                        <input type="text" class="formTextInput" id="shippingAddress-street" name="shippingAddress-street"/>
+                    </div>
+                    <div class="formInputLabelPair">
+                        <label class="formInputLabel" for="shippingAddress-city">City</label>
+                        <input type="text" class="formTextInput" id="shippingAddress-city" name="shippingAddress-city"/>
+                    </div>
+                    <div class="formInputLabelPair">
+                        <label class="formInputLabel" for="shippingAddress-postal">Postal code</label>
+                        <input type="text" class="formTextInput" id="shippingAddress-postal" name="shippingAddress-postal"/>
+                    </div>
+                </div>
+                <div class="formPageFooter">
+                    <button type="button" class="prevButton">Previous</button>
+                    <div class="fieldRequiredWarning">This field is required.</div>
+                    <button type="button" class="nextButton">Next</button>
+                </div>
+            </div>
+            <div class="page prescriptionUploadPage">
+                <div class="formTitleSection">
+                    <label class="primaryLabel" for="prescriptionUploadFileInput">Upload Your Prescription</label>
+                </div>
+                <div class="formFileInputBox">
+                    <img src="fileUploadIcon.png" class="formFileInputBoxIcon" />
+                    <p class="formFileInputBoxInfo">Drag and drop files here</p>
+                    <input type="file" class="formFileInputBoxUpload" id="prescriptionUploadFileInput" name="prescriptionUploadFileInput"/>
+                </div>
+                <div class="formPageFooter">
+                    <button type="button" class="prevButton">Previous</button>
+                    <div class="fieldRequiredWarning">This field is required.</div>
+                    <button type="button" class="nextButton">Next</button>
+                </div>
+            </div>
+            <div class="page rxNumbersPage">
+                <div class="formTitleSection">
+                    <label class="primaryLabel" for="rxNumbersInputList">RX Number(s) for refill</label>
+                </div>
+                <div class="formInputListWithAddButton" id="rxNumbersInputList">
+                    <input type="text" class="formTextInput formTextInputClearBtn" id="rxNumbersInput1" name="rxNumbersInput1"/>
+                </div>
+                <button class="formInputListAddBtn" id="rxNumbersInputListAddBtn">
+                    <p class="formInputListAddBtnPlus">+</p>
+                    <p class="formInputListAddBtnText">Add Another</p>
+                </button>
+                <div class="formPageFooter">
+                    <button type="button" class="prevButton">Back</button>
+                    <div class="fieldRequiredWarning">This field is required.</div>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>

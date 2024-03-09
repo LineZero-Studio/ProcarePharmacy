@@ -3,15 +3,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 661px;
+    height: 218px;
 }
 
 .page {
     display: none;
+    gap: 20px;
 }
 
 .page.active {
     display: flex;
     flex-direction: column;
+}
+
+form {
+    width: 100%;
+    height: 100%;
 }
 
 .formTitleSection {
@@ -20,9 +28,11 @@
 }
 
 .formTitleSection .primaryLabel {
+    display: flex;
     font-family: "Jost";
     font-weight: 700;
     font-size: 25px;
+    gap: 20px;
     line-height: 36.13px;
 }
 
@@ -35,12 +45,133 @@
 
 .page select {
     display: flex;
+    font-family: "Jost";
+    font-size: 18px;
+    font-weight: 500;
+    color: #818C94;
+    background-color: #F4FBFF;
     width: 100%;
     height: 65px;
+    border: 0px;
     border-radius: 15px;
     justify-self: space-between;
     padding: 20px 25px 20px 25px;
     gap: 10px;
+}
+
+.formRadioButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formRadioButtons .buttonLabelPair {
+    display: flex;
+    background-color: #F4FBFF;
+    padding: 20px 25px 20px 25px;
+    font-family: "Jost";
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 15px;
+    gap: 10px;
+}
+
+.fieldRequiredWarning {
+    width: auto;
+    font-size: 0.75em;
+    font-weight: 300;
+    border-radius: 3px;
+    line-height: 1.5;
+    background-color: #dc2626;
+    color: #fff;
+    padding: .4em .8em;
+}
+
+.formTextInput {
+    display: flex;
+    border: 0px;
+    border-radius: 15px;
+    font-family: "Jost";
+    font-weight: 500;
+    font-size: 18px;
+    padding: 20px 25px 20px 25px;
+    background-color: #F4FBFF;
+    gap: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.formInputLabel {
+    color: #999;
+    font-family: "Jost";
+    font-size: 12px;
+}
+
+.formInputList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formFileInputBox {
+    display: flex;
+    flex-direction: column;
+    border: 1px;
+    border-radius: 15px;
+    border-style: dashed;
+    align-content: center;
+    padding: 15px 25px 15px 25px;
+}
+
+.formFileInputBoxIcon {
+    width: 3%;
+    align-self: center;
+    margin: 10px;
+}
+
+.formFileInputBoxInfo {
+    font-family: "Jost";
+    font-weight: 400;
+    font-size: 18px;
+    color: #818C94;
+    text-align: center;
+}
+
+.formFileInputBoxUpload {
+    text-align: center;
+}
+
+.formInputListAddBtn {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0,0,0,0);
+    border: 1px;
+    border-style: dotted;
+    border-radius: 15px;
+    border-color: #0A1C37;
+    height: 65px;
+    gap: 5px;
+}
+
+.formInputListAddBtnPlus {
+    color: #8F99A1;
+    font-size: 20px;
+    height: 50%;
+    text-align: center;
+    margin-top: auto;
+    margin-left: 15px;
+    margin-bottom: auto;
+}
+
+.formInputListAddBtnText {
+    color: #8F99A1;
+    font-family: "Jost";
+    font-size: 18px;
+    font-weight: 500;
+    height: 50%;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .formPageFooter {
@@ -54,6 +185,7 @@ button.nextButton {
     color: #F4FBFF;
     padding: 12px 20px 12px 20px;
     gap: 10px;
+    border: 0px;
     border-radius: 48px;
     font-family: "Jost";
     height: 46px;
