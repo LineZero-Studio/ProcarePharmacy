@@ -107,10 +107,24 @@ form {
     font-size: 12px;
 }
 
+.formInputCancelButton {
+    position: absolute;
+    top: 33%;
+    left: 93%;
+}
+
+.formInputCancelButton:hover {
+    cursor: pointer;
+}
+
 .formInputList {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.formInputCancelButtonPair {
+    position: relative;
 }
 
 .formFileInputBox {
@@ -126,7 +140,8 @@ form {
 .formFileInputBoxIcon {
     width: 3%;
     align-self: center;
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px; 
 }
 
 .formFileInputBoxInfo {
@@ -135,6 +150,7 @@ form {
     font-size: 18px;
     color: #818C94;
     text-align: center;
+    margin-top: 5px;
 }
 
 .formFileInputBoxUpload {
@@ -151,6 +167,10 @@ form {
     border-color: #0A1C37;
     height: 65px;
     gap: 5px;
+}
+
+.formInputListAddBtn:hover {
+    cursor: pointer;
 }
 
 .formInputListAddBtnPlus {
