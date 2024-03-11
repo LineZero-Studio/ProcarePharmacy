@@ -19,32 +19,32 @@ $( document ).ready(function() {
     form = document.querySelector('form');
 
     addAnotherBtn = document.querySelectorAll('form .formInputListAddBtn');
-    cancelInputBtn = document.querySelectorAll('.formInputCancelButton')
+    cancelInputBtn = document.querySelectorAll('.formInputCancelButton');
+
+    // Event handlers for the next and previous buttons
+    nextBtn.forEach(button => {
+        button.addEventListener('click', (e) => {
+            changePage('next');
+        })
+    });
+    prevBtn.forEach(button => {
+        button.addEventListener('click', (e) => {
+            changePage('previous');
+        })
+    });
+
+    addAnotherBtn.forEach(button => {
+        button.addEventListener('click', (e) => {
+            addInputBox(e.target.closest(".page"));
+        })
+    });
+
+    cancelInputBtn.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.target.parentElement.getElementsByClassName("formTextInputClearBtn")[0].value = "";
+        })
+    })
 });
-
-// Event handlers for the next and previous buttons
-nextBtn.forEach(button => {
-    button.addEventListener('click', (e) => {
-        changePage('next');
-    })
-});
-prevBtn.forEach(button => {
-    button.addEventListener('click', (e) => {
-        changePage('previous');
-    })
-})
-
-addAnotherBtn.forEach(button => {
-    button.addEventListener('click', (e) => {
-        addInputBox(e.target.closest(".page"));
-    })
-})
-
-cancelInputBtn.forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.target.parentElement.getElementsByClassName("formTextInputClearBtn")[0].value = "";
-    })
-})
 
 
 
