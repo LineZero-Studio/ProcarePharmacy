@@ -11,8 +11,22 @@ var form;
 var addAnotherBtn;
 var cancelInputBtn;
 
+var observer = new MutationObserver(function (mutations) {
+    if($("#formContainer").length) {
+        initializeFormVariables();
+        observer.disconnect();
+    }
+});
 
-$( document ).ready(function() {
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+
+
+function initializeFormVariables() {
+    console.log("form loaded, initializing javascript...");
+
     formPages = Array.from(document.querySelectorAll('form .page'));
     nextBtn = document.querySelectorAll('form .nextButton');
     prevBtn = document.querySelectorAll('form .prevButton');
@@ -44,7 +58,7 @@ $( document ).ready(function() {
             e.target.parentElement.getElementsByClassName("formTextInputClearBtn")[0].value = "";
         })
     })
-});
+}
 
 
 
