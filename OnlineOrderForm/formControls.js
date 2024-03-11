@@ -18,7 +18,7 @@ var observer = new MutationObserver(function (mutations) {
     }
 });
 
-observer.observe($(".order-online"), {
+observer.observe(document.querySelector(".order-online"), {
     childList: true,
     subtree: true
 });
