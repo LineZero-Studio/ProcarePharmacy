@@ -105,7 +105,3 @@ function retrieveLocationData() {
         document.getElementById("selectionLocationDropdown").appendChild(location);
     });
 }
-
-function submitForm() {
-
-}
