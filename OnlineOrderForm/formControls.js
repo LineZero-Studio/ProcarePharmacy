@@ -3,13 +3,24 @@ let currentTab = 0;
 let locationElements = [];
 let locations = [];
 
-const formPages = Array.from(document.querySelectorAll('form .page'));
-const nextBtn = document.querySelectorAll('form .nextButton');
-const prevBtn = document.querySelectorAll('form .prevButton');
-const form = document.querySelector('form');
+var formPages;
+var nextBtn;
+var prevBtn;
+var form;
 
-const addAnotherBtn = document.querySelectorAll('form .formInputListAddBtn');
-const cancelInputBtn = document.querySelectorAll('.formInputCancelButton')
+var addAnotherBtn;
+var cancelInputBtn;
+
+
+$( document ).ready(function() {
+    formPages = Array.from(document.querySelectorAll('form .page'));
+    nextBtn = document.querySelectorAll('form .nextButton');
+    prevBtn = document.querySelectorAll('form .prevButton');
+    form = document.querySelector('form');
+
+    addAnotherBtn = document.querySelectorAll('form .formInputListAddBtn');
+    cancelInputBtn = document.querySelectorAll('.formInputCancelButton')
+});
 
 // Event handlers for the next and previous buttons
 nextBtn.forEach(button => {
