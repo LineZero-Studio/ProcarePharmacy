@@ -13,7 +13,7 @@
 <!-- CANNOT BE USED WITH CDN, STRICTLY FOR COPY/PASTE -->
     <section id="formContainer">
         <form>
-            <div class="page selectLocationPage active">
+            <div class="page active" id="selectLocationPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="selectLocationDropdown">Select Location</label>
                     <label class="secondaryLabel" for="selectLocationDropdown">Not sure which location to send to? Find the nearest location here</label>
@@ -27,7 +27,7 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page compoundingMedicationPage">
+            <div class="page" id="compoundingMedicationPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="compoundingMedicationButtons">Are any of your medications compounding?</label>
                 </div>
@@ -42,39 +42,39 @@
                     </div> 
                 </div>
                 <div class="formPageFooter">
-                    <button type="button" class="prevButton">Previous</button>
+                    <button type="button" class="prevButton">Back</button>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page whatToDoPage">
+            <div class="page affectsLogic" id="whatToDoPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="whatToDoButtons">What would you like to do?</label>
                 </div>
                 <div class="formRadioButtons" id="whatToDoButtons">
                     <div class="buttonLabelPair">
-                        <input type="radio" id="whatToDo-newMedication" name="whatToDoButtons" value="New Medication"/>
+                        <input type="radio" id="whatToDo-newMedication" name="whatToDoButtons" value="newMedication"/>
                         <label for="whatToDo-newMedication">New Medication</label>
                     </div>
                     <div class="buttonLabelPair">
-                        <input type="radio" id="whatToDo-existingRefill" name="whatToDoButtons" value="Existing Medication Refill"/>
+                        <input type="radio" id="whatToDo-existingRefill" name="whatToDoButtons" value="existingMedicationRefill"/>
                         <label for="whatToDo-existingRefill">Existing Medication Refill</label>
                     </div>
                     <div class="buttonLabelPair">
-                        <input type="radio" id="whatToDo-both" name="whatToDoButtons" value="Both New Medication and Existing Refill"/>
+                        <input type="radio" id="whatToDo-both" name="whatToDoButtons" value="bothNewMedicationAndExistingRefill"/>
                         <label for="whatToDo-both">Both New Medication and Existing Refill</label>
                     </div>
                     <div class="buttonLabelPair">
-                        <input type="radio" id="whatToDo-anotherPharmacy" name="whatToDoButtons" value="My prescription is with another pharmacy"/>
+                        <input type="radio" id="whatToDo-anotherPharmacy" name="whatToDoButtons" value="myPrescriptionIsWithAnotherPharmacy"/>
                         <label for="whatToDo-anotherPharmacy">My prescription is with another pharmacy</label>
                     </div>
                 </div>
                 <div class="formPageFooter">
-                    <button type="button" class="prevButton">Previous</button>
+                    <button type="button" class="prevButton">Back</button>
                     <div class="fieldRequiredWarning">This field is required.</div>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page currentPharmacyPage">
+            <div class="page" id="currentPharmacyPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="currentPharmacyInput">What is your current pharmacy's name and address?</label>
                 </div>
@@ -84,26 +84,26 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page newExistingPatientPage">
+            <div class="page affectsLogic" id="newExistingPatientPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="newExistingPatientButtons">Are you a new or existing patient?</label>
                 </div>
                 <div class="formRadioButtons" id="newExistingPatientButtons">
                     <div class="buttonLabelPair">
-                        <input type="radio" id="newExistingPatient-new" name="newExistingPatientButtons" value="new"/>
+                        <input type="radio" id="newExistingPatient-new" name="newExistingPatientButtons" value="newPatient"/>
                         <label for="newExistingPatient-new">New Patient</label>
                     </div>
                     <div class="buttonLabelPair">
-                        <input type="radio" id="newExistingPatient-existing" name="newExistingPatientButtons" value="existing"/>
+                        <input type="radio" id="newExistingPatient-existing" name="newExistingPatientButtons" value="existingPatient"/>
                         <label for="newExistingPatient-new">Existing Patient</label>
                     </div>
                 </div>
                 <div class="formPageFooter">
-                    <button type="button" class="prevButton">Previous</button>
+                    <button type="button" class="prevButton">Back</button>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page deliveryPickupPage">
+            <div class="page affectsLogic" id="deliveryPickupPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="deliveryPickupButtons">Delivery or Pick-up in store?</label>
                 </div>
@@ -118,12 +118,12 @@
                     </div>
                 </div>
                 <div class="formPageFooter">
-                    <button type="button" class="prevButton">Previous</button>
+                    <button type="button" class="prevButton">Back</button>
                     <div class="fieldRequiredWarning">This field is required.</div>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page shippingAddressPage">
+            <div class="page" id="shippingAddressPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="shippingAddressInputs">What is your shipping address?</label>
                 </div>
@@ -146,12 +146,12 @@
                     </div>
                 </div>
                 <div class="formPageFooter">
-                    <button type="button" class="prevButton">Previous</button>
+                    <button type="button" class="prevButton">Back</button>
                     <div class="fieldRequiredWarning">This field is required.</div>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page prescriptionUploadPage">
+            <div class="page" id="prescriptionUploadPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="prescriptionUploadFileInput">Upload Your Prescription</label>
                 </div>
@@ -161,12 +161,12 @@
                     <input type="file" class="formFileInputBoxUpload" id="prescriptionUploadFileInput" name="prescriptionUploadFileInput"/>
                 </div>
                 <div class="formPageFooter">
-                    <button type="button" class="prevButton">Previous</button>
+                    <button type="button" class="prevButton">Back</button>
                     <div class="fieldRequiredWarning">This field is required.</div>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page rxNumbersPage">
+            <div class="page" id="rxNumbersPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="rxNumbersInputList">RX Number(s) for refill</label>
                 </div>
@@ -185,7 +185,7 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page dateOfBirthPage">
+            <div class="page" id="dateOfBirthPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="dateOfBirthInput">Date of Birth?</label>
                 </div>
@@ -195,7 +195,7 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page allergiesPage">
+            <div class="page" id="allergiesPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="allergiesButtons">Do you have any allergies?</label>
                 </div>
@@ -210,11 +210,11 @@
                     </div>
                 </div>
                 <div class="formPageFooter">
-                    <button type="button" class="prevButton">Previous</button>
+                    <button type="button" class="prevButton">Back</button>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page healthCardNumberPage">
+            <div class="page" id="healthCardNumberPage">
                 <div class="formTitleSection"> 
                     <label class="primaryLabel" for="healthCardNumberInput">What is your health card number?</label>
                 </div>
@@ -224,7 +224,7 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page benefitsInsurancePage">
+            <div class="page" id="benefitsInsurancePage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="benefitsInsuranceInput">Benefits or Insurance information? (optional)</label>
                 </div>
@@ -234,7 +234,7 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page homeAddressPage">
+            <div class="page" id="homeAddressPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="homeAddressInputs">What is your home address?</label>
                 </div>
@@ -257,11 +257,11 @@
                     </div>
                 </div>
                 <div class="formPageFooter">
-                    <button type="button" class="prevButton">Previous</button>
+                    <button type="button" class="prevButton">Back</button>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page fullNamePage">
+            <div class="page" id="fullNamePage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="fullNameInputs">Full Patient Name</label>
                 </div>
@@ -276,11 +276,11 @@
                     </div>
                 </div>
                 <div class="formPageFooter">
-                    <button type="button" class="prevButton">Previous</button>
+                    <button type="button" class="prevButton">Back</button>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page patientEmailPage">
+            <div class="page" id="patientEmailPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="patientEmailInput">Patient Email</label>
                 </div>
@@ -290,7 +290,7 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page phoneNumberPage">
+            <div class="page" id="phoneNumberPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="phoneNumberInputs">Phone Number</label>
                 </div>
@@ -305,7 +305,7 @@
                     </div>
                 </div>
                 <div class="formPageFooter">
-                    <button type="button" class="prevButton">Previous</button>
+                    <button type="button" class="prevButton">Back</button>
                     <button type="submit" class="submitButton">Submit</button>
                 </div>
             </div>
@@ -313,5 +313,6 @@
     </section>
 <!-- Don't copy below this line-->
 <script src="formControls.js"></script>
+<script src="businessLogic.js"></script>
 </body>
 </html>

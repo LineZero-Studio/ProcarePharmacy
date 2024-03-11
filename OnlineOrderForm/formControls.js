@@ -11,6 +11,7 @@ var form;
 var addAnotherBtn;
 var cancelInputBtn;
 
+
 var observer = new MutationObserver(function (mutations) {
     if($("#formContainer").length) {
         initializeFormVariables();
@@ -22,6 +23,7 @@ observer.observe(document.querySelector(".order-online"), {
     childList: true,
     subtree: true
 });
+
 
 
 function initializeFormVariables() {
@@ -64,16 +66,37 @@ function initializeFormVariables() {
 
 // Change the form page after clicking a navigation button
 function changePage(btn) {
+
+    // Get current index value and active page
     let index = 0;
     const active = document.querySelector('form .page.active');
     index = formPages.indexOf(active);
+
+    // Check if the page affects logic
+    if(active.classList.contains('affectsLogic')) {
+
+        // Get radio buttons to see which one is checked
+        let options = document.getElementsByName(active.getElementsByClassName("formRadioButtons")[0].id);
+
+        // Send the checked value as the modifier for changeVisiblePages (businessLogic.js)
+        for (i = 0; i < options.length; i++) {
+            if (options[i].checked) {
+                changeVisiblePages(options[i].value)
+                break;
+            }
+        }
+    }
+
+    // Remove active class from current active page
     formPages[index].classList.remove('active');
 
-    if(btn === 'next' && index + 1 < formPages.length) {
-        index++;
-    } else if(btn === 'previous' && index > 0) {
-        index--;
-    }
+    do {
+        if(btn === 'next' && index + 1 < formPages.length) {
+            index++;
+        } else if(btn === 'previous' && index > 0) {
+            index--;
+        }
+    } while (formPages[index].classList.contains("outOfLogic"))
 
     formPages[index].classList.add('active');
     
