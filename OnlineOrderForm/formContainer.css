@@ -100,9 +100,10 @@ form {
 }
 
 .formInputLabel {
-    color: #999;
+    color: #0A1C37;
     font-family: "Jost";
-    font-size: 12px;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .formInputCancelButton {

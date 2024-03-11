@@ -104,9 +104,12 @@ function changePage(btn) {
 
 // Add an input and input cancel button to a list of inputs
 function addInputBox(currentPage) {
-    //const inputList = event.target.parentElement.getElementsByClassName("formInputListWithAddButton")[0];
+
     const inputList = currentPage.getElementsByClassName("formInputListWithAddButton")[0];
     
+    if(inputList.getElementsByClassName("formInputCancelButtonPair").length >= 5)
+        return;
+
     // Create empty elements for formInputCancelButtonPair, formTextInput, and formInputCancelButton
     const newInputCancelBtnPair = document.createElement("div");
     const newInput = document.createElement("input");
@@ -151,5 +154,40 @@ function retrieveLocationData() {
         location.value = element.dataset.slug;
         location.text = element.dataset.locname;
         document.getElementById("selectionLocationDropdown").appendChild(location);
+    });
+}
+
+// Handle form submission
+function createFormHandler() {
+    document.getElementById("onlineOrderForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        var fileName = $('#prescriptionUploadFileInput').val();
+        if(fileName != '') {
+            formData.append('fileupload',$('#prescriptionUploadFileInput')[0].files[0], fileName);
+        }
+
+        var formDataJSON = {};
+        formData.forEach(function(value, key) {
+            formDataJSON[key] = value;
+        });
+
+        var testJSON = { test: "success"};
+
+        $.ajax({
+            url: "https://formsubmit.co/ajax/almaheart16@gmail.com",
+            type: "POST",
+            dataType: "json",
+            processData: false,
+            contentType: false,
+            data: formData,
+            success: function(response) {
+                console.log("Sent an email!");
+            },
+            error: function(xhr, status, error) {
+                console.error("Request failed");
+            }
+        });
     });
 }
