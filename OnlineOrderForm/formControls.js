@@ -25,7 +25,6 @@ observer.observe(document.querySelector(".order-online"), {
 });
 
 
-
 function initializeFormVariables() {
     console.log("form loaded, initializing javascript...");
 
@@ -60,6 +59,8 @@ function initializeFormVariables() {
             e.target.parentElement.getElementsByClassName("formTextInputClearBtn")[0].value = "";
         })
     })
+
+    createFormHandler();
 }
 
 
@@ -154,40 +155,5 @@ function retrieveLocationData() {
         location.value = element.dataset.slug;
         location.text = element.dataset.locname;
         document.getElementById("selectionLocationDropdown").appendChild(location);
-    });
-}
-
-// Handle form submission
-function createFormHandler() {
-    document.getElementById("onlineOrderForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        
-        const formData = new FormData(event.target);
-        var fileName = $('#prescriptionUploadFileInput').val();
-        if(fileName != '') {
-            formData.append('fileupload',$('#prescriptionUploadFileInput')[0].files[0], fileName);
-        }
-
-        var formDataJSON = {};
-        formData.forEach(function(value, key) {
-            formDataJSON[key] = value;
-        });
-
-        var testJSON = { test: "success"};
-
-        $.ajax({
-            url: "https://formsubmit.co/ajax/almaheart16@gmail.com",
-            type: "POST",
-            dataType: "json",
-            processData: false,
-            contentType: false,
-            data: formData,
-            success: function(response) {
-                console.log("Sent an email!");
-            },
-            error: function(xhr, status, error) {
-                console.error("Request failed");
-            }
-        });
     });
 }

@@ -12,7 +12,7 @@
 <!-- add form action="https://formsubmit.co/37cb131a01650a3fff7eade378ae7280" method="POST" for testing -->
 <!-- CANNOT BE USED WITH CDN, STRICTLY FOR COPY/PASTE -->
     <section id="formContainer">
-        <form enctype="multipart/form-data" method="POST" id="onlineOrderForm" autocomplete="on">
+        <form action="https://formsubmit.co/almaheart16@gmail.com" enctype="multipart/form-data" method="POST" id="onlineOrderForm" autocomplete="on">
             <div class="page active" id="selectLocationPage">
                 <div class="formTitleSection">
                     <label class="primaryLabel" for="selectLocationDropdown">Select Location</label>
@@ -158,7 +158,9 @@
                 <div class="formFileInputBox">
                     <img src="fileUploadIcon.svg" class="formFileInputBoxIcon" />
                     <p class="formFileInputBoxInfo">Drag and drop files here</p>
-                    <input type="file" class="formFileInputBoxUpload" id="prescriptionUploadFileInput" name="prescriptionUploadFileInput"/>
+                    <input type="file" accept="image/png, image/jpeg" class="formFileInputBoxUpload" id="prescriptionUploadFileInput" name="attachment"/>
+                    <input type="hidden" name="_next" value="">
+                    <input type="hidden" name="_captcha" value="false">
                 </div>
                 <div class="formPageFooter">
                     <button type="button" class="prevButton">Back</button>
