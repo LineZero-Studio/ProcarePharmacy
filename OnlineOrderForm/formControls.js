@@ -31,6 +31,8 @@ observer.observe(document.querySelector(".order-online"), {
 function initializeFormVariables() {
     console.log("form loaded, initializing javascript...");
 
+    retrieveLocationData();
+
     formPages = Array.from(document.querySelectorAll('form .page'));
     nextBtn = document.querySelectorAll('form .nextButton');
     prevBtn = document.querySelectorAll('form .prevButton');
