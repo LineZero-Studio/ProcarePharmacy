@@ -200,10 +200,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="formFileInputBox">
+                <div class="formFileInputBox" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
                     <img src="fileUploadIcon.svg" class="formFileInputBoxIcon" />
                     <p class="formFileInputBoxInfo">Drag and drop files here</p>
-                    <input type="file" accept="image/png, image/jpeg" class="formFileInputBoxUpload" id="prescriptionUploadFileInput" name="attachment" />
+                    <div class="formFileInputBoxUpload">
+                        <label for="prescriptionUploadFileInput" class="formFileInputBoxUploadLabel" onclick="document.getElementById('prescriptionUploadFileInput').click()">Upload Picture</label>
+                        <input type="file" accept="image/png, image/jpeg" class="formFileInputBoxUploadInput" id="prescriptionUploadFileInput" name="attachment" />
+                    </div>
                 </div>
                 <div class="formPageFooter">
                     <button type="button" class="prevButton">Back</button>

@@ -11,6 +11,8 @@ var form;
 var addAnotherBtn;
 var cancelInputBtn;
 
+let filesToAppend = [];
+
 
 var observer = new MutationObserver(function (mutations) {
     if($("#formContainer").length) {
@@ -81,6 +83,9 @@ function initializeFormVariables() {
             formData.delete(key);
         });
 
+        if(filesToAppend.length > 0) {
+            filesToAppend.forEach(file => formData.append('file' + filesToAppend.indexOf(file), file))
+        }
     })
 }
 
@@ -176,7 +181,7 @@ function validatePage() {
     }
     else if(activePage[0].classList.contains('file')) {
         // Check if a file is uploaded
-        if(activePage.find(".formFileInputBoxUpload")[0].files.length === 0) {
+        if((activePage.find(".formFileInputBoxUpload")[0].files.length === 0) && filesToAppend.length === 0) {
             // Check if error text is already displayed
             if(activePage[0].classList.contains('error')) { return true; }
 
@@ -293,6 +298,18 @@ function addInputBox(currentPage) {
     inputList.appendChild(newInputCancelBtnPair);
     newInputCancelBtnPair.appendChild(newInput);
     newInputCancelBtnPair.appendChild(newInputCancelBtn);
+}
+
+// Handle file drop event
+function dropHandler(ev) {
+    ev.preventDefault();
+
+    let dt = ev.dataTransfer;
+    filesToAppend = Array.from(dt.files);
+}
+
+function dragOverHandler(ev) {
+    ev.preventDefault();
 }
 
 // Get locations data from the CMS and populate the form

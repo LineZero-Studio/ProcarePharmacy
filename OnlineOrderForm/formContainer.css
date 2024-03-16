@@ -172,6 +172,7 @@ input[type="radio"] {
     border-style: dashed;
     align-content: center;
     padding: 15px 25px 15px 25px;
+    background-color: #F4FBFF;
 }
 
 .formFileInputBoxIcon {
@@ -192,6 +193,22 @@ input[type="radio"] {
 
 .formFileInputBoxUpload {
     text-align: center;
+}
+
+.formFileInputBoxUploadLabel {
+    color: #0A1C37;
+    font-family: Jost;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.formFileInputBoxUploadLabel:hover {
+    cursor: pointer;
+}
+
+.formFileInputBoxUploadInput {
+    display: none;
 }
 
 .formInputListAddBtn {
