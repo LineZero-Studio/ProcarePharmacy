@@ -321,6 +321,7 @@ function retrieveLocationData() {
         var location = document.createElement("option");
         location.value = element.dataset.slug;
         location.text = element.dataset.locname;
+        location.classList.add("selectOption");
         document.getElementById("selectLocationDropdown").appendChild(location);
     });
 }

@@ -55,6 +55,10 @@ form {
     appearance: none;
 }
 
+.selectOption {
+    color: #0A1C37;
+}
+
 input[type="radio"] {
     pointer-events: none;
 }
