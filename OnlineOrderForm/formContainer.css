@@ -48,6 +48,13 @@ form {
     gap: 10px;
 }
 
+.formSelect {
+    background: url(dropdown-arrow.svg) no-repeat 97% 50%; 
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
 input[type="radio"] {
     pointer-events: none;
 }
