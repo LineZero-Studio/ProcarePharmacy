@@ -25,6 +25,7 @@ observer.observe(document.querySelector(".order-online"), {
 });
 
 
+
 function initializeFormVariables() {
     console.log("form loaded, initializing javascript...");
 
@@ -60,7 +61,27 @@ function initializeFormVariables() {
         })
     })
 
-    createFormHandler();
+    // Handler for div around radio button
+    Array.from($(".buttonLabelPair")).forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.target.getElementsByTagName('input')[0].checked = true;
+        })
+    })
+
+    form.addEventListener('formdata', (e) => {
+
+        const formData = e.formData;
+
+        let emptyRecords = [];
+        for(const pair of formData.entries()) { 
+            if(pair[1] === '') { emptyRecords.push(pair[0]); }
+        }
+
+        emptyRecords.forEach(key => {
+            formData.delete(key);
+        });
+
+    })
 }
 
 
@@ -72,6 +93,10 @@ function changePage(btn) {
     let index = 0;
     const active = document.querySelector('form .page.active');
     index = formPages.indexOf(active);
+
+    if(active.classList.contains('required') && btn === 'next') {
+        if(validatePage()) { return; }
+    }
 
     // Check if the page affects logic
     if(active.classList.contains('affectsLogic')) {
@@ -101,6 +126,129 @@ function changePage(btn) {
 
     formPages[index].classList.add('active');
     
+}
+
+// Check if the user's page input is valid
+function validatePage() {
+    const activePage = $(".page.active");
+
+    const selectErrorText = "Please select an option";
+    const radioErrorText = "Please select an option";
+    const fileErrorText = "Please input at least 1 item";
+    const dateErrorText = "Please type a date";
+    const textInputErrorText = "Please type a response";
+    const multiTextInputErrorText = "Please input at least 1 item";
+    const textInputAddErrorText = "Please input at least 1 item";
+
+    // Figure out the type of control on the page
+    if(activePage[0].classList.contains('select')) {
+        // Check if select tag is empty
+        if(activePage[0].getElementsByTagName('select')[0].value === '') {
+            // Check if error text is already displayed
+            if(activePage[0].classList.contains('error')) { return true; }
+
+            createErrorText(activePage, selectErrorText);
+            return true;
+        }
+        else { activePage[0].classList.remove('error'); disableErrorText(activePage); return false; }
+    }
+    else if(activePage[0].classList.contains('radio')) {
+        let flag = false;
+
+        // Check if no radio button is selected
+        Array.from(activePage[0].querySelectorAll("input")).forEach(input => { 
+            if(input.checked) {
+                activePage[0].classList.remove('error');
+                disableErrorText(activePage);
+                flag = true;
+                return;
+            }
+        })
+
+        // If an input was checked, return false
+        if(flag) { return false; }
+
+        // Check if error text is already displayed
+        if(activePage[0].classList.contains('error')) { return true; }
+
+        createErrorText(activePage, radioErrorText);
+        return true;
+    }
+    else if(activePage[0].classList.contains('file')) {
+        // Check if a file is uploaded
+        if(activePage.find(".formFileInputBoxUpload")[0].files.length === 0) {
+            // Check if error text is already displayed
+            if(activePage[0].classList.contains('error')) { return true; }
+
+            createErrorText(activePage, fileErrorText);
+            return true;
+        }
+        else { activePage[0].classList.remove('error'); disableErrorText(activePage); return false; }
+    }
+    else if(activePage[0].classList.contains('date')) {
+        // Check if a date is input
+        if(activePage[0].getElementsByTagName('input')[0].value === '') {
+            // Check if error text is already displayed
+            if(activePage[0].classList.contains('error')) { return true; }
+
+            createErrorText(activePage, dateErrorText);
+            return true;
+        }
+        else { activePage[0].classList.remove('error'); disableErrorText(activePage); return false; }
+    }
+    else if(activePage[0].classList.contains('text')) {
+        // Check if the input is populated with text
+        if(activePage[0].getElementsByTagName('input')[0].value === '') {
+            // Check if error text is already displayed
+            if(activePage[0].classList.contains('error')) { return true; }
+
+            createErrorText(activePage, textInputErrorText);
+            return true;
+        }
+        else { activePage[0].classList.remove('error'); disableErrorText(activePage); return false; }
+    }
+    else if(activePage[0].classList.contains('text-multiple')) {
+        // Check if the inputs are populated with text
+        Array.from(activePage[0].getElementsByTagName('input')).forEach(input => {
+            if(input.value === '') {
+                // Check if error text is already displayed
+                if(activePage[0].classList.contains('error')) { return true; }
+
+                createErrorText(activePage, multiTextInputErrorText);
+                return true;
+            }
+        })
+        
+        activePage[0].classList.remove('error');
+        disableErrorText(activePage);
+        return false; 
+    }
+    else if(activePage[0].classList.contains('text-add')) {
+        // Check if the first input is populated with text
+        if(activePage[0].getElementsByTagName('input')[0].value === '') {
+            // Check if error text is already displayed
+            if(activePage[0].classList.contains('error')) { return true; }
+
+            createErrorText(activePage, textInputAddErrorText);
+            return true;
+        }
+        else { activePage[0].classList.remove('error'); disableErrorText(activePage); return false; }
+    }
+
+    return false;
+}
+
+function createErrorText(page, message) {
+    errorMessage = page.find(".errorMessageText");
+
+    errorMessage.css("visibility", "visible");
+    errorMessage.html(message);
+}
+
+function disableErrorText(page) {
+    errorMessage = page.find(".errorMessageText");
+
+    errorMessage.css("visibility", "hidden");
 }
 
 // Add an input and input cancel button to a list of inputs

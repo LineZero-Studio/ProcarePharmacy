@@ -25,6 +25,12 @@ form {
     flex-direction: column;
 }
 
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 .formTitleSection .primaryLabel {
     display: flex;
     font-family: "Jost";
@@ -32,6 +38,30 @@ form {
     font-size: 25px;
     gap: 20px;
     line-height: 36.13px;
+}
+
+.errorMessage {
+    display: flex;
+    color: #E94443;
+    font-weight: 700;
+    font-family: "Jost";
+    gap: 10px;
+}
+
+input[type="radio"] {
+    pointer-events: none;
+}
+
+.errorMessage .errorMessageAsterisk {
+    margin: 0px;
+    font-size: 25px;
+}
+
+.errorMessage .errorMessageText {
+    visibility: hidden;
+    padding-top: 3%;
+    margin: 0px;
+    font-size: 18px;
 }
 
 .formTitleSection .secondaryLabel {
@@ -72,6 +102,10 @@ form {
     font-size: 18px;
     border-radius: 15px;
     gap: 10px;
+}
+
+.buttonLabelPair label {
+    pointer-events: none;
 }
 
 .fieldRequiredWarning {

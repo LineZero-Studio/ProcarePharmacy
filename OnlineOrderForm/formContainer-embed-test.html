@@ -11,14 +11,20 @@
 <!-- Don't copy above this line -->
 <!-- add form action="https://formsubmit.co/37cb131a01650a3fff7eade378ae7280" method="POST" for testing -->
 <!-- CANNOT BE USED WITH CDN, STRICTLY FOR COPY/PASTE -->
-    <section id="formContainer">
+    <section id="formContainer"> 
         <form action="https://formsubmit.co/almaheart16@gmail.com" enctype="multipart/form-data" method="POST" id="onlineOrderForm" autocomplete="on">
-            <div class="page active" id="selectLocationPage">
+            <div class="page select required active " id="selectLocationPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="selectLocationDropdown">Select Location</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="selectLocationDropdown">Select Location</label>
+                        <div class="errorMessage">
+                            <p class="errorMessageAsterisk">*</p>
+                            <p class="errorMessageText">Error message</p>
+                        </div>
+                    </div>
                     <label class="secondaryLabel" for="selectLocationDropdown">Not sure which location to send to? Find the nearest location here</label>
                 </div>
-                <select id="selectLocationDropdown" name="selectLocationDropdown" required>
+                <select class="formControl" id="selectLocationDropdown" name="selectLocationDropdown" required>
                     <option value="" selected>Select Location</option>
                     <option value="test">Test Option</option>
                 </select>
@@ -27,17 +33,23 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="compoundingMedicationPage">
+            <div class="page radio required" id="compoundingMedicationPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="compoundingMedicationButtons">Are any of your medications compounding?</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="compoundingMedicationButtons">Are any of your medications compounding?</label>
+                        <div class="errorMessage">
+                            <p class="errorMessageAsterisk">*</p>
+                            <p class="errorMessageText">Error message</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="formRadioButtons" id="compoundingMedicationButtons">
                     <div class="buttonLabelPair">
-                        <input type="radio" id="compoundingMedication-yes" name="compoundingMedicationButtonsGroup" value="Yes"/>
+                        <input type="radio" id="compoundingMedication-yes" name="compoundingMedicationButtonsGroup" value="Yes" />
                         <label for="compoundingMedication-yes">Yes</label>
                     </div>
                     <div class="buttonLabelPair">
-                        <input type="radio" id="compoundingMedication-no" name="compoundingMedicationButtonsGroup" value="No"/>
+                        <input type="radio" id="compoundingMedication-no" name="compoundingMedicationButtonsGroup" value="No" />
                         <label for="compoundingMedication-no">No</label>
                     </div> 
                 </div>
@@ -46,55 +58,72 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page affectsLogic" id="whatToDoPage">
+            <div class="page radio required affectsLogic" id="whatToDoPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="whatToDoButtons">What would you like to do?</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="whatToDoButtons">What would you like to do?</label>
+                        <div class="errorMessage">
+                            <p class="errorMessageAsterisk">*</p>
+                            <p class="errorMessageText">Error message</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="formRadioButtons" id="whatToDoButtons">
                     <div class="buttonLabelPair">
-                        <input type="radio" id="whatToDo-newMedication" name="whatToDoButtons" value="newMedication"/>
+                        <input type="radio" id="whatToDo-newMedication" name="whatToDoButtons" value="newMedication" />
                         <label for="whatToDo-newMedication">New Medication</label>
                     </div>
                     <div class="buttonLabelPair">
-                        <input type="radio" id="whatToDo-existingRefill" name="whatToDoButtons" value="existingMedicationRefill"/>
+                        <input type="radio" id="whatToDo-existingRefill" name="whatToDoButtons" value="existingMedicationRefill" />
                         <label for="whatToDo-existingRefill">Existing Medication Refill</label>
                     </div>
                     <div class="buttonLabelPair">
-                        <input type="radio" id="whatToDo-both" name="whatToDoButtons" value="bothNewMedicationAndExistingRefill"/>
+                        <input type="radio" id="whatToDo-both" name="whatToDoButtons" value="bothNewMedicationAndExistingRefill" />
                         <label for="whatToDo-both">Both New Medication and Existing Refill</label>
                     </div>
                     <div class="buttonLabelPair">
-                        <input type="radio" id="whatToDo-anotherPharmacy" name="whatToDoButtons" value="myPrescriptionIsWithAnotherPharmacy"/>
+                        <input type="radio" id="whatToDo-anotherPharmacy" name="whatToDoButtons" value="myPrescriptionIsWithAnotherPharmacy" />
                         <label for="whatToDo-anotherPharmacy">My prescription is with another pharmacy</label>
                     </div>
                 </div>
                 <div class="formPageFooter">
                     <button type="button" class="prevButton">Back</button>
-                    <div class="fieldRequiredWarning">This field is required.</div>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="currentPharmacyPage">
+            <div class="page text required" id="currentPharmacyPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="currentPharmacyInput">What is your current pharmacy's name and address?</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="currentPharmacyInput">What is your current pharmacy's name and address?</label>
+                        <div class="errorMessage">
+                            <p class="errorMessageAsterisk">*</p>
+                            <p class="errorMessageText">Error message</p>
+                        </div>
+                    </div>
                 </div>
-                <input type="text" class="formTextInput" id="currentPharmacyInput" name="currentPharmacyInput"/>
+                <input type="text" class="formTextInput" id="currentPharmacyInput" name="currentPharmacyInput" />
                 <div class="formPageFooter">
                     <button type="button" class="prevButton">Back</button>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page affectsLogic" id="newExistingPatientPage">
+            <div class="page radio required affectsLogic" id="newExistingPatientPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="newExistingPatientButtons">Are you a new or existing patient?</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="newExistingPatientButtons">Are you a new or existing patient?</label>
+                        <div class="errorMessage">
+                            <p class="errorMessageAsterisk">*</p>
+                            <p class="errorMessageText">Error message</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="formRadioButtons" id="newExistingPatientButtons">
                     <div class="buttonLabelPair">
-                        <input type="radio" id="newExistingPatient-new" name="newExistingPatientButtons" value="newPatient"/>
+                        <input type="radio" id="newExistingPatient-new" name="newExistingPatientButtons" value="newPatient" />
                         <label for="newExistingPatient-new">New Patient</label>
                     </div>
                     <div class="buttonLabelPair">
-                        <input type="radio" id="newExistingPatient-existing" name="newExistingPatientButtons" value="existingPatient"/>
+                        <input type="radio" id="newExistingPatient-existing" name="newExistingPatientButtons" value="existingPatient" />
                         <label for="newExistingPatient-new">Existing Patient</label>
                     </div>
                 </div>
@@ -103,78 +132,97 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page affectsLogic" id="deliveryPickupPage">
+            <div class="page radio required affectsLogic" id="deliveryPickupPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="deliveryPickupButtons">Delivery or Pick-up in store?</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="deliveryPickupButtons">Delivery or Pick-up in store?</label>
+                        <div class="errorMessage">
+                            <p class="errorMessageAsterisk">*</p>
+                            <p class="errorMessageText">Error message</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="formRadioButtons" id="deliveryPickupButtons">
                     <div class="buttonLabelPair">
-                        <input type="radio" id="deliveryPickup-delivery" name="deliveryPickupButtons" value="delivery"/>
+                        <input type="radio" id="deliveryPickup-delivery" name="deliveryPickupButtons" value="delivery" />
                         <label for="deliveryPickup-delivery">Delivery</label>
                     </div>
                     <div class="buttonLabelPair">
-                        <input type="radio" id="deliveryPickup-pickup" name="deliveryPickupButtons" value="pickup"/>
+                        <input type="radio" id="deliveryPickup-pickup" name="deliveryPickupButtons" value="pickup" />
                         <label for="deliveryPickup-pickup">Pickup</label>
                     </div>
                 </div>
                 <div class="formPageFooter">
                     <button type="button" class="prevButton">Back</button>
-                    <div class="fieldRequiredWarning">This field is required.</div>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="shippingAddressPage">
+            <div class="page text-multiple required" id="shippingAddressPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="shippingAddressInputs">What is your shipping address?</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="shippingAddressInputs">What is your shipping address?</label>
+                        <div class="errorMessage">
+                            <p class="errorMessageAsterisk">*</p>
+                            <p class="errorMessageText">Error message</p>
+                        </div>
+                    </div>
                 </div>
                 <div id="shippingAddressInputs" class="formInputList">
                     <div class="formInputLabelPair">
                         <label class="formInputLabel" for="shippingAddress-fullName">Full Name</label>
-                        <input type="text" class="formTextInput" id="shippingAddress-fullName" name="shippingAddress-fullName"/>
+                        <input type="text" class="formTextInput" id="shippingAddress-fullName" name="shippingAddress-fullName" />
                     </div>
                     <div class="formInputLabelPair">
                         <label class="formInputLabel" for="shippingAddress-street">Street & Apt Number, suite, etc.</label>
-                        <input type="text" class="formTextInput" id="shippingAddress-street" name="shippingAddress-street"/>
+                        <input type="text" class="formTextInput" id="shippingAddress-street" name="shippingAddress-street" />
                     </div>
                     <div class="formInputLabelPair">
                         <label class="formInputLabel" for="shippingAddress-city">City</label>
-                        <input type="text" class="formTextInput" id="shippingAddress-city" name="shippingAddress-city"/>
+                        <input type="text" class="formTextInput" id="shippingAddress-city" name="shippingAddress-city" />
                     </div>
                     <div class="formInputLabelPair">
                         <label class="formInputLabel" for="shippingAddress-postal">Postal code</label>
-                        <input type="text" class="formTextInput" id="shippingAddress-postal" name="shippingAddress-postal"/>
+                        <input type="text" class="formTextInput" id="shippingAddress-postal" name="shippingAddress-postal" />
                     </div>
                 </div>
                 <div class="formPageFooter">
                     <button type="button" class="prevButton">Back</button>
-                    <div class="fieldRequiredWarning">This field is required.</div>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="prescriptionUploadPage">
+            <div class="page file required" id="prescriptionUploadPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="prescriptionUploadFileInput">Upload Your Prescription</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="prescriptionUploadFileInput">Upload Your Prescription</label>
+                        <div class="errorMessage">
+                            <p class="errorMessageAsterisk">*</p>
+                            <p class="errorMessageText">Error message</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="formFileInputBox">
                     <img src="fileUploadIcon.svg" class="formFileInputBoxIcon" />
                     <p class="formFileInputBoxInfo">Drag and drop files here</p>
-                    <input type="file" accept="image/png, image/jpeg" class="formFileInputBoxUpload" id="prescriptionUploadFileInput" name="attachment"/>
-                    <input type="hidden" name="_next" value="">
-                    <input type="hidden" name="_captcha" value="false">
+                    <input type="file" accept="image/png, image/jpeg" class="formFileInputBoxUpload" id="prescriptionUploadFileInput" name="attachment" />
                 </div>
                 <div class="formPageFooter">
                     <button type="button" class="prevButton">Back</button>
-                    <div class="fieldRequiredWarning">This field is required.</div>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="rxNumbersPage">
+            <div class="page text-add required" id="rxNumbersPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="rxNumbersInputList">RX Number(s) for refill</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="rxNumbersInputList">RX Number(s) for refill</label>
+                        <div class="errorMessage">
+                            <p class="errorMessageAsterisk">*</p>
+                            <p class="errorMessageText">Error message</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="formInputList formInputListWithAddButton" id="rxNumbersInputList">
                     <div class="formInputCancelButtonPair">
-                        <input type="text" placeholder="Enter RX number here" class="formTextInput formTextInputClearBtn" id="rxNumbersInput1" name="rxNumbersInput1"/>
+                        <input type="text" placeholder="Enter RX number here" class="formTextInput formTextInputClearBtn" id="rxNumbersInput1" name="rxNumbersInput1" />
                         <img src="input-cancel.svg" class="formInputCancelButton" />
                     </div>
                 </div>
@@ -187,19 +235,27 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="dateOfBirthPage">
+            <div class="page date required" id="dateOfBirthPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="dateOfBirthInput">Date of Birth?</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="dateOfBirthInput">Date of Birth?</label>
+                        <div class="errorMessage">
+                            <p class="errorMessageAsterisk">*</p>
+                            <p class="errorMessageText">Error message</p>
+                        </div>
+                    </div>
                 </div>
-                <input type="date" placeholder="MM-DD-YYYY" class="formTextInput" id="dateOfBirthInput" name="dateOfBirthInput"/>
+                <input type="date" placeholder="MM-DD-YYYY" class="formTextInput" id="dateOfBirthInput" name="dateOfBirthInput" />
                 <div class="formPageFooter">
                     <button type="button" class="prevButton">Back</button>
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="allergiesPage">
+            <div class="page radio" id="allergiesPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="allergiesButtons">Do you have any allergies?</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="allergiesButtons">Do you have any allergies?</label>
+                    </div>
                 </div>
                 <div class="formRadioButtons" id="allergiesButtons">
                     <div class="buttonLabelPair">
@@ -216,9 +272,11 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="healthCardNumberPage">
+            <div class="page text" id="healthCardNumberPage">
                 <div class="formTitleSection"> 
-                    <label class="primaryLabel" for="healthCardNumberInput">What is your health card number?</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="healthCardNumberInput">What is your health card number?</label>
+                    </div>
                 </div>
                 <input type="text" placeholder="Type your health card number here" class="formTextInput" id="healthCardNumberInput" name="healthCardNumberInput"/>
                 <div class="formPageFooter">
@@ -226,9 +284,11 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="benefitsInsurancePage">
+            <div class="page text" id="benefitsInsurancePage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="benefitsInsuranceInput">Benefits or Insurance information? (optional)</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="benefitsInsuranceInput">Benefits or Insurance information? (optional)</label>
+                    </div>
                 </div>
                 <input type="text" placeholder="Enter your information here" class="formTextInput" id="benefitsInsuranceInput" name="benefitsInsuranceInput"/>
                 <div class="formPageFooter">
@@ -236,9 +296,11 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="homeAddressPage">
+            <div class="page text-multiple" id="homeAddressPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="homeAddressInputs">What is your home address?</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="homeAddressInputs">What is your home address?</label>
+                    </div>
                 </div>
                 <div id="homeAddressInputs" class="formInputList">
                     <div class="formInputLabelPair">
@@ -263,9 +325,11 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="fullNamePage">
+            <div class="page text-multiple" id="fullNamePage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="fullNameInputs">Full Patient Name</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="fullNameInputs">Full Patient Name</label>
+                    </div>
                 </div>
                 <div id="fullNameInputs" class="formInputList">
                     <div class="formInputLabelPair">
@@ -282,9 +346,11 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="patientEmailPage">
+            <div class="page text" id="patientEmailPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="patientEmailInput">Patient Email</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="patientEmailInput">Patient Email</label>
+                    </div>
                 </div>
                 <input type="email" placeholder="example@example.com" class="formTextInput" id="patientEmailInput" name="patientEmailInput"/>
                 <div class="formPageFooter">
@@ -292,9 +358,11 @@
                     <button type="button" class="nextButton">Next</button>
                 </div>
             </div>
-            <div class="page" id="phoneNumberPage">
+            <div class="page text-multiple" id="phoneNumberPage">
                 <div class="formTitleSection">
-                    <label class="primaryLabel" for="phoneNumberInputs">Phone Number</label>
+                    <div class="titleContainer">
+                        <label class="primaryLabel" for="phoneNumberInputs">Phone Number</label>
+                    </div>
                 </div>
                 <div id="phoneNumberInputs" class="formInputList">
                     <div class="formInputLabelPair">
@@ -309,6 +377,10 @@
                 <div class="formPageFooter">
                     <button type="button" class="prevButton">Back</button>
                     <button type="submit" class="submitButton">Submit</button>
+                    <input type="hidden" name="_next" value="https://procare-pharmacy-57e7c673e0d4459e767098.webflow.io/online-order-redirect">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="New website Patient Order">
+                    <input type="hidden" name="_template" value="table">
                 </div>
             </div>
         </form>
