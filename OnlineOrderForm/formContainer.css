@@ -133,6 +133,10 @@ input[type="radio"] {
     width: 100%;
 }
 
+.formTextInput[type="date"] {
+    -webkit-appearance: none;
+}
+
 .formInputLabel {
     color: #0A1C37;
     font-family: "Jost";
@@ -260,6 +264,22 @@ button.prevButton {
     font-family: "Jost";
 }
 
-.fieldRequiredWarning {
-    float: center;
+@media only screen and (max-width: 700px) {
+    .w-embed.w-script {
+        width: 100%;
+    }
+
+    #formContainer {
+        margin: 5%;
+        width: 85%;
+    }
+
+    button.nextButton {
+        width: 40%;
+    }
+
+
+    button.prevButton {
+        width: 40%;
+    }
 }
