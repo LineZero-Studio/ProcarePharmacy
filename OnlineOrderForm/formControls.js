@@ -390,7 +390,7 @@ function initializeCustomSelect() {
                 yl = y.length;
 
                 // Change what email gets cc'd
-                document.getElementById("email-cc").value = locationElements[s.selectedIndex - 1].dataset.formEmail;
+                document.getElementById("email-cc").value = locationElements[s.selectedIndex - 1].dataset.formemail;
                 
                 for (k = 0; k < yl; k++) {
                     y[k].classList.remove("same-as-selected");
@@ -446,7 +446,7 @@ function retrieveLocationData() {
         var location = document.createElement("option");
         location.value = element.dataset.slug;
         location.text = element.dataset.locname;
-        location.setAttribute("formEmail", element.dataset.formEmail);
+        location.setAttribute("formEmail", element.dataset.formemail);
         location.classList.add("selectOption");
         document.getElementById("selectLocationDropdown").appendChild(location);
     });
