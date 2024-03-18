@@ -450,6 +450,6 @@ function populateLocationAddresses() {
     addressFields = document.querySelectorAll(".optionAddress");
 
     addressFields.forEach((element) => {
-        element.innerHTML = locationElements.find((e) => { e.dataset.locname === element.parentElement.children[0].innerHTML }).dataset.address;
+        element.innerHTML = locationElements.find((location) => location.dataset.locname === element.parentElement.children[0].innerHTML).dataset.address;
     })
 }
