@@ -390,7 +390,7 @@ function initializeCustomSelect() {
                 yl = y.length;
 
                 // Change what email gets cc'd
-                document.getElementById("email-cc").value = locationElements[s.selectedIndex].dataset.formEmail;
+                document.getElementById("email-cc").value = locationElements[s.selectedIndex - 1].dataset.formEmail;
                 
                 for (k = 0; k < yl; k++) {
                     y[k].classList.remove("same-as-selected");
