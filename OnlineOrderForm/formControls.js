@@ -94,6 +94,8 @@ function initializeFormVariables() {
 
     initializeCustomSelect();
 
+    populateLocationAddresses();
+
     /* If the user clicks anywhere outside the select box,
     then close all select boxes: */
     document.addEventListener("click", closeAllSelect);
@@ -442,4 +444,12 @@ function retrieveLocationData() {
         location.classList.add("selectOption");
         document.getElementById("selectLocationDropdown").appendChild(location);
     });
+}
+
+function populateLocationAddresses() {
+    addressFields = document.querySelectorAll(".optionAddress");
+
+    addressFields.forEach((element) => {
+        element.innerHTML = locationElements.find((e) => { e.dataset.locname === element.parentElement.children[0].innerHTML }).dataset.address;
+    })
 }

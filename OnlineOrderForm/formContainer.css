@@ -6,6 +6,10 @@
     width: 661px;
 }
 
+.online-order .w-embed.w-script {
+	height: 650px;
+}
+
 .page {
     display: none;
     gap: 20px;
@@ -406,7 +410,7 @@ button.submitButton {
 }
 
 @media only screen and (max-width: 700px) {
-    .w-embed.w-script {
+    .online-order .w-embed.w-script {
         width: 100%;
     }
 
