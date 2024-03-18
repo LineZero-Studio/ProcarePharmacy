@@ -334,7 +334,7 @@ function initializeCustomSelect() {
     a.setAttribute("class", "select-selected");
 
     dropdownArrow = document.createElement("img");
-    dropdownArrow.src = "dropdown-arrow.svg";
+    dropdownArrow.src = "https://uploads-ssl.webflow.com/65e765b5fb8859b0fba8914f/65f5e5c4751c83c1e18126d8_dropdown-arrow.svg";
     dropdownArrow.classList.add("select-selected-arrow");
 
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
@@ -354,7 +354,7 @@ function initializeCustomSelect() {
 
         locIcon = document.createElement("img");
         locIcon.classList.add("locIcon");
-        locIcon.src = "location_on.svg";
+        locIcon.src = "https://uploads-ssl.webflow.com/65e765b5fb8859b0fba8914f/65f882bec4faf3945d75c71e_location_on.svg";
         
         let optTitle = document.createElement("p");
         let optAddress = document.createElement("p");
