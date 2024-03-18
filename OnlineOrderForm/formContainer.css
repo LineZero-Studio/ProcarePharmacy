@@ -184,6 +184,11 @@ input[type="radio"] {
     line-height: 26.01px;
 }
 
+.secondaryLabel a {
+    color: #00AEEF;
+    padding: 0px;
+}
+
 .page select {
     display: flex;
     font-family: "Jost";
