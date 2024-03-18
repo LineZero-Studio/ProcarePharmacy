@@ -294,7 +294,7 @@ function addInputBox(currentPage) {
     newInput.placeholder = "Enter RX number here";
 
     // Create accompanying input cancel button
-    newInputCancelBtn.src = "input-cancel.svg";
+    newInputCancelBtn.src = "https://uploads-ssl.webflow.com/65e765b5fb8859b0fba8914f/65f5d1f0751c83c1e16ec20b_input-cancel.svg";
     newInputCancelBtn.classList.add("formInputCancelButton");
     newInputCancelBtn.id = inputList.id + "CancelBtn" + (inputCount + 1);
 
