@@ -15,6 +15,7 @@ let filesToAppend = [];
 
 // variables for custom select box
 var x, i, j, l, ll, selElmnt, a, b, c, d, locIcon, dropdownArrow;
+var addressIterator;
 
 
 var observer = new MutationObserver(function (mutations) {
@@ -93,6 +94,7 @@ function initializeFormVariables() {
     })
 
     initializeCustomSelect();
+    populateLocationAddresses();
 
     /* If the user clicks anywhere outside the select box,
     then close all select boxes: */
@@ -408,8 +410,6 @@ function initializeCustomSelect() {
         dropdownArrow.classList.toggle("select-arrow-active");
     });
     }
-
-    populateLocationAddresses();
 }
 
 function closeAllSelect(elmnt) {
@@ -441,6 +441,7 @@ function retrieveLocationData() {
         var location = document.createElement("option");
         location.value = element.dataset.slug;
         location.text = element.dataset.locname;
+        //location.setAttribute('address', element.dataset.address);
         location.classList.add("selectOption");
         document.getElementById("selectLocationDropdown").appendChild(location);
     });
@@ -449,7 +450,7 @@ function retrieveLocationData() {
 function populateLocationAddresses() {
     addressFields = document.querySelectorAll(".optionAddress");
 
-    addressFields.forEach((element) => {
-        element.innerHTML = locationElements.find((location) => location.dataset.locname === element.parentElement.children[0].innerHTML).dataset.address;
-    })
+    for(addressIterator = 0; addressIterator < addressFields.length; addressIterator++) {
+        addressFields[addressIterator].innerHTML = locationElements[addressIterator].dataset.address;
+    }
 }
