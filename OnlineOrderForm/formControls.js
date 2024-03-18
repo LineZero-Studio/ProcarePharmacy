@@ -388,6 +388,9 @@ function initializeCustomSelect() {
                 h.innerHTML = this.children[1].children[0].innerHTML;
                 y = this.parentNode.getElementsByClassName("same-as-selected");
                 yl = y.length;
+
+                // Change what email gets cc'd
+                document.getElementById("email-cc").value = locationElements[s.selectedIndex].dataset.formEmail;
                 
                 for (k = 0; k < yl; k++) {
                     y[k].classList.remove("same-as-selected");
@@ -395,9 +398,6 @@ function initializeCustomSelect() {
                 this.children[1].children[0].classList.add("same-as-selected");
                 break;
             }
-
-            // Change what email gets cc'd
-            document.getElementById("email-cc").value = locationElements[s.selectedIndex].dataset.formEmail;
 
             }
             h.click();
@@ -446,7 +446,7 @@ function retrieveLocationData() {
         var location = document.createElement("option");
         location.value = element.dataset.slug;
         location.text = element.dataset.locname;
-        location.setAttribute = element.dataset.formEmail;
+        location.setAttribute("formEmail", element.dataset.formEmail);
         location.classList.add("selectOption");
         document.getElementById("selectLocationDropdown").appendChild(location);
     });
