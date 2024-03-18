@@ -94,8 +94,6 @@ function initializeFormVariables() {
 
     initializeCustomSelect();
 
-    populateLocationAddresses();
-
     /* If the user clicks anywhere outside the select box,
     then close all select boxes: */
     document.addEventListener("click", closeAllSelect);
@@ -410,6 +408,8 @@ function initializeCustomSelect() {
         dropdownArrow.classList.toggle("select-arrow-active");
     });
     }
+
+    populateLocationAddresses();
 }
 
 function closeAllSelect(elmnt) {
