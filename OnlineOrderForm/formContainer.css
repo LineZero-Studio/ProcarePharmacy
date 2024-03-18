@@ -48,15 +48,113 @@ form {
     gap: 10px;
 }
 
+.custom-select {
+    position: relative;
+    font-family: "Jost";
+}
+
 .formSelect {
     background: url(dropdown-arrow.svg) no-repeat 97% 50%; 
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+    display: none !important;
 }
 
-.selectOption {
+.formSelect::-webkit-scrollbar {
+    width: 10px;
+}
+
+.select-selected {
     color: #0A1C37;
+    padding: 15px 25px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    background-color: #F4FBFF;
+    border-radius: 15px;
+}
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    /*border: 6px solid transparent;*/
+    border-color: #818C94 transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #0A1C37 transparent;
+    top: 7px;
+}
+
+.select-selected-arrow {
+    display: inline-block;
+    position: absolute;
+    right: 4%;
+    top: 42%;
+    pointer-events: none;
+}
+
+.select-selected-arrow.select-arrow-active {
+    rotate: 180deg;
+}
+
+.select-items div,.select-selected {
+    cursor: pointer;
+}
+
+.select-items {
+    position: absolute;
+    color: #0A1C37;
+    background-color: #F4FBFF;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-radius: 15px;
+    height: 9em;
+    overflow-y: auto;
+}
+
+.select-items-option {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    padding: 7px 20px 10px 16px;
+}
+
+.select-items-option-info {
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    justify-content: center;
+    align-items: flex-start;
+    border: 0 !important;
+    padding: 0 0 0 8;
+}
+
+.optionName {
+    pointer-events: none;
+    font-size: 16px;
+    margin: 0;
+}
+
+.optionAddress {
+    pointer-events: none;
+    font-size: 10px;
+    color: #818C94;
+    margin: 0;
+}
+
+.select-hide {
+    display: none;
 }
 
 input[type="radio"] {

@@ -13,6 +13,9 @@ var cancelInputBtn;
 
 let filesToAppend = [];
 
+// variables for custom select box
+var x, i, j, l, ll, selElmnt, a, b, c, d, locIcon, dropdownArrow;
+
 
 var observer = new MutationObserver(function (mutations) {
     if($("#formContainer").length) {
@@ -25,7 +28,6 @@ observer.observe(document.querySelector(".order-online"), {
     childList: true,
     subtree: true
 });
-
 
 
 function initializeFormVariables() {
@@ -89,6 +91,12 @@ function initializeFormVariables() {
             filesToAppend.forEach(file => formData.append('file' + filesToAppend.indexOf(file), file))
         }
     })
+
+    initializeCustomSelect();
+
+    /* If the user clicks anywhere outside the select box,
+    then close all select boxes: */
+    document.addEventListener("click", closeAllSelect);
 }
 
 
@@ -312,6 +320,116 @@ function dropHandler(ev) {
 
 function dragOverHandler(ev) {
     ev.preventDefault();
+}
+
+function initializeCustomSelect() {
+    /* Look for any elements with the class "custom-select": */
+    x = document.getElementsByClassName("custom-select");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+    selElmnt = x[i].getElementsByTagName("select")[0];
+    ll = selElmnt.length;
+    /* For each element, create a new DIV that will act as the selected item: */
+    a = document.createElement("DIV");
+    a.setAttribute("class", "select-selected");
+
+    dropdownArrow = document.createElement("img");
+    dropdownArrow.src = "dropdown-arrow.svg";
+    dropdownArrow.classList.add("select-selected-arrow");
+
+    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    x[i].appendChild(a);
+
+    /* For each element, create a new DIV that will contain the option list: */
+    b = document.createElement("DIV");
+    b.setAttribute("class", "select-items select-hide");
+    for (j = 1; j < ll; j++) {
+        /* For each option in the original select element,
+        create a new DIV that will act as an option item: */
+        c = document.createElement("DIV");
+        c.classList.add("select-items-option");
+
+        d = document.createElement("DIV");
+        d.classList.add("select-items-option-info");
+
+        locIcon = document.createElement("img");
+        locIcon.classList.add("locIcon");
+        locIcon.src = "location_on.svg";
+        
+        let optTitle = document.createElement("p");
+        let optAddress = document.createElement("p");
+
+        optTitle.classList.add("optionName");
+        optAddress.classList.add("optionAddress");
+
+        optTitle.innerHTML = selElmnt.options[j].innerHTML;
+        // replace with fetching address from CMS
+        optAddress.innerHTML = "Address Number " + j;
+
+        d.appendChild(optTitle);
+        d.appendChild(optAddress);
+
+        c.appendChild(locIcon);
+        c.appendChild(d);
+
+        c.addEventListener("click", function(e) {
+            /* When an item is clicked, update the original select box,
+            and the selected item: */
+            var y, i, k, s, h, sl, yl;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            sl = s.length;
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < sl; i++) {
+            if (s.options[i].innerHTML == this.children[1].children[0].innerHTML) {
+                s.selectedIndex = i;
+                h.innerHTML = this.children[1].children[0].innerHTML;
+                y = this.parentNode.getElementsByClassName("same-as-selected");
+                yl = y.length;
+                
+                for (k = 0; k < yl; k++) {
+                    y[k].classList.remove("same-as-selected");
+                }
+                this.children[1].children[0].classList.add("same-as-selected");
+                break;
+            }
+            }
+            h.click();
+        });
+        b.appendChild(c);
+    }
+    x[i].appendChild(b);
+    x[i].appendChild(dropdownArrow);
+    a.addEventListener("click", function(e) {
+        /* When the select box is clicked, close any other select boxes,
+        and open/close the current select box: */
+        e.stopPropagation();
+        closeAllSelect(this);
+        this.nextSibling.classList.toggle("select-hide");
+        dropdownArrow.classList.toggle("select-arrow-active");
+    });
+    }
+}
+
+function closeAllSelect(elmnt) {
+    /* A function that will close all select boxes in the document,
+    except the current select box: */
+    var x, y, i, xl, yl, arrNo = [];
+    x = document.getElementsByClassName("select-items");
+    y = document.getElementsByClassName("select-selected");
+    xl = x.length;
+    yl = y.length;
+    for (i = 0; i < yl; i++) {
+      if (elmnt == y[i]) {
+        arrNo.push(i)
+      } else {
+        y[i].classList.remove("select-arrow-active");
+      }
+    }
+    for (i = 0; i < xl; i++) {
+      if (arrNo.indexOf(i)) {
+        x[i].classList.add("select-hide");
+      }
+    }
 }
 
 // Get locations data from the CMS and populate the form
