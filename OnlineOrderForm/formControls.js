@@ -75,6 +75,7 @@ function initializeFormVariables() {
         })
     })
 
+    // Change form data before submitting
     form.addEventListener('formdata', (e) => {
 
         const formData = e.formData;
@@ -394,6 +395,10 @@ function initializeCustomSelect() {
                 this.children[1].children[0].classList.add("same-as-selected");
                 break;
             }
+
+            // Change what email gets cc'd
+            document.getElementById("email-cc").value = locationElements[s.selectedIndex].dataset.formEmail;
+
             }
             h.click();
         });
@@ -441,7 +446,7 @@ function retrieveLocationData() {
         var location = document.createElement("option");
         location.value = element.dataset.slug;
         location.text = element.dataset.locname;
-        //location.setAttribute('address', element.dataset.address);
+        location.setAttribute = element.dataset.formEmail;
         location.classList.add("selectOption");
         document.getElementById("selectLocationDropdown").appendChild(location);
     });
