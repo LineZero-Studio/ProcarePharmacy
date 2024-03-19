@@ -194,7 +194,7 @@ function validatePage() {
     }
     else if(activePage[0].classList.contains('file')) {
         // Check if a file is uploaded
-        if((activePage.find(".formFileInputBoxUpload")[0].files.length === 0) && filesToAppend.length === 0) {
+        if((activePage.find(".formFileInputBoxUploadInput")[0].files.length === 0) && filesToAppend.length === 0) {
             // Check if error text is already displayed
             if(activePage[0].classList.contains('error')) { return true; }
 
