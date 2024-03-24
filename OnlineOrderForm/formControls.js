@@ -97,7 +97,7 @@ function initializeFormVariables() {
     }
 
     var locationSlug = formData.get("selectLocationDropdown");
-    var location = locationElements.find(
+    var location = Array.from(locationElements).find(
       (element) => locationSlug === element.dataset.slug
     );
 
