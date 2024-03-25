@@ -55,11 +55,11 @@ function initializeFormVariables() {
     });
   });
 
-  submitBtn.addEventListener("click", (e) => {
-    sendPatientEmail().then(() => {
-      form.submit();
-    });
-  });
+  //   submitBtn.addEventListener("click", (e) => {
+  //     sendPatientEmail().then(() => {
+  //       form.submit();
+  //     });
+  //   });
 
   addAnotherBtn.forEach((button) => {
     button.addEventListener("click", (e) => {
