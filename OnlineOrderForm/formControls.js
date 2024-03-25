@@ -103,11 +103,6 @@ function initializeFormVariables() {
         formData.append("file" + filesToAppend.indexOf(file), file)
       );
     }
-
-    var locationSlug = formData.get("selectLocationDropdown");
-    var location = Array.from(locationElements).find(
-      (element) => locationSlug === element.dataset.slug
-    );
   });
 
   initializeCustomSelect();
@@ -499,6 +494,11 @@ function closeAllSelect(elmnt) {
 }
 
 async function sendPatientEmail() {
+  var locationSlug = formData.get("selectLocationDropdown");
+  var location = Array.from(locationElements).find(
+    (element) => locationSlug === element.dataset.slug
+  );
+
   return $.ajax({
     url: "https://us-central1-procare-scarborough.cloudfunctions.net/sendPatientEmail",
     type: "get",
