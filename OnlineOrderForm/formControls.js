@@ -105,8 +105,8 @@ function initializeFormVariables() {
       url: "https://us-central1-procare-scarborough.cloudfunctions.net/sendPatientEmail",
       type: "get",
       data: {
-        locationEmail: location.dataset.formEmail,
-        locationNumber: location.dataset.locPhoneNumber,
+        locationEmail: location.dataset.formemail,
+        locationNumber: location.dataset.locphonenumber,
         patientName: formData.get("fullName-first"),
         patientEmail: formData.get("patientEmailInput"),
       },
