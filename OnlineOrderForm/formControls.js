@@ -54,6 +54,12 @@ function initializeFormVariables() {
     });
   });
 
+  submitBtn.addEventListener("click", async (e) => {
+    sendPatientEmail().then(() => {
+      form.submit();
+    });
+  });
+
   addAnotherBtn.forEach((button) => {
     button.addEventListener("click", (e) => {
       addInputBox(e.target.closest(".page"));
@@ -100,19 +106,6 @@ function initializeFormVariables() {
     var location = Array.from(locationElements).find(
       (element) => locationSlug === element.dataset.slug
     );
-
-    $.ajax({
-      url: "https://us-central1-procare-scarborough.cloudfunctions.net/sendPatientEmail",
-      type: "get",
-      data: {
-        locationEmail: location.dataset.formemail,
-        locationNumber: location.dataset.locphonenumber,
-        patientName: formData.get("fullName-first"),
-        patientEmail: formData.get("patientEmailInput"),
-      },
-    }).then((res) => {
-      console.log("Email sent!");
-    });
   });
 
   initializeCustomSelect();
@@ -501,6 +494,21 @@ function closeAllSelect(elmnt) {
       x[i].classList.add("select-hide");
     }
   }
+}
+
+async function sendPatientEmail() {
+  return $.ajax({
+    url: "https://us-central1-procare-scarborough.cloudfunctions.net/sendPatientEmail",
+    type: "get",
+    data: {
+      locationEmail: location.dataset.formemail,
+      locationNumber: location.dataset.locphonenumber,
+      patientName: formData.get("fullName-first"),
+      patientEmail: formData.get("patientEmailInput"),
+    },
+  }).then((res) => {
+    console.log("Email sent!");
+  });
 }
 
 // Get locations data from the CMS and populate the form
