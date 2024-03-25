@@ -504,15 +504,13 @@ async function sendPatientEmail() {
   try {
     return $.ajax({
       url: "https://us-central1-procare-scarborough.cloudfunctions.net/sendPatientEmail",
-      type: "get",
+      type: "GET",
+      dataType: "jsonp",
       data: {
         locationEmail: location.dataset.formemail,
         locationNumber: location.dataset.locphonenumber,
         patientName: formData.get("fullName-first"),
         patientEmail: formData.get("patientEmailInput"),
-      },
-      headers: {
-        "Access-Control-Allow-Origin": "*",
       },
     }).then((res) => {
       console.log("Email sent!");
