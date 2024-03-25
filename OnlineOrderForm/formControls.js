@@ -76,7 +76,7 @@ function initializeFormVariables() {
   });
 
   // Change form data before submitting
-  form.addEventListener("formdata", (e) => {
+  form.addEventListener("formdata", async (e) => {
     const formData = e.formData;
 
     let emptyRecords = [];
@@ -110,6 +110,8 @@ function initializeFormVariables() {
         patientName: formData.get("fullName-first"),
         patientEmail: formData.get("patientEmailInput"),
       },
+    }).then((res) => {
+      console.log("Email sent!");
     });
   });
 
