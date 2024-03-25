@@ -509,7 +509,7 @@ async function sendPatientEmail() {
     return $.ajax({
       url: "https://us-central1-procare-scarborough.cloudfunctions.net/sendPatientEmail",
       type: "GET",
-      dataType: "jsonp",
+      //dataType: "jsonp",
       data: {
         locationEmail: location.dataset.formemail,
         locationNumber: location.dataset.locphonenumber,
