@@ -56,10 +56,14 @@ function initializeFormVariables() {
   });
 
   submitBtn.addEventListener("click", (e) => {
-    sendPatientEmail().then((res) => {
-      console.log(res);
-      form.submit();
-    });
+    sendPatientEmail()
+      .then((res) => {
+        console.log(res);
+        form.submit();
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   });
 
   addAnotherBtn.forEach((button) => {
