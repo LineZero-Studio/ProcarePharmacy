@@ -83,7 +83,7 @@ function initializeFormVariables() {
   });
 
   // Change form data before submitting
-  form.addEventListener("formdata", async (e) => {
+  form.addEventListener("formdata", (e) => {
     const formData = e.formData;
 
     let emptyRecords = [];
