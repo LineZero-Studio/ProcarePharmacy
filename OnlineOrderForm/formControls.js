@@ -59,7 +59,14 @@ function initializeFormVariables() {
     sendPatientEmail()
       .then((res) => {
         console.log(res);
-        form.submit();
+        //form.submit();
+        sendFormSubmission()
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((e) => {
+            console.log(e);
+          });
       })
       .catch((e) => {
         console.log(e);
@@ -518,6 +525,24 @@ async function sendPatientEmail() {
       },
     }).then((res) => {
       console.log("Email sent!");
+      return res;
+    });
+  } catch (error) {
+    console.log(error);
+    return;
+  }
+}
+
+async function sendFormSubmission() {
+  var formData = new FormData(form);
+
+  try {
+    return $.ajax({
+      url: "http://127.0.0.1:5001/procare-scarborough/us-central1/submission/sendFormSubmissionEmail",
+      type: "POST",
+      data: formData,
+    }).then((res) => {
+      console.log("Pharmacy email sent!");
       return res;
     });
   } catch (error) {
