@@ -38,7 +38,7 @@ function initializeFormVariables() {
   nextBtn = document.querySelectorAll("form .nextButton");
   prevBtn = document.querySelectorAll("form .prevButton");
   submitBtn = document.querySelectorAll("form submitButton");
-  form = document.querySelector("form");
+  form = $("#onlineOrderForm");
 
   addAnotherBtn = document.querySelectorAll("form .formInputListAddBtn");
   cancelInputBtn = document.querySelectorAll(".formInputCancelButton");
@@ -55,11 +55,12 @@ function initializeFormVariables() {
     });
   });
 
-  //   submitBtn.addEventListener("click", (e) => {
-  //     sendPatientEmail().then(() => {
-  //       form.submit();
-  //     });
-  //   });
+  submitBtn.addEventListener("click", (e) => {
+    sendPatientEmail().then((res) => {
+      console.log(res);
+      form.submit();
+    });
+  });
 
   addAnotherBtn.forEach((button) => {
     button.addEventListener("click", (e) => {
@@ -509,6 +510,7 @@ async function sendPatientEmail() {
     },
   }).then((res) => {
     console.log("Email sent!");
+    return res;
   });
 }
 
