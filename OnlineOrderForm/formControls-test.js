@@ -17,6 +17,8 @@ let filesToAppend = [];
 var x, i, j, l, ll, selElmnt, a, b, c, d, locIcon, dropdownArrow;
 var addressIterator;
 
+initializeFormVariables();
+/*
 var observer = new MutationObserver(function (mutations) {
   if ($("#formContainer").length) {
     initializeFormVariables();
@@ -28,6 +30,7 @@ observer.observe(document.querySelector(".order-online"), {
   childList: true,
   subtree: true,
 });
+*/
 
 function initializeFormVariables() {
   alert("form loaded, initializing javascript...");
@@ -111,7 +114,7 @@ function initializeFormVariables() {
   });
 
   initializeCustomSelect();
-  populateLocationAddresses();
+  //populateLocationAddresses();
 
   /* If the user clicks anywhere outside the select box,
     then close all select boxes: */
