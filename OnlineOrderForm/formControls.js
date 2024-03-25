@@ -501,22 +501,27 @@ async function sendPatientEmail() {
     (element) => locationSlug === element.dataset.slug
   );
 
-  return $.ajax({
-    url: "https://us-central1-procare-scarborough.cloudfunctions.net/sendPatientEmail",
-    type: "get",
-    data: {
-      locationEmail: location.dataset.formemail,
-      locationNumber: location.dataset.locphonenumber,
-      patientName: formData.get("fullName-first"),
-      patientEmail: formData.get("patientEmailInput"),
-    },
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
-  }).then((res) => {
-    console.log("Email sent!");
-    return res;
-  });
+  try {
+    return $.ajax({
+      url: "https://us-central1-procare-scarborough.cloudfunctions.net/sendPatientEmail",
+      type: "get",
+      data: {
+        locationEmail: location.dataset.formemail,
+        locationNumber: location.dataset.locphonenumber,
+        patientName: formData.get("fullName-first"),
+        patientEmail: formData.get("patientEmailInput"),
+      },
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    }).then((res) => {
+      console.log("Email sent!");
+      return res;
+    });
+  } catch (error) {
+    console.log(error);
+    return;
+  }
 }
 
 // Get locations data from the CMS and populate the form
