@@ -448,8 +448,8 @@ function initializeCustomSelect() {
             try {
               document.getElementById("email-cc").value =
                 locationElements[s.selectedIndex - 1].dataset.formemail;
-            } catch {
-              console.log("Location email not found");
+            } catch (error) {
+              console.error(error);
             }
 
             for (k = 0; k < yl; k++) {
