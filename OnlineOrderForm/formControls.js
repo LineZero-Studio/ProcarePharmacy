@@ -446,7 +446,7 @@ function initializeCustomSelect() {
 
             // Change what email gets cc'd
             document.getElementById("email-cc").value =
-              locationElements[s.selectedIndex - 1].dataset.formemail;
+              locationElements[s.selectedIndex].dataset.formemail;
 
             for (k = 0; k < yl; k++) {
               y[k].classList.remove("same-as-selected");
