@@ -510,6 +510,10 @@ async function sendPatientEmail() {
       patientName: formData.get("fullName-first"),
       patientEmail: formData.get("patientEmailInput"),
     },
+    headers: {
+      "Access-Control-Allow-Origin":
+        "https://us-central1-procare-scarborough.cloudfunctions.net",
+    },
   }).then((res) => {
     console.log("Email sent!");
     return res;
