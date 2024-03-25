@@ -55,7 +55,7 @@ function initializeFormVariables() {
     });
   });
 
-  submitBtn.addEventListener("click", async (e) => {
+  submitBtn.addEventListener("click", (e) => {
     sendPatientEmail().then(() => {
       form.submit();
     });
