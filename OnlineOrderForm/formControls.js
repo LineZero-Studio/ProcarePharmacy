@@ -37,6 +37,7 @@ function initializeFormVariables() {
   formPages = Array.from(document.querySelectorAll("form .page"));
   nextBtn = document.querySelectorAll("form .nextButton");
   prevBtn = document.querySelectorAll("form .prevButton");
+  submitBtn = document.querySelectorAll("form submitButton");
   form = document.querySelector("form");
 
   addAnotherBtn = document.querySelectorAll("form .formInputListAddBtn");
