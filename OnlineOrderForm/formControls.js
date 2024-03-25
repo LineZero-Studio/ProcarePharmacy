@@ -541,6 +541,8 @@ async function sendFormSubmission() {
       url: "http://127.0.0.1:5001/procare-scarborough/us-central1/submission/sendFormSubmissionEmail",
       type: "POST",
       data: formData,
+      processData: false,
+      contentType: false,
     }).then((res) => {
       console.log("Pharmacy email sent!");
       return res;
