@@ -316,10 +316,14 @@
                 <button type="button" class="nextButton">Next</button>
             </div>
         </div>
-        <div class="page text-multiple" id="fullNamePage">
+        <div class="page text-multiple required" id="fullNamePage">
             <div class="formTitleSection">
                 <div class="titleContainer">
                     <label class="primaryLabel" for="fullNameInputs">Full Patient Name</label>
+                    <div class="errorMessage">
+                        <p class="errorMessageAsterisk">*</p>
+                        <p class="errorMessageText">Error message</p>
+                    </div>
                 </div>
             </div>
             <div id="fullNameInputs" class="formInputList">
@@ -337,10 +341,14 @@
                 <button type="button" class="nextButton">Next</button>
             </div>
         </div>
-        <div class="page text" id="patientEmailPage">
+        <div class="page text required" id="patientEmailPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
                     <label class="primaryLabel" for="patientEmailInput">Patient Email</label>
+                    <div class="errorMessage">
+                        <p class="errorMessageAsterisk">*</p>
+                        <p class="errorMessageText">Error message</p>
+                    </div>
                 </div>
             </div>
             <input type="email" placeholder="example@example.com" class="formTextInput" id="patientEmailInput" name="patientEmailInput"/>
