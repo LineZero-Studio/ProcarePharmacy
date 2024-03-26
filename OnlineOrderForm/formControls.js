@@ -457,7 +457,7 @@ function initializeCustomSelect() {
             // Change what phone number gets attached
             try {
               document.getElementById("pharmacyPhoneNumber").value =
-                locationElements[s.selectedIndex - 1].dataset.phonenumber;
+                locationElements[s.selectedIndex - 1].dataset.locphonenumber;
             } catch (error) {
               console.error(error);
             }
