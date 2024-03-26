@@ -93,7 +93,7 @@ function initializeFormVariables() {
 
   // Whenever a file is uploaded, show the user how many files are added
   $(".formFileInputBoxUploadInput").change((input) => {
-    input.parentElement.getElementsByClassName(
+    input.target.parentElement.getElementsByClassName(
       "formFileInputBoxUploadLabel"
     )[0].innerText = `${filesToAppend.length} files added`;
   });
