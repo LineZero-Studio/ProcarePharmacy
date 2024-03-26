@@ -387,7 +387,7 @@ function fileAdd(controlID) {
   fileSelector.click();
   fileSelector.parentElement
     .getElementsByClassName("formFileInputBoxUploadLabel")[0]
-    .innerHTML(`${filesToAppend.length} files added`);
+    .innerText(`${filesToAppend.length} files added`);
 }
 
 function initializeCustomSelect() {
