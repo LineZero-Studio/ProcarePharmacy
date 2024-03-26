@@ -24,10 +24,14 @@ var observer = new MutationObserver(function (mutations) {
   }
 });
 
-observer.observe(document.querySelector(".order-online"), {
-  childList: true,
-  subtree: true,
-});
+if ($("#formContainer").length) {
+  initializeFormVariables();
+} else {
+  observer.observe(document.querySelector(".order-online"), {
+    childList: true,
+    subtree: true,
+  });
+}
 
 function initializeFormVariables() {
   alert("form loaded, initializing javascript...");
