@@ -281,18 +281,24 @@ function validatePage() {
       return false;
     }
   } else if (activePage[0].classList.contains("text-multiple")) {
+    var containsError = false;
     // Check if the inputs are populated with text
     Array.from(activePage[0].getElementsByTagName("input")).forEach((input) => {
       if (input.value === "") {
-        // Check if error text is already displayed
-        if (activePage[0].classList.contains("error")) {
-          return true;
-        }
-
-        createErrorText(activePage, multiTextInputErrorText);
-        return true;
+        containsError = true;
       }
     });
+
+    // Check if error flag was raised after validating
+    if (containsError) {
+      // Check if error text is already displayed
+      if (activePage[0].classList.contains("error")) {
+        return true;
+      }
+
+      createErrorText(activePage, multiTextInputErrorText);
+      return true;
+    }
 
     activePage[0].classList.remove("error");
     disableErrorText(activePage);
