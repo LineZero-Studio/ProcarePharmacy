@@ -538,7 +538,7 @@ async function sendFormSubmission() {
 
   try {
     return $.ajax({
-      url: "http://127.0.0.1:5001/procare-scarborough/us-central1/submission/sendFormSubmissionEmail",
+      url: "https://us-central1-procare-scarborough.cloudfunctions.net/submission/sendFormSubmissionEmail",
       type: "POST",
       data: formData,
       processData: false,
