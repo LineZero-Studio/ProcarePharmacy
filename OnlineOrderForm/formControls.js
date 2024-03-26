@@ -34,7 +34,7 @@ if ($("#formContainer").length) {
 }
 
 function initializeFormVariables() {
-  alert("form loaded, initializing javascript...");
+  console.log("form loaded, initializing javascript...");
 
   retrieveLocationData();
 
