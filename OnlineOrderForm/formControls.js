@@ -91,6 +91,13 @@ function initializeFormVariables() {
     });
   });
 
+  // Whenever a file is uploaded, show the user how many files are added
+  $(".formFileInputBoxUploadInput").change((input) => {
+    input.parentElement.getElementsByClassName(
+      "formFileInputBoxUploadLabel"
+    )[0].innerText = `${filesToAppend.length} files added`;
+  });
+
   // Handler for div around radio button
   Array.from($(".buttonLabelPair")).forEach((button) => {
     button.addEventListener("click", (e) => {
@@ -379,15 +386,6 @@ function dropHandler(ev) {
 
 function dragOverHandler(ev) {
   ev.preventDefault();
-}
-
-// Event handler for adding file to file upload page
-function fileAdd(controlID) {
-  const fileSelector = document.getElementById(controlID);
-  fileSelector.click();
-  fileSelector.parentElement.getElementsByClassName(
-    "formFileInputBoxUploadLabel"
-  )[0].innerText = `${filesToAppend.length} files added`;
 }
 
 function initializeCustomSelect() {
