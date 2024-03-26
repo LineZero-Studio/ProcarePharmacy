@@ -448,8 +448,16 @@ function initializeCustomSelect() {
 
             // Change what email gets cc'd
             try {
-              document.getElementById("email-cc").value =
+              document.getElementById("pharmacyEmail").value =
                 locationElements[s.selectedIndex - 1].dataset.formemail;
+            } catch (error) {
+              console.error(error);
+            }
+
+            // Change what phone number gets attached
+            try {
+              document.getElementById("pharmacyPhoneNumber").value =
+                locationElements[s.selectedIndex - 1].dataset.phonenumber;
             } catch (error) {
               console.error(error);
             }

@@ -349,25 +349,18 @@
                 <button type="button" class="nextButton">Next</button>
             </div>
         </div>
-        <div class="page text-multiple" id="phoneNumberPage">
+        <div class="page text" id="phoneNumberPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="phoneNumberInputs">Phone Number</label>
+                    <label class="primaryLabel" for="phoneNumberInput">Phone Number</label>
                 </div>
             </div>
-            <div id="phoneNumberInputs" class="formInputList">
-                <div class="formInputLabelPair">
-                    <label class="formInputLabel" for="phoneNumber-area">Area Code</label>
-                    <input type="text" class="formTextInput" id="phoneNumber-area" name="phoneNumber-area"/>
-                </div>
-                <div class="formInputLabelPair">
-                    <label class="formInputLabel" for="phoneNumber-number">Phone Number</label>
-                    <input type="text" class="formTextInput" id="phoneNumber-number" name="phoneNumber-number"/>
-                </div>
-            </div>
+            <input type="tel" placeholder="XXX-XXX-XXXX" class="formTextInput" id="patientPhoneNumberInput" name="patientPhoneNumberInput" />
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="submitButton">Submit</button>
+                <input type="hidden" id="pharmacyEmail" name="pharmacyEmail" value="another@email.com"/>
+                <input type="hidden" id="pharmacyPhoneNumber" name="pharmacyPhoneNumber" value="XXX-XXX-XXXX"/>
             </div>
         </div>
     </form>
