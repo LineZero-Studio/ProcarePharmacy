@@ -366,6 +366,11 @@ input[type="radio"] {
     margin-bottom: auto;
 }
 
+.contact_me_by_fax_only {
+    position: absolute;
+    left: -5000px;
+}
+
 .formPageFooter {
     display: flex;
     justify-content: space-between;
