@@ -385,9 +385,9 @@ function dragOverHandler(ev) {
 function fileAdd(controlID) {
   const fileSelector = document.getElementById(controlID);
   fileSelector.click();
-  fileSelector.parentElement
-    .getElementsByClassName("formFileInputBoxUploadLabel")[0]
-    .innerText(`${filesToAppend.length} files added`);
+  fileSelector.parentElement.getElementsByClassName(
+    "formFileInputBoxUploadLabel"
+  )[0].innerText = `${filesToAppend.length} files added`;
 }
 
 function initializeCustomSelect() {
