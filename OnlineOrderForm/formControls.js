@@ -523,7 +523,7 @@ async function sendPatientEmail() {
 
   try {
     return $.ajax({
-      url: "https://us-central1-procare-scarborough.cloudfunctions.net/sendPatientEmail",
+      url: "https://us-central1-procare-scarborough.cloudfunctions.net/submission/sendPatientEmail",
       type: "GET",
       data: {
         locationEmail: location.dataset.formemail,
