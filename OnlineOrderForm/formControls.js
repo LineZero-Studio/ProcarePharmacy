@@ -61,7 +61,9 @@ function initializeFormVariables() {
 
   submitBtn.addEventListener("click", (e) => {
     // If honeyput has a value in it, redirect without submitting the form
-    if ($(".contact_me_by_fax_only").value != "") {
+    if (
+      document.getElementsByClassName(".contact_me_by_fax_only")[0].value !== ""
+    ) {
       window.location.href =
         "https://procare-pharmacy-57e7c673e0d4459e767098.webflow.io/online-order-redirect";
       return;
