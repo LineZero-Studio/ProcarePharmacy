@@ -62,7 +62,8 @@ function initializeFormVariables() {
         //form.submit();
         sendFormSubmission()
           .then((res) => {
-            console.log(res);
+            window.location.href =
+              "https://procare-pharmacy-57e7c673e0d4459e767098.webflow.io/online-order-redirect";
           })
           .catch((e) => {
             console.log(e);
@@ -516,7 +517,6 @@ async function sendPatientEmail() {
     return $.ajax({
       url: "https://us-central1-procare-scarborough.cloudfunctions.net/sendPatientEmail",
       type: "GET",
-      //dataType: "jsonp",
       data: {
         locationEmail: location.dataset.formemail,
         locationNumber: location.dataset.locphonenumber,
