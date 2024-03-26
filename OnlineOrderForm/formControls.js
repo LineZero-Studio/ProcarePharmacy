@@ -389,6 +389,10 @@ function dragOverHandler(ev) {
   ev.preventDefault();
 }
 
+function manuallyUploadFile(inputID) {
+  document.getElementById("prescriptionUploadFileInput").click();
+}
+
 function initializeCustomSelect() {
   /* Look for any elements with the class "custom-select": */
   x = document.getElementsByClassName("custom-select");
