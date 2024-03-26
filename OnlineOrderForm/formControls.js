@@ -63,7 +63,6 @@ function initializeFormVariables() {
     sendPatientEmail()
       .then((res) => {
         console.log(res);
-        //form.submit();
         sendFormSubmission()
           .then((res) => {
             window.location.href =
@@ -380,6 +379,16 @@ function dropHandler(ev) {
 
 function dragOverHandler(ev) {
   ev.preventDefault();
+}
+
+// Event handler for adding file to file upload page
+function fileAdd(controlID) {
+  const fileSelector = document.getElementById(controlID);
+  fileSelector.click();
+  fileSelector
+    .parentElement()
+    .getElementsByClassName("formFileInputBoxUploadLabel")[0]
+    .innerHTML(`${filesToAppend.length} files added`);
 }
 
 function initializeCustomSelect() {
