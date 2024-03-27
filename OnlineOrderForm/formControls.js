@@ -399,8 +399,9 @@ function addInputBox(currentPage) {
 function dropHandler(ev) {
   ev.preventDefault();
 
-  let dt = ev.dataTransfer;
-  filesToAppend = Array.from(dt.files);
+  [...ev.dataTransfer.files].forEach((file, i) => {
+    document.querySelector(".formFileInputBoxUploadInput").files.push(file);
+  });
 
   // Trigger label to change
   document
