@@ -133,10 +133,10 @@ function initializeFormVariables() {
       formData.delete(key);
     });
 
-    var blob;
     if (filesToAppend.length) {
-      blob = new Blob([filesToAppend[0], { type: filesToAppend[0].type }]);
-      formData.append("file", blob, filesToAppend[0].name);
+      filesToAppend.forEach((file) =>
+        formData.append("file" + filesToAppend.indexOf(file), file)
+      );
     }
   });
 
