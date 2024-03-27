@@ -401,6 +401,11 @@ function dropHandler(ev) {
 
   let dt = ev.dataTransfer;
   filesToAppend = Array.from(dt.files);
+
+  // Trigger label to change
+  document
+    .querySelector(".formFileInputBoxUploadLabel")
+    .dispatchEvent(new Event("change", { bubbles: true }));
 }
 
 function dragOverHandler(ev) {
