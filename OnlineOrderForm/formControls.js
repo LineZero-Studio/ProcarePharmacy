@@ -403,9 +403,9 @@ function dropHandler(ev) {
     ev.dataTransfer.files;
 
   // Trigger label to change
-  document.querySelector(
-    ".formFileInputBoxUploadLabel"
-  ).innerText = `${filesToAppend.length} files added`;
+  document.querySelector(".formFileInputBoxUploadLabel").innerText = `${
+    document.querySelector(".formFileInputBoxUploadInput").files.length
+  } files added`;
 }
 
 function dragOverHandler(ev) {
