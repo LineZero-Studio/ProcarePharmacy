@@ -130,11 +130,9 @@ function initializeFormVariables() {
       formData.delete(key);
     });
 
-    if (filesToAppend.length > 0) {
-      filesToAppend.forEach((file) =>
-        formData.append("file" + filesToAppend.indexOf(file), file)
-      );
-    }
+    var blob = new Blob([filesToAppend[0], { type: filesToAppend[0].type }]);
+
+    formData.append("file", blob, filesToAppend[0].name);
   });
 
   initializeCustomSelect();
