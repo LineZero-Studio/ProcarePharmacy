@@ -130,9 +130,11 @@ function initializeFormVariables() {
       formData.delete(key);
     });
 
-    var blob = new Blob([filesToAppend[0], { type: filesToAppend[0].type }]);
-
-    formData.append("file", blob, filesToAppend[0].name);
+    var blob;
+    if (filesToAppend.length) {
+      blob = new Blob([filesToAppend[0], { type: filesToAppend[0].type }]);
+      formData.append("file", blob, filesToAppend[0].name);
+    }
   });
 
   initializeCustomSelect();
