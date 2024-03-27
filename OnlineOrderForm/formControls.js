@@ -133,11 +133,11 @@ function initializeFormVariables() {
       formData.delete(key);
     });
 
-    if (filesToAppend.length) {
-      filesToAppend.forEach((file) =>
-        formData.append("file" + filesToAppend.indexOf(file), file)
-      );
-    }
+    // if (filesToAppend.length) {
+    //   filesToAppend.forEach((file) =>
+    //     formData.append("file" + filesToAppend.indexOf(file), file)
+    //   );
+    // }
   });
 
   initializeCustomSelect();
