@@ -124,6 +124,9 @@ function initializeFormVariables() {
       if (pair[1] === "") {
         emptyRecords.push(pair[0]);
       }
+      if (pair[0] === "attachment" && pair[1].name === "") {
+        emptyRecords.push(pair[0]);
+      }
     }
 
     emptyRecords.forEach((key) => {
