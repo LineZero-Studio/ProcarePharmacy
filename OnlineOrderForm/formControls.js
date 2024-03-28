@@ -603,15 +603,14 @@ async function sendFormSubmission() {
 function retrieveLocationData() {
   locationElements = document.querySelectorAll("div[id^='LOCATIONID_");
   locationElements.forEach((element) => {
-    var location = document.createElement("option");
-    location.value = element.dataset.slug;
-    location.text = element.dataset.loclabel;
-    location.setAttribute("formEmail", element.dataset.formemail);
-    location.classList.add("selectOption");
-    document.getElementById("selectLocationDropdown").appendChild(location);
-    console.log(
-      `The checkbox value for ${element.dataset.loclabel} is ${element.dataset.excludelocation}`
-    );
+    if (!element.dataset.excludelocation) {
+      var location = document.createElement("option");
+      location.value = element.dataset.slug;
+      location.text = element.dataset.loclabel;
+      location.setAttribute("formEmail", element.dataset.formemail);
+      location.classList.add("selectOption");
+      document.getElementById("selectLocationDropdown").appendChild(location);
+    }
   });
 }
 
