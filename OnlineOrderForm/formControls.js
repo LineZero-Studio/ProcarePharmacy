@@ -603,7 +603,7 @@ async function sendFormSubmission() {
 function retrieveLocationData() {
   locationElements = document.querySelectorAll("div[id^='LOCATIONID_");
   locationElements.forEach((element) => {
-    if (!element.dataset.excludelocation) {
+    if (element.dataset.excludelocation == "false") {
       var location = document.createElement("option");
       location.value = element.dataset.slug;
       location.text = element.dataset.loclabel;
