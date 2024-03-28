@@ -84,6 +84,7 @@ function initializeFormVariables() {
       .catch((e) => {
         console.log(e);
       });
+    submitBtn.disabled = true;
   });
 
   addAnotherBtn.forEach((button) => {
