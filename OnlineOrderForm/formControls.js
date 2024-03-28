@@ -609,6 +609,9 @@ function retrieveLocationData() {
     location.setAttribute("formEmail", element.dataset.formemail);
     location.classList.add("selectOption");
     document.getElementById("selectLocationDropdown").appendChild(location);
+    console.log(
+      `The checkbox value for ${element.dataset.loclabel} is ${element.dataset.excludelocation}`
+    );
   });
 }
 
