@@ -195,12 +195,12 @@ function changePage(btn) {
 function validatePage() {
   const activePage = $(".page.active");
 
-  const selectErrorText = "Please select an option";
-  const radioErrorText = "Please select an option";
-  const fileErrorText = "Please input at least 1 item";
+  const selectErrorText = "Field is required";
+  const radioErrorText = "Field is required";
+  const fileErrorText = "Please attach a file";
   const dateErrorText = "Please type a date";
   const textInputErrorText = "Please type a response";
-  const multiTextInputErrorText = "Please input at least 1 item";
+  const multiTextInputErrorText = "Field is required";
   const textInputAddErrorText = "Please input at least 1 item";
 
   // Figure out the type of control on the page
@@ -605,7 +605,7 @@ function retrieveLocationData() {
   locationElements.forEach((element) => {
     var location = document.createElement("option");
     location.value = element.dataset.slug;
-    location.text = element.dataset.locname;
+    location.text = element.dataset.loclabel;
     location.setAttribute("formEmail", element.dataset.formemail);
     location.classList.add("selectOption");
     document.getElementById("selectLocationDropdown").appendChild(location);
