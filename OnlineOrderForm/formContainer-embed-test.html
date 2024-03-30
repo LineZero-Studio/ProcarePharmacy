@@ -12,22 +12,18 @@
 <!-- add form action="https://formsubmit.co/37cb131a01650a3fff7eade378ae7280" method="POST" for testing -->
 <!-- CANNOT BE USED WITH CDN, STRICTLY FOR COPY/PASTE -->
 <section id="formContainer"> 
-    <form action="https://formsubmit.co/almaheart16@gmail.com" enctype="multipart/form-data" method="POST" id="onlineOrderForm" autocomplete="on">
+    <form enctype="multipart/form-data" method="POST" id="onlineOrderForm" autocomplete="on">
         <div class="page select required active " id="selectLocationPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="selectLocationDropdown">Select Location</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="selectLocationDropdown">Select Location <span class="errorMessage">*</span></label>
                 </div>
                 <label class="secondaryLabel" for="selectLocationDropdown">Not sure which location to send to? Find the nearest location <a href="https://www.procare-pharmacy.ca/locations">here</a></label>
             </div>
             <div class="custom-select">
                 <select class="formSelect" id="selectLocationDropdown" name="selectLocationDropdown" required>
                     <option value="" selected>Select Location</option>
-                    <option value="Test Option" value="test">Test Option</option>
+                    <option value="test">Test</option>
                 </select>
             </div>
             <div class="formPageFooter">
@@ -206,8 +202,8 @@
                 <img src="https://uploads-ssl.webflow.com/65e765b5fb8859b0fba8914f/65f5d1f0a0dab5fa960f9232_fileUploadIcon.svg" class="formFileInputBoxIcon" />
                 <p class="formFileInputBoxInfo">Drag and drop files here</p>
                 <div class="formFileInputBoxUpload">
-                    <label for="prescriptionUploadFileInput" class="formFileInputBoxUploadLabel" onclick="document.getElementById('prescriptionUploadFileInput').click()">Upload Picture</label>
-                    <input type="file" accept="image/png, image/jpeg" class="formFileInputBoxUploadInput" id="prescriptionUploadFileInput" name="attachment" />
+                    <label for="prescriptionUploadFileInput" class="formFileInputBoxUploadLabel" onclick="manuallyUploadFile('prescriptionUploadFileInput')">Upload Picture</label>
+                    <input type="file" multiple="multiple" accept="image/png, image/jpeg" class="formFileInputBoxUploadInput" id="prescriptionUploadFileInput" name="attachment" />
                 </div>
             </div>
             <div class="formPageFooter">
@@ -330,10 +326,14 @@
                 <button type="button" class="nextButton">Next</button>
             </div>
         </div>
-        <div class="page text-multiple" id="fullNamePage">
+        <div class="page text-multiple required" id="fullNamePage">
             <div class="formTitleSection">
                 <div class="titleContainer">
                     <label class="primaryLabel" for="fullNameInputs">Full Patient Name</label>
+                    <div class="errorMessage">
+                        <p class="errorMessageAsterisk">*</p>
+                        <p class="errorMessageText">Error message</p>
+                    </div>
                 </div>
             </div>
             <div id="fullNameInputs" class="formInputList">
@@ -351,10 +351,14 @@
                 <button type="button" class="nextButton">Next</button>
             </div>
         </div>
-        <div class="page text" id="patientEmailPage">
+        <div class="page text required" id="patientEmailPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
                     <label class="primaryLabel" for="patientEmailInput">Patient Email</label>
+                    <div class="errorMessage">
+                        <p class="errorMessageAsterisk">*</p>
+                        <p class="errorMessageText">Error message</p>
+                    </div>
                 </div>
             </div>
             <input type="email" placeholder="example@example.com" class="formTextInput" id="patientEmailInput" name="patientEmailInput"/>
@@ -363,30 +367,19 @@
                 <button type="button" class="nextButton">Next</button>
             </div>
         </div>
-        <div class="page text-multiple" id="phoneNumberPage">
+        <div class="page text" id="phoneNumberPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="phoneNumberInputs">Phone Number</label>
+                    <label class="primaryLabel" for="phoneNumberInput">Phone Number</label>
                 </div>
             </div>
-            <div id="phoneNumberInputs" class="formInputList">
-                <div class="formInputLabelPair">
-                    <label class="formInputLabel" for="phoneNumber-area">Area Code</label>
-                    <input type="text" class="formTextInput" id="phoneNumber-area" name="phoneNumber-area"/>
-                </div>
-                <div class="formInputLabelPair">
-                    <label class="formInputLabel" for="phoneNumber-number">Phone Number</label>
-                    <input type="text" class="formTextInput" id="phoneNumber-number" name="phoneNumber-number"/>
-                </div>
-            </div>
+            <input type="tel" placeholder="XXX-XXX-XXXX" class="formTextInput" id="patientPhoneNumberInput" name="patientPhoneNumberInput" />
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="submitButton">Submit</button>
-                <input type="hidden" name="_next" value="https://procare-pharmacy-57e7c673e0d4459e767098.webflow.io/online-order-redirect">
-                <!--<input type="hidden" id="email-cc" name="_cc" value="another@email.com">-->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="New website Patient Order">
-                <input type="hidden" name="_template" value="table">
+                <input type="text" class="contact_me_by_fax_only" name="contact_me_by_fax_only" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <input type="hidden" id="pharmacyEmail" name="pharmacyEmail" value="another@email.com"/>
+                <input type="hidden" id="pharmacyPhoneNumber" name="pharmacyPhoneNumber" value="XXX-XXX-XXXX"/>
             </div>
         </div>
     </form>

@@ -27,29 +27,30 @@ form {
 .formTitleSection {
     display: flex;
     flex-direction: column;
-}
-
-.titleContainer {
-    display: flex;
-    flex-direction: row;
     gap: 10px;
 }
 
-.formTitleSection .primaryLabel {
-    display: flex;
-    font-family: "Jost";
+.titleContainer {
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
     font-weight: 700;
+    font-family: "Jost";
     font-size: 25px;
+    gap: 10px;
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+    align-items: flex-start;
+}
+
+.primaryLabel {
     gap: 20px;
     line-height: 36.13px;
 }
 
-.errorMessage {
-    display: flex;
+.errorMessage { 
     color: #E94443;
-    font-weight: 700;
-    font-family: "Jost";
-    gap: 10px;
 }
 
 .custom-select {

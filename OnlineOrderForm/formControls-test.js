@@ -17,8 +17,6 @@ let filesToAppend = [];
 var x, i, j, l, ll, selElmnt, a, b, c, d, locIcon, dropdownArrow;
 var addressIterator;
 
-initializeFormVariables();
-/*
 var observer = new MutationObserver(function (mutations) {
   if ($("#formContainer").length) {
     initializeFormVariables();
@@ -26,14 +24,17 @@ var observer = new MutationObserver(function (mutations) {
   }
 });
 
-observer.observe(document.querySelector(".order-online"), {
-  childList: true,
-  subtree: true,
-});
-*/
+if ($("#formContainer").length) {
+  initializeFormVariables();
+} else {
+  observer.observe(document.querySelector(".order-online"), {
+    childList: true,
+    subtree: true,
+  });
+}
 
 function initializeFormVariables() {
-  alert("form loaded, initializing javascript...");
+  console.log("form loaded, initializing javascript...");
 
   retrieveLocationData();
 
@@ -59,10 +60,30 @@ function initializeFormVariables() {
   });
 
   submitBtn.addEventListener("click", (e) => {
-    sendPatientEmail().then((res) => {
-      console.log(res);
-      form.submit();
-    });
+    // If honeyput has a value in it, redirect without submitting the form
+    if (
+      document.getElementsByClassName("contact_me_by_fax_only")[0].value !== ""
+    ) {
+      window.location.href =
+        "https://procare-pharmacy-57e7c673e0d4459e767098.webflow.io/online-order-redirect";
+      return;
+    }
+
+    sendPatientEmail()
+      .then((res) => {
+        console.log(res);
+        sendFormSubmission()
+          .then((res) => {
+            window.location.href =
+              "https://procare-pharmacy-57e7c673e0d4459e767098.webflow.io/online-order-redirect";
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   });
 
   addAnotherBtn.forEach((button) => {
@@ -77,6 +98,14 @@ function initializeFormVariables() {
         "formTextInputClearBtn"
       )[0].value = "";
     });
+  });
+
+  // Whenever a file is uploaded, show the user how many files are added
+  $(".formFileInputBoxUploadInput").change((input) => {
+    filesToAppend = input.target.files;
+    input.target.parentElement.getElementsByClassName(
+      "formFileInputBoxUploadLabel"
+    )[0].innerText = `${filesToAppend.length} files added`;
   });
 
   // Handler for div around radio button
@@ -95,26 +124,24 @@ function initializeFormVariables() {
       if (pair[1] === "") {
         emptyRecords.push(pair[0]);
       }
+      if (pair[0] === "attachment" && pair[1].name === "") {
+        emptyRecords.push(pair[0]);
+      }
     }
 
     emptyRecords.forEach((key) => {
       formData.delete(key);
     });
 
-    if (filesToAppend.length > 0) {
-      filesToAppend.forEach((file) =>
-        formData.append("file" + filesToAppend.indexOf(file), file)
-      );
-    }
-
-    var locationSlug = formData.get("selectLocationDropdown");
-    var location = Array.from(locationElements).find(
-      (element) => locationSlug === element.dataset.slug
-    );
+    // if (filesToAppend.length) {
+    //   filesToAppend.forEach((file) =>
+    //     formData.append("file" + filesToAppend.indexOf(file), file)
+    //   );
+    // }
   });
 
   initializeCustomSelect();
-  //populateLocationAddresses();
+  populateLocationAddresses();
 
   /* If the user clicks anywhere outside the select box,
     then close all select boxes: */
@@ -168,12 +195,12 @@ function changePage(btn) {
 function validatePage() {
   const activePage = $(".page.active");
 
-  const selectErrorText = "Please select an option";
-  const radioErrorText = "Please select an option";
-  const fileErrorText = "Please input at least 1 item";
+  const selectErrorText = "Field is required";
+  const radioErrorText = "Field is required";
+  const fileErrorText = "Please attach a file";
   const dateErrorText = "Please type a date";
   const textInputErrorText = "Please type a response";
-  const multiTextInputErrorText = "Please input at least 1 item";
+  const multiTextInputErrorText = "Field is required";
   const textInputAddErrorText = "Please input at least 1 item";
 
   // Figure out the type of control on the page
@@ -266,18 +293,24 @@ function validatePage() {
       return false;
     }
   } else if (activePage[0].classList.contains("text-multiple")) {
+    var containsError = false;
     // Check if the inputs are populated with text
     Array.from(activePage[0].getElementsByTagName("input")).forEach((input) => {
       if (input.value === "") {
-        // Check if error text is already displayed
-        if (activePage[0].classList.contains("error")) {
-          return true;
-        }
-
-        createErrorText(activePage, multiTextInputErrorText);
-        return true;
+        containsError = true;
       }
     });
+
+    // Check if error flag was raised after validating
+    if (containsError) {
+      // Check if error text is already displayed
+      if (activePage[0].classList.contains("error")) {
+        return true;
+      }
+
+      createErrorText(activePage, multiTextInputErrorText);
+      return true;
+    }
 
     activePage[0].classList.remove("error");
     disableErrorText(activePage);
@@ -303,16 +336,16 @@ function validatePage() {
 }
 
 function createErrorText(page, message) {
-  errorMessage = page.find(".errorMessageText");
+  errorMessage = page.find(".errorMessage");
 
-  errorMessage.css("visibility", "visible");
-  errorMessage.html(message);
+  //errorMessage.css("visibility", "visible");
+  errorMessage.html("* " + message);
 }
 
 function disableErrorText(page) {
-  errorMessage = page.find(".errorMessageText");
+  errorMessage = page.find(".errorMessage");
 
-  errorMessage.css("visibility", "hidden");
+  errorMessage.html("*");
 }
 
 // Add an input and input cancel button to a list of inputs
@@ -366,12 +399,21 @@ function addInputBox(currentPage) {
 function dropHandler(ev) {
   ev.preventDefault();
 
-  let dt = ev.dataTransfer;
-  filesToAppend = Array.from(dt.files);
+  document.querySelector(".formFileInputBoxUploadInput").files =
+    ev.dataTransfer.files;
+
+  // Trigger label to change
+  document.querySelector(".formFileInputBoxUploadLabel").innerText = `${
+    document.querySelector(".formFileInputBoxUploadInput").files.length
+  } files added`;
 }
 
 function dragOverHandler(ev) {
   ev.preventDefault();
+}
+
+function manuallyUploadFile(inputID) {
+  document.getElementById("prescriptionUploadFileInput").click();
 }
 
 function initializeCustomSelect() {
@@ -444,8 +486,16 @@ function initializeCustomSelect() {
 
             // Change what email gets cc'd
             try {
-              document.getElementById("email-cc").value =
+              document.getElementById("pharmacyEmail").value =
                 locationElements[s.selectedIndex - 1].dataset.formemail;
+            } catch (error) {
+              console.error(error);
+            }
+
+            // Change what phone number gets attached
+            try {
+              document.getElementById("pharmacyPhoneNumber").value =
+                locationElements[s.selectedIndex - 1].dataset.locphonenumber;
             } catch (error) {
               console.error(error);
             }
@@ -502,19 +552,51 @@ function closeAllSelect(elmnt) {
 }
 
 async function sendPatientEmail() {
-  return $.ajax({
-    url: "https://us-central1-procare-scarborough.cloudfunctions.net/sendPatientEmail",
-    type: "get",
-    data: {
-      locationEmail: location.dataset.formemail,
-      locationNumber: location.dataset.locphonenumber,
-      patientName: formData.get("fullName-first"),
-      patientEmail: formData.get("patientEmailInput"),
-    },
-  }).then((res) => {
-    console.log("Email sent!");
-    return res;
-  });
+  var formData = new FormData(form);
+
+  var locationSlug = formData.get("selectLocationDropdown");
+  var location = Array.from(locationElements).find(
+    (element) => locationSlug === element.dataset.slug
+  );
+
+  try {
+    return $.ajax({
+      url: "https://us-central1-procare-scarborough.cloudfunctions.net/submission/sendPatientEmail",
+      type: "GET",
+      data: {
+        locationEmail: location.dataset.formemail,
+        locationNumber: location.dataset.locphonenumber,
+        patientName: formData.get("fullName-first"),
+        patientEmail: formData.get("patientEmailInput"),
+      },
+    }).then((res) => {
+      console.log("Email sent!");
+      return res;
+    });
+  } catch (error) {
+    console.log(error);
+    return;
+  }
+}
+
+async function sendFormSubmission() {
+  var formData = new FormData(form);
+
+  try {
+    return $.ajax({
+      url: "https://us-central1-procare-scarborough.cloudfunctions.net/submission/sendFormSubmissionEmail",
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+    }).then((res) => {
+      console.log("Pharmacy email sent!");
+      return res;
+    });
+  } catch (error) {
+    console.log(error);
+    return;
+  }
 }
 
 // Get locations data from the CMS and populate the form
@@ -523,7 +605,7 @@ function retrieveLocationData() {
   locationElements.forEach((element) => {
     var location = document.createElement("option");
     location.value = element.dataset.slug;
-    location.text = element.dataset.locname;
+    location.text = element.dataset.loclabel;
     location.setAttribute("formEmail", element.dataset.formemail);
     location.classList.add("selectOption");
     document.getElementById("selectLocationDropdown").appendChild(location);

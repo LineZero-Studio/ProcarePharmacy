@@ -336,16 +336,16 @@ function validatePage() {
 }
 
 function createErrorText(page, message) {
-  errorMessage = page.find(".errorMessageText");
+  errorMessage = page.find(".errorMessage");
 
-  errorMessage.css("visibility", "visible");
-  errorMessage.html(message);
+  //errorMessage.css("visibility", "visible");
+  errorMessage.html("* " + message);
 }
 
 function disableErrorText(page) {
-  errorMessage = page.find(".errorMessageText");
+  errorMessage = page.find(".errorMessage");
 
-  errorMessage.css("visibility", "hidden");
+  errorMessage.html("*");
 }
 
 // Add an input and input cancel button to a list of inputs

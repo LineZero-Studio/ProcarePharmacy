@@ -3,11 +3,7 @@
         <div class="page select required active " id="selectLocationPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="selectLocationDropdown">Select Location</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="selectLocationDropdown">Select Location <span class="errorMessage">*</span></label>
                 </div>
                 <label class="secondaryLabel" for="selectLocationDropdown">Not sure which location to send to? Find the nearest location <a href="https://www.procare-pharmacy.ca/locations">here</a></label>
             </div>
@@ -24,11 +20,7 @@
         <div class="page radio required" id="compoundingMedicationPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="compoundingMedicationButtons">Are any of your medications compounding?</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="compoundingMedicationButtons">Are any of your medications compounding?  <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <div class="formRadioButtons" id="compoundingMedicationButtons">
@@ -49,11 +41,7 @@
         <div class="page radio required affectsLogic" id="whatToDoPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="whatToDoButtons">What would you like to do?</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="whatToDoButtons">What would you like to do?  <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <div class="formRadioButtons" id="whatToDoButtons">
@@ -82,11 +70,7 @@
         <div class="page text required" id="currentPharmacyPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="currentPharmacyInput">What is your current pharmacy's name and address?</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="currentPharmacyInput">What is your current pharmacy's name and address?  <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <input type="text" class="formTextInput" id="currentPharmacyInput" name="currentPharmacyInput" />
@@ -98,11 +82,7 @@
         <div class="page radio required affectsLogic" id="newExistingPatientPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="newExistingPatientButtons">Are you a new or existing patient?</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="newExistingPatientButtons">Are you a new or existing patient?  <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <div class="formRadioButtons" id="newExistingPatientButtons">
@@ -123,11 +103,7 @@
         <div class="page radio required affectsLogic" id="deliveryPickupPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="deliveryPickupButtons">Delivery or Pick-up in store?</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="deliveryPickupButtons">Delivery or Pick-up in store?  <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <div class="formRadioButtons" id="deliveryPickupButtons">
@@ -148,11 +124,7 @@
         <div class="page text-multiple required" id="shippingAddressPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="shippingAddressInputs">What is your shipping address?</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="shippingAddressInputs">What is your shipping address?  <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <div id="shippingAddressInputs" class="formInputList">
@@ -181,11 +153,7 @@
         <div class="page file required" id="prescriptionUploadPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="prescriptionUploadFileInput">Upload Your Prescription</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="prescriptionUploadFileInput">Upload Your Prescription  <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <div class="formFileInputBox" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
@@ -204,11 +172,7 @@
         <div class="page text-add required" id="rxNumbersPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="rxNumbersInputList">RX Number(s) for refill</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="rxNumbersInputList">RX Number(s) for refill  <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <div class="formInputList formInputListWithAddButton" id="rxNumbersInputList">
@@ -229,11 +193,7 @@
         <div class="page date required" id="dateOfBirthPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="dateOfBirthInput">Date of Birth?</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="dateOfBirthInput">Date of Birth?  <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <input type="date" placeholder="MM-DD-YYYY" class="formTextInput" id="dateOfBirthInput" name="dateOfBirthInput" />
@@ -319,11 +279,7 @@
         <div class="page text-multiple required" id="fullNamePage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="fullNameInputs">Full Patient Name</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="fullNameInputs">Full Patient Name  <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <div id="fullNameInputs" class="formInputList">
@@ -344,11 +300,7 @@
         <div class="page text required" id="patientEmailPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="patientEmailInput">Patient Email</label>
-                    <div class="errorMessage">
-                        <p class="errorMessageAsterisk">*</p>
-                        <p class="errorMessageText">Error message</p>
-                    </div>
+                    <label class="primaryLabel" for="patientEmailInput">Patient Email  <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <input type="email" placeholder="example@example.com" class="formTextInput" id="patientEmailInput" name="patientEmailInput"/>
