@@ -86,7 +86,6 @@ form {
     right: 10px;
     width: 0;
     height: 0;
-    /*border: 6px solid transparent;*/
     border-color: #818C94 transparent transparent transparent;
 }
 
@@ -122,6 +121,7 @@ form {
     border-radius: 15px;
     height: 16em;
     overflow-y: auto;
+    box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.25);
 }
 
 .select-items-option {
@@ -163,18 +163,6 @@ form {
 
 input[type="radio"] {
     pointer-events: none;
-}
-
-.errorMessage .errorMessageAsterisk {
-    margin: 0px;
-    font-size: 25px;
-}
-
-.errorMessage .errorMessageText {
-    visibility: hidden;
-    padding-top: 3%;
-    margin: 0px;
-    font-size: 18px;
 }
 
 .formTitleSection .secondaryLabel {
@@ -224,17 +212,6 @@ input[type="radio"] {
 
 .buttonLabelPair label {
     pointer-events: none;
-}
-
-.fieldRequiredWarning {
-    width: auto;
-    font-size: 0.75em;
-    font-weight: 300;
-    border-radius: 3px;
-    line-height: 1.5;
-    background-color: #dc2626;
-    color: #fff;
-    padding: .4em .8em;
 }
 
 .formTextInput {
@@ -315,7 +292,7 @@ input[type="radio"] {
 
 .formFileInputBoxUploadLabel {
     color: #0A1C37;
-    font-family: Jost;
+    font-family: "Jost";
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -389,6 +366,7 @@ button.nextButton {
     width: 191px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 button.prevButton {
@@ -402,6 +380,7 @@ button.prevButton {
     padding: 12px 20px 12px 20px;
     gap: 10px;
     font-family: "Jost";
+    cursor: pointer;
 }
 
 button.submitButton {
@@ -417,6 +396,7 @@ button.submitButton {
     width: 191px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 700px) {
