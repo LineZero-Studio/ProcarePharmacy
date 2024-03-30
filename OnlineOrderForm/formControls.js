@@ -84,6 +84,7 @@ function initializeFormVariables() {
       .catch((e) => {
         console.log(e);
       });
+    submitBtn.disabled = true;
   });
 
   addAnotherBtn.forEach((button) => {
@@ -603,12 +604,14 @@ async function sendFormSubmission() {
 function retrieveLocationData() {
   locationElements = document.querySelectorAll("div[id^='LOCATIONID_");
   locationElements.forEach((element) => {
-    var location = document.createElement("option");
-    location.value = element.dataset.slug;
-    location.text = element.dataset.loclabel;
-    location.setAttribute("formEmail", element.dataset.formemail);
-    location.classList.add("selectOption");
-    document.getElementById("selectLocationDropdown").appendChild(location);
+    if (element.dataset.excludelocation == "false") {
+      var location = document.createElement("option");
+      location.value = element.dataset.slug;
+      location.text = element.dataset.loclabel;
+      location.setAttribute("formEmail", element.dataset.formemail);
+      location.classList.add("selectOption");
+      document.getElementById("selectLocationDropdown").appendChild(location);
+    }
   });
 }
 
