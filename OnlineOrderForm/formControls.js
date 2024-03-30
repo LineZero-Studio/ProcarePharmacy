@@ -98,9 +98,6 @@ function initializeFormVariables() {
       e.target.parentElement.getElementsByClassName(
         "formTextInputClearBtn"
       )[0].value = "";
-
-      if ($(".active .formInputCancelButtonPair").length >= 5)
-        addAnotherBtn.css("display", "none");
     });
   });
 
@@ -391,6 +388,12 @@ function addInputBox(currentPage) {
   // Add button event listener
   newInputCancelBtn.addEventListener("click", (e) => {
     e.target.parentElement.remove();
+
+    // Check if list is no longer full
+    if (
+      inputList.getElementsByClassName("formInputCancelButtonPair").length < 5
+    )
+      addAnotherBtn.style.display = "block";
   });
 
   // Add the elements to the list
