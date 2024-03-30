@@ -403,7 +403,7 @@ function addInputBox(currentPage) {
 
   // Check if the add button needs locked
   if (inputList.getElementsByClassName("formInputCancelButtonPair").length >= 5)
-    addAnotherBtn.css("display", "none");
+    addAnotherBtn.style.display = "none";
 }
 
 // Handle file drop event
