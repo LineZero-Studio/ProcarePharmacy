@@ -98,6 +98,9 @@ function initializeFormVariables() {
       e.target.parentElement.getElementsByClassName(
         "formTextInputClearBtn"
       )[0].value = "";
+
+      if ($(".active .formInputCancelButtonPair").length >= 5)
+        addAnotherBtn.css("display", "none");
     });
   });
 
@@ -394,6 +397,10 @@ function addInputBox(currentPage) {
   inputList.appendChild(newInputCancelBtnPair);
   newInputCancelBtnPair.appendChild(newInput);
   newInputCancelBtnPair.appendChild(newInputCancelBtn);
+
+  // Check if the add button needs locked
+  if (inputList.getElementsByClassName("formInputCancelButtonPair").length >= 5)
+    addAnotherBtn.css("display", "none");
 }
 
 // Handle file drop event
