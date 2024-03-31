@@ -393,7 +393,9 @@ function addInputBox(currentPage) {
     if (
       inputList.getElementsByClassName("formInputCancelButtonPair").length < 5
     )
-      addAnotherBtn.style.display = "block";
+      currentPage.getElementsByClassName(
+        "formInputListAddBtn"
+      )[0].style.display = "block";
   });
 
   // Add the elements to the list
@@ -403,7 +405,8 @@ function addInputBox(currentPage) {
 
   // Check if the add button needs locked
   if (inputList.getElementsByClassName("formInputCancelButtonPair").length >= 5)
-    addAnotherBtn.style.display = "none";
+    currentPage.getElementsByClassName("formInputListAddBtn")[0].style.display =
+      "none";
 }
 
 // Handle file drop event
