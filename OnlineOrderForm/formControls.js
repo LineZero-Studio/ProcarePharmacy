@@ -395,7 +395,7 @@ function addInputBox(currentPage) {
     )
       currentPage.getElementsByClassName(
         "formInputListAddBtn"
-      )[0].style.display = "block";
+      )[0].style.display = "flex";
   });
 
   // Add the elements to the list
