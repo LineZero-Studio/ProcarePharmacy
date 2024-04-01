@@ -371,7 +371,7 @@ function addInputBox(currentPage) {
 
   // Create new input to add to the list
   newInput.id = inputList.id + "Entry" + (inputCount + 1);
-  newInput.name = inputList.id + "Entry" + (inputCount + 1);
+  newInput.name = inputList.name + " - " +(inputCount + 1);
   newInput.classList.add("formTextInput");
   newInput.classList.add("formTextInputClearBtn");
   newInput.type = "text";
@@ -578,8 +578,8 @@ async function sendPatientEmail() {
       data: {
         locationEmail: location.dataset.formemail,
         locationNumber: location.dataset.locphonenumber,
-        patientName: formData.get("fullName-first"),
-        patientEmail: formData.get("patientEmailInput"),
+        patientName: formData.get("Full Patient Name - First Name"),
+        patientEmail: formData.get("Patient Email"),
       },
     }).then((res) => {
       console.log("Email sent!");

@@ -45,22 +45,22 @@ function changeVisiblePages(modifier) {
             formPages.find(page => page.id === "prescriptionUploadPage").classList.remove("outOfLogic");
             formPages.find(page => page.id === "rxNumbersPage").classList.remove("outOfLogic");
             formPages.find(page => page.id === "currentPharmacyPage").classList.add("outOfLogic");
-        case "newPatient":
+        case "New Patient":
             formPages.find(page => page.id === "allergiesPage").classList.remove("outOfLogic");
             formPages.find(page => page.id === "healthCardNumberPage").classList.remove("outOfLogic");
             formPages.find(page => page.id === "benefitsInsurancePage").classList.remove("outOfLogic");
             formPages.find(page => page.id === "homeAddressPage").classList.remove("outOfLogic");
             break;
-        case "existingPatient":
+        case "Existing Patient":
             formPages.find(page => page.id === "allergiesPage").classList.add("outOfLogic");
             formPages.find(page => page.id === "healthCardNumberPage").classList.add("outOfLogic");
             formPages.find(page => page.id === "benefitsInsurancePage").classList.add("outOfLogic");
             formPages.find(page => page.id === "homeAddressPage").classList.add("outOfLogic");
             break;
-        case "delivery":
+        case "Delivery":
             formPages.find(page => page.id === "shippingAddressPage").classList.remove("outOfLogic");
             break;
-        case "pickup":
+        case "Pickup":
             formPages.find(page => page.id === "shippingAddressPage").classList.add("outOfLogic");
             break;
     }

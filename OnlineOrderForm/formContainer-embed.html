@@ -73,7 +73,7 @@
                     <label class="primaryLabel" for="currentPharmacyInput">What is your current pharmacy's name and address?  <span class="errorMessage">*</span></label>
                 </div>
             </div>
-            <input type="text" class="formTextInput" id="currentPharmacyInput" name="currentPharmacyInput" />
+            <input type="text" class="formTextInput" id="currentPharmacyInput" name="Current Pharmacy" />
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="nextButton">Next</button>
@@ -87,11 +87,11 @@
             </div>
             <div class="formRadioButtons" id="newExistingPatientButtons">
                 <div class="buttonLabelPair">
-                    <input type="radio" id="newExistingPatient-new" name="newExistingPatientButtons" value="newPatient" />
+                    <input type="radio" id="newExistingPatient-new" name="New Or Existing Patient" value="New Patient" />
                     <label for="newExistingPatient-new">New Patient</label>
                 </div>
                 <div class="buttonLabelPair">
-                    <input type="radio" id="newExistingPatient-existing" name="newExistingPatientButtons" value="existingPatient" />
+                    <input type="radio" id="newExistingPatient-existing" name="New Or Existing Patient" value="Existing Patient" />
                     <label for="newExistingPatient-new">Existing Patient</label>
                 </div>
             </div>
@@ -108,11 +108,11 @@
             </div>
             <div class="formRadioButtons" id="deliveryPickupButtons">
                 <div class="buttonLabelPair">
-                    <input type="radio" id="deliveryPickup-delivery" name="deliveryPickupButtons" value="delivery" />
+                    <input type="radio" id="deliveryPickup-delivery" name="Delivery or Pickup" value="Delivery" />
                     <label for="deliveryPickup-delivery">Delivery</label>
                 </div>
                 <div class="buttonLabelPair">
-                    <input type="radio" id="deliveryPickup-pickup" name="deliveryPickupButtons" value="pickup" />
+                    <input type="radio" id="deliveryPickup-pickup" name="Delivery or Pickup" value="Pickup" />
                     <label for="deliveryPickup-pickup">Pickup</label>
                 </div>
             </div>
@@ -130,19 +130,19 @@
             <div id="shippingAddressInputs" class="formInputList">
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="shippingAddress-fullName">Full Name</label>
-                    <input type="text" class="formTextInput" id="shippingAddress-fullName" name="shippingAddress-fullName" />
+                    <input type="text" class="formTextInput" id="shippingAddress-fullName" name="Shipping Address - Full Name" />
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="shippingAddress-street">Street & Apt Number, suite, etc.</label>
-                    <input type="text" class="formTextInput" id="shippingAddress-street" name="shippingAddress-street" />
+                    <input type="text" class="formTextInput" id="shippingAddress-street" name="Shipping Address - Street Address" />
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="shippingAddress-city">City</label>
-                    <input type="text" class="formTextInput" id="shippingAddress-city" name="shippingAddress-city" />
+                    <input type="text" class="formTextInput" id="shippingAddress-city" name="Shipping Address - City" />
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="shippingAddress-postal">Postal code</label>
-                    <input type="text" class="formTextInput" id="shippingAddress-postal" name="shippingAddress-postal" />
+                    <input type="text" class="formTextInput" id="shippingAddress-postal" name="Shipping Address - Postal Code" />
                 </div>
             </div>
             <div class="formPageFooter">
@@ -175,9 +175,9 @@
                     <label class="primaryLabel" for="rxNumbersInputList">RX Number(s) for refill  <span class="errorMessage">*</span></label>
                 </div>
             </div>
-            <div class="formInputList formInputListWithAddButton" id="rxNumbersInputList">
+            <div class="formInputList formInputListWithAddButton" id="rxNumbersInputList" name="Refill RX Number">
                 <div class="formInputCancelButtonPair">
-                    <input type="text" placeholder="Enter RX number here" class="formTextInput formTextInputClearBtn" id="rxNumbersInput1" name="rxNumbersInput1" />
+                    <input type="text" placeholder="Enter RX number here" class="formTextInput formTextInputClearBtn" id="rxNumbersInput1" name="Refill RX Number - 1" />
                     <img src="https://uploads-ssl.webflow.com/65e765b5fb8859b0fba8914f/65f5d1f0751c83c1e16ec20b_input-cancel.svg" class="formInputCancelButton" />
                 </div>
             </div>
@@ -196,7 +196,7 @@
                     <label class="primaryLabel" for="dateOfBirthInput">Date of Birth?  <span class="errorMessage">*</span></label>
                 </div>
             </div>
-            <input type="date" placeholder="MM-DD-YYYY" class="formTextInput" id="dateOfBirthInput" name="dateOfBirthInput" />
+            <input type="date" placeholder="MM-DD-YYYY" class="formTextInput" id="dateOfBirthInput" name="Date of Birth" />
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="nextButton">Next</button>
@@ -208,7 +208,7 @@
                     <label class="primaryLabel" for="allergiesInput">Please describe relevant allergies (optional).</label>
                 </div>
             </div>
-            <input type="text" placeholder="Enter allergies here" class="formTextInput" id="allergiesInput" name="allergiesInput"/>
+            <input type="text" placeholder="Enter allergies here" class="formTextInput" id="allergiesInput" name="Allergies"/>
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="nextButton">Next</button>
@@ -220,7 +220,7 @@
                     <label class="primaryLabel" for="healthCardNumberInput">What is your health card number?</label>
                 </div>
             </div>
-            <input type="text" placeholder="Type your health card number here" class="formTextInput" id="healthCardNumberInput" name="healthCardNumberInput"/>
+            <input type="text" placeholder="Type your health card number here" class="formTextInput" id="healthCardNumberInput" name="Health Card Number"/>
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="nextButton">Next</button>
@@ -232,7 +232,7 @@
                     <label class="primaryLabel" for="benefitsInsuranceInput">Benefits or Insurance information? (optional)</label>
                 </div>
             </div>
-            <input type="text" placeholder="Enter your information here" class="formTextInput" id="benefitsInsuranceInput" name="benefitsInsuranceInput"/>
+            <input type="text" placeholder="Enter your information here" class="formTextInput" id="benefitsInsuranceInput" name="Benefits or Insurance Information"/>
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="nextButton">Next</button>
@@ -247,19 +247,19 @@
             <div id="homeAddressInputs" class="formInputList">
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="homeAddress-fullName">Full Name</label>
-                    <input type="text" class="formTextInput" id="homeAddress-fullName" name="homeAddress-fullName"/>
+                    <input type="text" class="formTextInput" id="homeAddress-fullName" name="Home Address - Full Name"/>
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="homeAddress-street">Street & Apt Number, suite, etc.</label>
-                    <input type="text" class="formTextInput" id="homeAddress-street" name="homeAddress-street"/>
+                    <input type="text" class="formTextInput" id="homeAddress-street" name="Home Address - Street"/>
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="homeAddress-city">City</label>
-                    <input type="text" class="formTextInput" id="homeAddress-city" name="homeAddress-city"/>
+                    <input type="text" class="formTextInput" id="homeAddress-city" name="Home Address - City"/>
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="homeAddress-postal">Postal code</label>
-                    <input type="text" class="formTextInput" id="homeAddress-postal" name="homeAddress-postal"/>
+                    <input type="text" class="formTextInput" id="homeAddress-postal" name="Home Address - Postal Code"/>
                 </div>
             </div>
             <div class="formPageFooter">
@@ -276,11 +276,11 @@
             <div id="fullNameInputs" class="formInputList">
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="fullName-first">First Name</label>
-                    <input type="text" class="formTextInput" id="fullName-first" name="fullName-first"/>
+                    <input type="text" class="formTextInput" id="fullName-first" name="Full Patient Name - First Name"/>
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="fullName-last">Last Name</label>
-                    <input type="text" class="formTextInput" id="fullName-last" name="fullName-last"/>
+                    <input type="text" class="formTextInput" id="fullName-last" name="Full Patient Name - Last Name"/>
                 </div>
             </div>
             <div class="formPageFooter">
@@ -294,7 +294,7 @@
                     <label class="primaryLabel" for="patientEmailInput">Patient Email  <span class="errorMessage">*</span></label>
                 </div>
             </div>
-            <input type="email" placeholder="example@example.com" class="formTextInput" id="patientEmailInput" name="patientEmailInput"/>
+            <input type="email" placeholder="example@example.com" class="formTextInput" id="patientEmailInput" name="Patient Email"/>
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="nextButton">Next</button>
@@ -306,13 +306,13 @@
                     <label class="primaryLabel" for="phoneNumberInput">Phone Number</label>
                 </div>
             </div>
-            <input type="tel" placeholder="XXX-XXX-XXXX" class="formTextInput" id="patientPhoneNumberInput" name="patientPhoneNumberInput" />
+            <input type="tel" placeholder="XXX-XXX-XXXX" class="formTextInput" id="patientPhoneNumberInput" name="Patient Phone Number" />
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="submitButton">Submit</button>
                 <input type="text" class="contact_me_by_fax_only" name="contact_me_by_fax_only" tabindex="-1" autocomplete="off" aria-hidden="true">
-                <input type="hidden" id="pharmacyEmail" name="pharmacyEmail" value="another@email.com"/>
-                <input type="hidden" id="pharmacyPhoneNumber" name="pharmacyPhoneNumber" value="XXX-XXX-XXXX"/>
+                <input type="hidden" id="pharmacyEmail" name="Pharmacy Email" value="another@email.com"/>
+                <input type="hidden" id="pharmacyPhoneNumber" name="Pharmacy Phone Number" value="XXX-XXX-XXXX"/>
             </div>
         </div>
     </form>
