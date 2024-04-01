@@ -60,6 +60,10 @@ function initializeFormVariables() {
   });
 
   submitBtn.addEventListener("click", (e) => {
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = "0.5";
+    submitBtn.innerText = "Submitting...";
+    
     // If honeyput has a value in it, redirect without submitting the form
     if (
       document.getElementsByClassName("contact_me_by_fax_only")[0].value !== ""
@@ -84,7 +88,6 @@ function initializeFormVariables() {
       .catch((e) => {
         console.log(e);
       });
-    submitBtn.disabled = true;
   });
 
   addAnotherBtn.forEach((button) => {
