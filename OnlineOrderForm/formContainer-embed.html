@@ -8,7 +8,7 @@
                 <label class="secondaryLabel" for="selectLocationDropdown">Not sure which location to send to? Find the nearest location <a href="https://www.procare-pharmacy.ca/locations">here</a></label>
             </div>
             <div class="custom-select">
-                <select class="formSelect" id="selectLocationDropdown" name="selectLocationDropdown" required>
+                <select class="formSelect" id="selectLocationDropdown" name="Location" required>
                     <option value="" selected>Select Location</option>
                 </select>
             </div>
@@ -25,11 +25,11 @@
             </div>
             <div class="formRadioButtons" id="compoundingMedicationButtons">
                 <div class="buttonLabelPair">
-                    <input type="radio" id="compoundingMedication-yes" name="compoundingMedicationButtonsGroup" value="Yes" />
+                    <input type="radio" id="compoundingMedication-yes" name="Compounding Medications" value="Yes" />
                     <label for="compoundingMedication-yes">Yes</label>
                 </div>
                 <div class="buttonLabelPair">
-                    <input type="radio" id="compoundingMedication-no" name="compoundingMedicationButtonsGroup" value="No" />
+                    <input type="radio" id="compoundingMedication-no" name="Compounding Medications" value="No" />
                     <label for="compoundingMedication-no">No</label>
                 </div> 
             </div>
@@ -46,19 +46,19 @@
             </div>
             <div class="formRadioButtons" id="whatToDoButtons">
                 <div class="buttonLabelPair">
-                    <input type="radio" id="whatToDo-newMedication" name="whatToDoButtons" value="newMedication" />
+                    <input type="radio" id="whatToDo-newMedication" name="What To Do" value="New Medication" />
                     <label for="whatToDo-newMedication">New Medication</label>
                 </div>
                 <div class="buttonLabelPair">
-                    <input type="radio" id="whatToDo-existingRefill" name="whatToDoButtons" value="existingMedicationRefill" />
+                    <input type="radio" id="whatToDo-existingRefill" name="What To Do" value="Existing Medication Refill" />
                     <label for="whatToDo-existingRefill">Existing Medication Refill</label>
                 </div>
                 <div class="buttonLabelPair">
-                    <input type="radio" id="whatToDo-both" name="whatToDoButtons" value="bothNewMedicationAndExistingRefill" />
+                    <input type="radio" id="whatToDo-both" name="What To Do" value="Both New Medication and Existing Medication Refill" />
                     <label for="whatToDo-both">Both New Medication and Existing Refill</label>
                 </div>
                 <div class="buttonLabelPair">
-                    <input type="radio" id="whatToDo-anotherPharmacy" name="whatToDoButtons" value="myPrescriptionIsWithAnotherPharmacy" />
+                    <input type="radio" id="whatToDo-anotherPharmacy" name="What To Do" value="My Prescription Is With Another Pharmacy" />
                     <label for="whatToDo-anotherPharmacy">My prescription is with another pharmacy</label>
                 </div>
             </div>
@@ -202,22 +202,13 @@
                 <button type="button" class="nextButton">Next</button>
             </div>
         </div>
-        <div class="page radio" id="allergiesPage">
+        <div class="page text" id="allergiesPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="allergiesButtons">Do you have any allergies?</label>
+                    <label class="primaryLabel" for="allergiesInput">Please describe relevant allergies (optional).</label>
                 </div>
             </div>
-            <div class="formRadioButtons" id="allergiesButtons">
-                <div class="buttonLabelPair">
-                    <input type="radio" id="allergies-yes" name="allergiesButtons" value="Yes"/>
-                    <label for="allergies-yes">Yes</label>
-                </div>
-                <div class="buttonLabelPair">
-                    <input type="radio" id="allergies-no" name="allergiesButtons" value="No"/>
-                    <label for="allergies-no">No</label>
-                </div>
-            </div>
+            <input type="text" placeholder="Enter allergies here" class="formTextInput" id="allergiesInput" name="allergiesInput"/>
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="nextButton">Next</button>

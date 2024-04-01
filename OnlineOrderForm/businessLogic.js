@@ -26,22 +26,22 @@
 ----------------------------------------------------------------------------------------------------*/
 function changeVisiblePages(modifier) {
     switch(modifier) {
-        case "myPrescriptionIsWithAnotherPharmacy":
+        case "My Prescription Is With Another Pharmacy":
             formPages.find(page => page.id === "prescriptionUploadPage").classList.add("outOfLogic");
             formPages.find(page => page.id === "rxNumbersPage").classList.add("outOfLogic");
             formPages.find(page => page.id === "currentPharmacyPage").classList.remove("outOfLogic");
             break;
-        case "newMedication":
+        case "New Medication":
             formPages.find(page => page.id === "prescriptionUploadPage").classList.remove("outOfLogic");
             formPages.find(page => page.id === "rxNumbersPage").classList.add("outOfLogic");
             formPages.find(page => page.id === "currentPharmacyPage").classList.add("outOfLogic");
             break;
-        case "existingMedicationRefill":
+        case "Existing Medication Refill":
             formPages.find(page => page.id === "prescriptionUploadPage").classList.add("outOfLogic");
             formPages.find(page => page.id === "rxNumbersPage").classList.remove("outOfLogic");
             formPages.find(page => page.id === "currentPharmacyPage").classList.add("outOfLogic");
             break;
-        case "bothNewMedicationAndExistingRefill":
+        case "Both New Medication And Existing Medication Refill":
             formPages.find(page => page.id === "prescriptionUploadPage").classList.remove("outOfLogic");
             formPages.find(page => page.id === "rxNumbersPage").classList.remove("outOfLogic");
             formPages.find(page => page.id === "currentPharmacyPage").classList.add("outOfLogic");
