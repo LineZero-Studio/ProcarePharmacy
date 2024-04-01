@@ -566,7 +566,7 @@ function closeAllSelect(elmnt) {
 async function sendPatientEmail() {
   var formData = new FormData(form);
 
-  var locationSlug = formData.get("selectLocationDropdown");
+  var locationSlug = formData.get("Location");
   var location = Array.from(locationElements).find(
     (element) => locationSlug === element.dataset.slug
   );
