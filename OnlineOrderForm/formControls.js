@@ -165,9 +165,7 @@ function changePage(btn) {
   // Check if the page affects logic
   if (active.classList.contains("affectsLogic")) {
     // Get radio buttons to see which one is checked
-    let options = document.getElementsByName(
-      active.getElementsByClassName("formRadioButtons")[0].id
-    );
+    let options = active.getElementsByClassName("formRadioButtons")[0].getElementsByTagName("input");
 
     // Send the checked value as the modifier for changeVisiblePages (businessLogic.js)
     for (i = 0; i < options.length; i++) {
