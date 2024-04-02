@@ -570,9 +570,9 @@ function closeAllSelect(elmnt) {
 async function sendPatientEmail() {
   var formData = new FormData(form);
 
-  var locationSlug = formData.get("Location");
+  var locationLabel = formData.get("Location");
   var location = Array.from(locationElements).find(
-    (element) => locationSlug === element.dataset.slug
+    (element) => locationLabel === element.dataset.loclabel
   );
 
   try {
@@ -621,7 +621,7 @@ function retrieveLocationData() {
   locationElements.forEach((element) => {
     if (element.dataset.excludelocation == "false") {
       var location = document.createElement("option");
-      location.value = element.dataset.slug;
+      location.value = element.dataset.loclabel;
       location.text = element.dataset.loclabel;
       location.setAttribute("formEmail", element.dataset.formemail);
       location.classList.add("selectOption");
