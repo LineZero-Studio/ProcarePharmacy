@@ -1,11 +1,13 @@
-<div id="formContainer"> 
+<div id="formContainer">
     <form enctype="multipart/form-data" method="POST" id="onlineOrderForm" autocomplete="on">
         <div class="page select required active " id="selectLocationPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="selectLocationDropdown">Select Location <span class="errorMessage">*</span></label>
+                    <label class="primaryLabel" for="selectLocationDropdown">Select Location <span
+                            class="errorMessage">*</span></label>
                 </div>
-                <label class="secondaryLabel" for="selectLocationDropdown">Not sure which location to send to? Find the nearest location <a href="https://www.procare-pharmacy.ca/locations">here</a></label>
+                <label class="secondaryLabel" for="selectLocationDropdown">Not sure which location to send to? Find the
+                    nearest location <a href="https://www.procare-pharmacy.ca/locations">here</a></label>
             </div>
             <div class="custom-select">
                 <select class="formSelect" id="selectLocationDropdown" name="Location" required>
@@ -20,7 +22,8 @@
         <div class="page radio required" id="compoundingMedicationPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="compoundingMedicationButtons">Are any of your medications compounding?  <span class="errorMessage">*</span></label>
+                    <label class="primaryLabel" for="compoundingMedicationButtons">Are any of your medications
+                        compounding? <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <div class="formRadioButtons" id="compoundingMedicationButtons">
@@ -31,7 +34,29 @@
                 <div class="buttonLabelPair">
                     <input type="radio" id="compoundingMedication-no" name="Compounding Medications" value="No" />
                     <label for="compoundingMedication-no">No</label>
-                </div> 
+                </div>
+            </div>
+            <div class="formPageFooter">
+                <button type="button" class="prevButton">Back</button>
+                <button type="button" class="nextButton">Next</button>
+            </div>
+        </div>
+        <div class="page radio required" id="genjiBuff">
+            <div class="formTitleSection">
+                <div class="titleContainer">
+                    <label class="primaryLabel" for="genjiBuffButtons">Does Genji Need a buff? <span
+                            class="errorMessage">*</span></label>
+                </div>
+            </div>
+            <div class="formRadioButtons" id="genjiBuffButtons">
+                <div class="buttonLabelPair">
+                    <input type="radio" id="genjiBuff-yes" name="Do we buff genji, gang?" value="Yes" />
+                    <label for="genjiBuff-yes">Yes</label>
+                </div>
+                <div class="buttonLabelPair">
+                    <input type="radio" id="genjiBuff-no" name="Do we buff genji, gang?" value="No" />
+                    <label for="genjiBuff-no">No</label>
+                </div>
             </div>
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
@@ -41,7 +66,8 @@
         <div class="page radio required affectsLogic" id="whatToDoPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="whatToDoButtons">What would you like to do?  <span class="errorMessage">*</span></label>
+                    <label class="primaryLabel" for="whatToDoButtons">What would you like to do? <span
+                            class="errorMessage">*</span></label>
                 </div>
             </div>
             <div class="formRadioButtons" id="whatToDoButtons">
@@ -50,15 +76,18 @@
                     <label for="whatToDo-newMedication">New Medication</label>
                 </div>
                 <div class="buttonLabelPair">
-                    <input type="radio" id="whatToDo-existingRefill" name="What To Do" value="Existing Medication Refill" />
+                    <input type="radio" id="whatToDo-existingRefill" name="What To Do"
+                        value="Existing Medication Refill" />
                     <label for="whatToDo-existingRefill">Existing Medication Refill</label>
                 </div>
                 <div class="buttonLabelPair">
-                    <input type="radio" id="whatToDo-both" name="What To Do" value="Both New Medication and Existing Medication Refill" />
+                    <input type="radio" id="whatToDo-both" name="What To Do"
+                        value="Both New Medication and Existing Medication Refill" />
                     <label for="whatToDo-both">Both New Medication and Existing Refill</label>
                 </div>
                 <div class="buttonLabelPair">
-                    <input type="radio" id="whatToDo-anotherPharmacy" name="What To Do" value="My Prescription Is With Another Pharmacy" />
+                    <input type="radio" id="whatToDo-anotherPharmacy" name="What To Do"
+                        value="My Prescription Is With Another Pharmacy" />
                     <label for="whatToDo-anotherPharmacy">My prescription is with another pharmacy</label>
                 </div>
             </div>
@@ -70,7 +99,8 @@
         <div class="page text required" id="currentPharmacyPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="currentPharmacyInput">What is your current pharmacy's name and address?  <span class="errorMessage">*</span></label>
+                    <label class="primaryLabel" for="currentPharmacyInput">What is your current pharmacy's name and
+                        address? <span class="errorMessage">*</span></label>
                 </div>
             </div>
             <input type="text" class="formTextInput" id="currentPharmacyInput" name="Current Pharmacy" />
@@ -82,16 +112,19 @@
         <div class="page radio required affectsLogic" id="newExistingPatientPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="newExistingPatientButtons">Are you a new or existing patient?  <span class="errorMessage">*</span></label>
+                    <label class="primaryLabel" for="newExistingPatientButtons">Are you a new or existing patient? <span
+                            class="errorMessage">*</span></label>
                 </div>
             </div>
             <div class="formRadioButtons" id="newExistingPatientButtons">
                 <div class="buttonLabelPair">
-                    <input type="radio" id="newExistingPatient-new" name="New Or Existing Patient" value="New Patient" />
+                    <input type="radio" id="newExistingPatient-new" name="New Or Existing Patient"
+                        value="New Patient" />
                     <label for="newExistingPatient-new">New Patient</label>
                 </div>
                 <div class="buttonLabelPair">
-                    <input type="radio" id="newExistingPatient-existing" name="New Or Existing Patient" value="Existing Patient" />
+                    <input type="radio" id="newExistingPatient-existing" name="New Or Existing Patient"
+                        value="Existing Patient" />
                     <label for="newExistingPatient-new">Existing Patient</label>
                 </div>
             </div>
@@ -103,7 +136,8 @@
         <div class="page radio required affectsLogic" id="deliveryPickupPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="deliveryPickupButtons">Delivery or Pick-up in store?  <span class="errorMessage">*</span></label>
+                    <label class="primaryLabel" for="deliveryPickupButtons">Delivery or Pick-up in store? <span
+                            class="errorMessage">*</span></label>
                 </div>
             </div>
             <div class="formRadioButtons" id="deliveryPickupButtons">
@@ -124,17 +158,20 @@
         <div class="page text-multiple required" id="shippingAddressPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="shippingAddressInputs">What is your shipping address?  <span class="errorMessage">*</span></label>
+                    <label class="primaryLabel" for="shippingAddressInputs">What is your shipping address? <span
+                            class="errorMessage">*</span></label>
                 </div>
             </div>
             <div id="shippingAddressInputs" class="formInputList">
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="shippingAddress-fullName">Full Name</label>
-                    <input type="text" class="formTextInput" id="shippingAddress-fullName" name="Shipping Address - Full Name" />
+                    <input type="text" class="formTextInput" id="shippingAddress-fullName"
+                        name="Shipping Address - Full Name" />
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="shippingAddress-street">Street & Apt Number, suite, etc.</label>
-                    <input type="text" class="formTextInput" id="shippingAddress-street" name="Shipping Address - Street Address" />
+                    <input type="text" class="formTextInput" id="shippingAddress-street"
+                        name="Shipping Address - Street Address" />
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="shippingAddress-city">City</label>
@@ -142,7 +179,8 @@
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="shippingAddress-postal">Postal code</label>
-                    <input type="text" class="formTextInput" id="shippingAddress-postal" name="Shipping Address - Postal Code" />
+                    <input type="text" class="formTextInput" id="shippingAddress-postal"
+                        name="Shipping Address - Postal Code" />
                 </div>
             </div>
             <div class="formPageFooter">
@@ -153,15 +191,19 @@
         <div class="page file required" id="prescriptionUploadPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="prescriptionUploadFileInput">Upload Your Prescription  <span class="errorMessage">*</span></label>
+                    <label class="primaryLabel" for="prescriptionUploadFileInput">Upload Your Prescription <span
+                            class="errorMessage">*</span></label>
                 </div>
             </div>
             <div class="formFileInputBox" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
-                <img src="https://uploads-ssl.webflow.com/65e765b5fb8859b0fba8914f/65f5d1f0a0dab5fa960f9232_fileUploadIcon.svg" class="formFileInputBoxIcon" />
+                <img src="https://uploads-ssl.webflow.com/65e765b5fb8859b0fba8914f/65f5d1f0a0dab5fa960f9232_fileUploadIcon.svg"
+                    class="formFileInputBoxIcon" />
                 <p class="formFileInputBoxInfo">Drag and drop files here</p>
                 <div class="formFileInputBoxUpload">
-                    <label for="prescriptionUploadFileInput" class="formFileInputBoxUploadLabel" onclick="manuallyUploadFile('prescriptionUploadFileInput')">Upload Picture</label>
-                    <input type="file" accept="image/png, image/jpeg" class="formFileInputBoxUploadInput" id="prescriptionUploadFileInput" name="attachment" />
+                    <label for="prescriptionUploadFileInput" class="formFileInputBoxUploadLabel"
+                        onclick="manuallyUploadFile('prescriptionUploadFileInput')">Upload Picture</label>
+                    <input type="file" accept="image/png, image/jpeg" class="formFileInputBoxUploadInput"
+                        id="prescriptionUploadFileInput" name="attachment" />
                 </div>
             </div>
             <div class="formPageFooter">
@@ -172,13 +214,16 @@
         <div class="page text-add required" id="rxNumbersPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="rxNumbersInputList">RX Number(s) for refill  <span class="errorMessage">*</span></label>
+                    <label class="primaryLabel" for="rxNumbersInputList">RX Number(s) for refill <span
+                            class="errorMessage">*</span></label>
                 </div>
             </div>
             <div class="formInputList formInputListWithAddButton" id="rxNumbersInputList" name="Refill RX Number">
                 <div class="formInputCancelButtonPair">
-                    <input type="text" placeholder="Enter RX number here" class="formTextInput formTextInputClearBtn" id="rxNumbersInput1" name="Refill RX Number - 1" />
-                    <img src="https://uploads-ssl.webflow.com/65e765b5fb8859b0fba8914f/65f5d1f0751c83c1e16ec20b_input-cancel.svg" class="formInputCancelButton" />
+                    <input type="text" placeholder="Enter RX number here" class="formTextInput formTextInputClearBtn"
+                        id="rxNumbersInput1" name="Refill RX Number - 1" />
+                    <img src="https://uploads-ssl.webflow.com/65e765b5fb8859b0fba8914f/65f5d1f0751c83c1e16ec20b_input-cancel.svg"
+                        class="formInputCancelButton" />
                 </div>
             </div>
             <button type="button" class="formInputListAddBtn" id="rxNumbersInputListAddBtn">
@@ -193,10 +238,12 @@
         <div class="page date required" id="dateOfBirthPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="dateOfBirthInput">Date of Birth?  <span class="errorMessage">*</span></label>
+                    <label class="primaryLabel" for="dateOfBirthInput">Date of Birth? <span
+                            class="errorMessage">*</span></label>
                 </div>
             </div>
-            <input type="date" placeholder="MM-DD-YYYY" class="formTextInput" id="dateOfBirthInput" name="Date of Birth" />
+            <input type="date" placeholder="MM-DD-YYYY" class="formTextInput" id="dateOfBirthInput"
+                name="Date of Birth" />
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="nextButton">Next</button>
@@ -205,22 +252,25 @@
         <div class="page text" id="allergiesPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="allergiesInput">Please describe relevant allergies (optional).</label>
+                    <label class="primaryLabel" for="allergiesInput">Please describe relevant allergies
+                        (optional).</label>
                 </div>
             </div>
-            <input type="text" placeholder="Enter allergies here" class="formTextInput" id="allergiesInput" name="Allergies"/>
+            <input type="text" placeholder="Enter allergies here" class="formTextInput" id="allergiesInput"
+                name="Allergies" />
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="nextButton">Next</button>
             </div>
         </div>
         <div class="page text" id="healthCardNumberPage">
-            <div class="formTitleSection"> 
+            <div class="formTitleSection">
                 <div class="titleContainer">
                     <label class="primaryLabel" for="healthCardNumberInput">What is your health card number?</label>
                 </div>
             </div>
-            <input type="text" placeholder="Type your health card number here" class="formTextInput" id="healthCardNumberInput" name="Health Card Number"/>
+            <input type="text" placeholder="Type your health card number here" class="formTextInput"
+                id="healthCardNumberInput" name="Health Card Number" />
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="nextButton">Next</button>
@@ -229,10 +279,12 @@
         <div class="page text" id="benefitsInsurancePage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="benefitsInsuranceInput">Benefits or Insurance information? (optional)</label>
+                    <label class="primaryLabel" for="benefitsInsuranceInput">Benefits or Insurance information?
+                        (optional)</label>
                 </div>
             </div>
-            <input type="text" placeholder="Enter your information here" class="formTextInput" id="benefitsInsuranceInput" name="Benefits or Insurance Information"/>
+            <input type="text" placeholder="Enter your information here" class="formTextInput"
+                id="benefitsInsuranceInput" name="Benefits or Insurance Information" />
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="nextButton">Next</button>
@@ -247,19 +299,21 @@
             <div id="homeAddressInputs" class="formInputList">
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="homeAddress-fullName">Full Name</label>
-                    <input type="text" class="formTextInput" id="homeAddress-fullName" name="Home Address - Full Name"/>
+                    <input type="text" class="formTextInput" id="homeAddress-fullName"
+                        name="Home Address - Full Name" />
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="homeAddress-street">Street & Apt Number, suite, etc.</label>
-                    <input type="text" class="formTextInput" id="homeAddress-street" name="Home Address - Street"/>
+                    <input type="text" class="formTextInput" id="homeAddress-street" name="Home Address - Street" />
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="homeAddress-city">City</label>
-                    <input type="text" class="formTextInput" id="homeAddress-city" name="Home Address - City"/>
+                    <input type="text" class="formTextInput" id="homeAddress-city" name="Home Address - City" />
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="homeAddress-postal">Postal code</label>
-                    <input type="text" class="formTextInput" id="homeAddress-postal" name="Home Address - Postal Code"/>
+                    <input type="text" class="formTextInput" id="homeAddress-postal"
+                        name="Home Address - Postal Code" />
                 </div>
             </div>
             <div class="formPageFooter">
@@ -270,17 +324,19 @@
         <div class="page text-multiple required" id="fullNamePage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="fullNameInputs">Full Patient Name  <span class="errorMessage">*</span></label>
+                    <label class="primaryLabel" for="fullNameInputs">Full Patient Name <span
+                            class="errorMessage">*</span></label>
                 </div>
             </div>
             <div id="fullNameInputs" class="formInputList">
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="fullName-first">First Name</label>
-                    <input type="text" class="formTextInput" id="fullName-first" name="Full Patient Name - First Name"/>
+                    <input type="text" class="formTextInput" id="fullName-first"
+                        name="Full Patient Name - First Name" />
                 </div>
                 <div class="formInputLabelPair">
                     <label class="formInputLabel" for="fullName-last">Last Name</label>
-                    <input type="text" class="formTextInput" id="fullName-last" name="Full Patient Name - Last Name"/>
+                    <input type="text" class="formTextInput" id="fullName-last" name="Full Patient Name - Last Name" />
                 </div>
             </div>
             <div class="formPageFooter">
@@ -291,10 +347,12 @@
         <div class="page text required" id="patientEmailPage">
             <div class="formTitleSection">
                 <div class="titleContainer">
-                    <label class="primaryLabel" for="patientEmailInput">Patient Email  <span class="errorMessage">*</span></label>
+                    <label class="primaryLabel" for="patientEmailInput">Patient Email <span
+                            class="errorMessage">*</span></label>
                 </div>
             </div>
-            <input type="email" placeholder="example@example.com" class="formTextInput" id="patientEmailInput" name="Patient Email"/>
+            <input type="email" placeholder="example@example.com" class="formTextInput" id="patientEmailInput"
+                name="Patient Email" />
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="nextButton">Next</button>
@@ -306,13 +364,15 @@
                     <label class="primaryLabel" for="phoneNumberInput">Phone Number</label>
                 </div>
             </div>
-            <input type="tel" placeholder="XXX-XXX-XXXX" class="formTextInput" id="patientPhoneNumberInput" name="Patient Phone Number" />
+            <input type="tel" placeholder="XXX-XXX-XXXX" class="formTextInput" id="patientPhoneNumberInput"
+                name="Patient Phone Number" />
             <div class="formPageFooter">
                 <button type="button" class="prevButton">Back</button>
                 <button type="button" class="submitButton">Submit</button>
-                <input type="text" class="contact_me_by_fax_only" name="contact_me_by_fax_only" tabindex="-1" autocomplete="off" aria-hidden="true">
-                <input type="hidden" id="pharmacyEmail" name="Pharmacy Email" value="another@email.com"/>
-                <input type="hidden" id="pharmacyPhoneNumber" name="Pharmacy Phone Number" value="XXX-XXX-XXXX"/>
+                <input type="text" class="contact_me_by_fax_only" name="contact_me_by_fax_only" tabindex="-1"
+                    autocomplete="off" aria-hidden="true">
+                <input type="hidden" id="pharmacyEmail" name="Pharmacy Email" value="another@email.com" />
+                <input type="hidden" id="pharmacyPhoneNumber" name="Pharmacy Phone Number" value="XXX-XXX-XXXX" />
             </div>
         </div>
     </form>
