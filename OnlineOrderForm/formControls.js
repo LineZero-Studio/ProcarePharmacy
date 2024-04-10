@@ -505,7 +505,7 @@ function initializeCustomSelect() {
             // Change what email gets cc'd
             try {
               document.getElementById("pharmacyEmail").value =
-                visibleLocations[s.selectedIndex].dataset.formemail;
+                visibleLocations[s.selectedIndex - 1].dataset.formemail;
             } catch (error) {
               console.error(error);
             }
@@ -513,7 +513,7 @@ function initializeCustomSelect() {
             // Change what phone number gets attached
             try {
               document.getElementById("pharmacyPhoneNumber").value =
-                visibleLocations[s.selectedIndex].dataset.locphonenumber;
+                visibleLocations[s.selectedIndex - 1].dataset.locphonenumber;
             } catch (error) {
               console.error(error);
             }
