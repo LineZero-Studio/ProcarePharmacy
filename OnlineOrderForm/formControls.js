@@ -11,6 +11,8 @@ var form;
 var addAnotherBtn;
 var cancelInputBtn;
 
+var visibleLocations = [];
+
 let filesToAppend = [];
 
 // variables for custom select box
@@ -503,7 +505,7 @@ function initializeCustomSelect() {
             // Change what email gets cc'd
             try {
               document.getElementById("pharmacyEmail").value =
-                locationElements[s.selectedIndex - 1].dataset.formemail;
+                visibleLocations[s.selectedIndex].dataset.formemail;
             } catch (error) {
               console.error(error);
             }
@@ -511,7 +513,7 @@ function initializeCustomSelect() {
             // Change what phone number gets attached
             try {
               document.getElementById("pharmacyPhoneNumber").value =
-                locationElements[s.selectedIndex - 1].dataset.locphonenumber;
+                visibleLocations[s.selectedIndex].dataset.locphonenumber;
             } catch (error) {
               console.error(error);
             }
@@ -626,6 +628,7 @@ function retrieveLocationData() {
       location.setAttribute("formEmail", element.dataset.formemail);
       location.classList.add("selectOption");
       document.getElementById("selectLocationDropdown").appendChild(location);
+      visibleLocations.push(element);
     }
   });
 }
