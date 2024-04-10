@@ -71,7 +71,7 @@ function initializeFormVariables() {
       document.getElementsByClassName("contact_me_by_fax_only")[0].value !== ""
     ) {
       window.location.href =
-        "https://procare-pharmacy-57e7c673e0d4459e767098.webflow.io/online-order-redirect";
+        "https://www.procare-pharmacy.ca/online-order-redirect";
       return;
     }
 
@@ -81,7 +81,7 @@ function initializeFormVariables() {
         sendFormSubmission()
           .then((res) => {
             window.location.href =
-              "https://procare-pharmacy-57e7c673e0d4459e767098.webflow.io/online-order-redirect";
+              "https://www.procare-pharmacy.ca/online-order-redirect";
           })
           .catch((e) => {
             console.log(e);
