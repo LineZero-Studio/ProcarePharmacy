@@ -3,6 +3,8 @@ let currentTab = 0;
 let locationElements = [];
 let locations = [];
 
+let isCompounding = false;
+
 var formPages;
 var nextBtn;
 var prevBtn;
@@ -45,6 +47,8 @@ function initializeFormVariables() {
   prevBtn = document.querySelectorAll("form .prevButton");
   submitBtn = document.querySelector("form .submitButton");
   form = document.querySelector("#onlineOrderForm");
+
+  compoundingButtons = document.querySelectorAll('input[name="Compounding Medications"]');
 
   addAnotherBtn = document.querySelectorAll("form .formInputListAddBtn");
   cancelInputBtn = document.querySelectorAll(".formInputCancelButton");
@@ -90,6 +94,12 @@ function initializeFormVariables() {
       .catch((e) => {
         console.log(e);
       });
+  });
+
+  compoundingButtons.forEach((button) => {
+    button.addEventListener("change", (e) => {
+      updateCompounding();
+    });
   });
 
   addAnotherBtn.forEach((button) => {
@@ -644,4 +654,15 @@ function populateLocationAddresses() {
     addressFields[addressIterator].innerHTML =
       locationElements[addressIterator].dataset.address;
   }
+}
+
+function updateCompounding() {
+  isCompounding = document.querySelector('input[name="Compounding Medications"]:checked').value == "Yes";
+  
+  locationElements = document.querySelectorAll("div[id^='LOCATIONID_");
+  locationElements.forEach((element) => {
+    if (element.dataset.excludelocation == "false") {
+      location.setAttribute(isCompounding ? "formEmail2" : "formEmail", element.dataset.formemail);
+    }
+  });
 }
