@@ -652,11 +652,12 @@ function populateLocationAddresses() {
 
 function updateCompounding() {
   isCompounding = document.querySelector('input[name="Compounding Medications"]:checked').value == "Yes";
-  
+
   locationElements = document.querySelectorAll("div[id^='LOCATIONID_");
-  locationElements.forEach((element) => {
-    if (element.dataset.excludelocation == "false") {
-      element.setAttribute(isCompounding ? "formEmail2" : "formEmail", element.dataset.formemail);
-    }
-  });
+
+  var locationLabel = formData.get("Location");
+  var location = Array.from(locationElements).find(
+    (element) => locationLabel === element.dataset.loclabel
+  );
+  document.getElementById("pharmacyEmail").value = isCompounding ? location.dataset.formemail2 : location.dataset.formemail;
 }
