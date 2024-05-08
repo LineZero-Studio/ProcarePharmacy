@@ -96,12 +96,6 @@ function initializeFormVariables() {
       });
   });
 
-  compoundingButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      updateCompounding();
-    });
-  });
-
   addAnotherBtn.forEach((button) => {
     button.addEventListener("click", (e) => {
       addInputBox(e.target.closest(".page"));
