@@ -97,7 +97,7 @@ function initializeFormVariables() {
   });
 
   compoundingButtons.forEach((button) => {
-    button.addEventListener("change", (e) => {
+    button.addEventListener("click", (e) => {
       updateCompounding();
     });
   });
