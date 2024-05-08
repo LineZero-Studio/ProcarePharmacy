@@ -654,6 +654,8 @@ function updateCompounding() {
   isCompounding = document.querySelector('input[name="Compounding Medications"]:checked').value == "Yes";
 
   locationElements = document.querySelectorAll("div[id^='LOCATIONID_");
+  
+  var formData = new FormData(form);
 
   var locationLabel = formData.get("Location");
   var location = Array.from(locationElements).find(
