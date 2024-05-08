@@ -662,7 +662,7 @@ function updateCompounding() {
   locationElements = document.querySelectorAll("div[id^='LOCATIONID_");
   locationElements.forEach((element) => {
     if (element.dataset.excludelocation == "false") {
-      location.setAttribute(isCompounding ? "formEmail2" : "formEmail", element.dataset.formemail);
+      element.setAttribute(isCompounding ? "formEmail2" : "formEmail", element.dataset.formemail);
     }
   });
 }
