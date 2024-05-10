@@ -572,7 +572,7 @@ function closeAllSelect(elmnt) {
   if (elmnt.target) {
     elmnt = elmnt.target;
   }
-  if (elmnt.classList.contains("select-selected") || !shouldClose) {
+  if (elmnt.classList.contains("select-selected")) {
     return;
   }
   var x,
