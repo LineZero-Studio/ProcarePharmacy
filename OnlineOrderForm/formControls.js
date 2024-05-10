@@ -542,10 +542,12 @@ function initializeCustomSelect() {
     a.addEventListener("click", function (e) {
       /* When the select box is clicked, close any other select boxes,
         and open/close the current select box: */
+        if (this.nextSibling.classList.contains("select-hide") || e.target.classList.contains("select-items-option")) {
           isReadyToEdit = true;
           e.stopPropagation();
           closeAllSelect(this);
           this.nextSibling.classList.toggle("select-hide");
+        }
     });
     a.addEventListener("input", function (e) {
       const options = document.querySelectorAll(".select-items-option");
