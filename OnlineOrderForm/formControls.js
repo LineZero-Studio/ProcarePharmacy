@@ -451,7 +451,7 @@ function initializeCustomSelect() {
 
     dropdownArrow = document.createElement("img");
     dropdownArrow.src =
-      "https://uploads-ssl.webflow.com/65e765b5fb8859b0fba8914f/65f5e5c4751c83c1e18126d8_dropdown-arrow.svg";
+      "https://uploads-ssl.webflow.com/60392b8b1c9914f4005be205/663d8fdb8c533be479592510_search.svg";
     dropdownArrow.classList.add("select-selected-arrow");
 
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
@@ -624,7 +624,8 @@ async function sendFormSubmission() {
 // Get locations data from the CMS and populate the form
 function retrieveLocationData() {
   locationElements = document.querySelectorAll("div[id^='LOCATIONID_");
-  locationElements.sort((a, b) => {
+  const arr = Array.prototype.slice.call(locationElements, 0);
+  arr.sort((a, b) => {
     return a.dataset.loclabel > b.dataset.loclabel ? 1 : -1;
   }).forEach((element) => {
     if (element.dataset.excludelocation == "false") {

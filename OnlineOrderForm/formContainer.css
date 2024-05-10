@@ -102,9 +102,9 @@ form {
     pointer-events: none;
 }
 
-.select-selected-arrow.select-arrow-active {
+/* .select-selected-arrow.select-arrow-active {
     rotate: 180deg;
-}
+} */
 
 .select-items div,.select-selected {
     cursor: pointer;
