@@ -17,7 +17,7 @@ var visibleLocations = [];
 
 let filesToAppend = [];
 
-let isEditingSearchText = false;
+let isReadyToEdit = false;
 
 // variables for custom select box
 var x, i, j, l, ll, selElmnt, a, b, c, d, locIcon, dropdownArrow;
@@ -494,7 +494,7 @@ function initializeCustomSelect() {
       c.appendChild(d);
 
       c.addEventListener("click", function (e) {
-        isEditingSearchText = false;
+        isReadyToEdit = false;
         /* When an item is clicked, update the original select box,
             and the selected item: */
         var y, i, k, s, h, sl, yl;
@@ -542,14 +542,25 @@ function initializeCustomSelect() {
     a.addEventListener("click", function (e) {
       /* When the select box is clicked, close any other select boxes,
         and open/close the current select box: */
-      if (this.nextSibling.classList.contains("select-hide")) {
+      if (!isReadyToEdit) {
+        isReadyToEdit = true;
         e.stopPropagation();
         closeAllSelect(this);
         this.nextSibling.classList.toggle("select-hide");
         dropdownArrow.classList.toggle("select-arrow-active");
       } else {
-        isEditingSearchText = true;
       }
+    });
+    a.addEventListener("input", function (e) {
+      const options = document.querySelectorAll(".select-items-option");
+      const filteredOptions = Array.from(options).filter((option) => {
+        const optionName = option.querySelector('.optionName').textContent.toLowerCase();
+        const optionAddress = option.querySelector('.optionAddress').textContent.toLowerCase();
+        return optionName.includes(e.target.value.toLowerCase()) || optionAddress.includes(e.target.value.toLowerCase());
+      });
+      const hiddenOptions = Array.from(options).filter((option) => !filteredOptions.includes(option));
+      filteredOptions.forEach(option => option.classList.remove("select-hide"));
+      hiddenOptions.forEach(option => option.classList.add("select-hide"));
     });
   }
 }
