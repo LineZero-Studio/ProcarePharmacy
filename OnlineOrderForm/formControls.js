@@ -544,11 +544,9 @@ function initializeCustomSelect() {
         and open/close the current select box: */
       if (!isReadyToEdit) {
         isReadyToEdit = true;
-        e.preventDefault();
         e.stopPropagation();
         closeAllSelect(this);
         this.nextSibling.classList.toggle("select-hide");
-        dropdownArrow.classList.toggle("select-arrow-active");
       } else {
       }
     });
