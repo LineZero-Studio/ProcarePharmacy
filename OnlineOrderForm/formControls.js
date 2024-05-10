@@ -544,9 +544,9 @@ function initializeCustomSelect() {
     a.addEventListener("click", function (e) {
       /* When the select box is clicked, close any other select boxes,
         and open/close the current select box: */
+          e.stopPropagation();
         if (this.nextSibling.classList.contains("select-hide") || shouldClose) {
           isReadyToEdit = true;
-          e.stopPropagation();
           closeAllSelect(this);
           this.nextSibling.classList.toggle("select-hide");
         }
