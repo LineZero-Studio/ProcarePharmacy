@@ -457,8 +457,8 @@ function initializeCustomSelect() {
       "https://uploads-ssl.webflow.com/60392b8b1c9914f4005be205/663d8fdb8c533be479592510_search.svg";
     dropdownArrow.classList.add("select-selected-arrow");
 
-    a.setAttribute("placeholder", "Select Location");
-    a.setAttribute("value", selElmnt.options[selElmnt.selectedIndex].innerHTML == "Select Location" ? "" : selElmnt.options[selElmnt.selectedIndex].innerHTML);
+    a.setAttribute("placeholder", "Search Location");
+    a.setAttribute("value", selElmnt.options[selElmnt.selectedIndex].innerHTML == "Search Location" ? "" : selElmnt.options[selElmnt.selectedIndex].innerHTML);
     x[i].appendChild(a);
 
     /* For each element, create a new DIV that will contain the option list: */
@@ -507,7 +507,7 @@ function initializeCustomSelect() {
             s.options[i].innerHTML == this.children[1].children[0].innerHTML
           ) {
             s.selectedIndex = i;
-            h.setAttribute("value", this.children[1].children[0].innerHTML == "Select Location" ? "" : this.children[1].children[0].innerHTML);
+            h.setAttribute("value", this.children[1].children[0].innerHTML == "Search Location" ? "" : this.children[1].children[0].innerHTML);
             y = this.parentNode.getElementsByClassName("same-as-selected");
             yl = y.length;
 
