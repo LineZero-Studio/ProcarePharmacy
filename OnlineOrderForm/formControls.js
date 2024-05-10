@@ -546,11 +546,16 @@ function initializeCustomSelect() {
         and open/close the current select box: */
         if (this.nextSibling.classList.contains("select-hide") || shouldClose) {
           isReadyToEdit = true;
-          e.preventDefault();
           e.stopPropagation();
           closeAllSelect(this);
           this.nextSibling.classList.toggle("select-hide");
         }
+    });
+    a.addEventListener("mousedown", function (e) {
+      if (!isReadyToEdit) {
+        e.preventDefault();
+        isReadyToEdit = true;
+      }
     });
     a.addEventListener("input", function (e) {
       const options = document.querySelectorAll(".select-items-option");
@@ -576,6 +581,7 @@ function closeAllSelect(elmnt) {
   if (elmnt.classList.contains("select-selected")) {
     return;
   }
+  isReadyToEdit = false;
   var x,
     y,
     i,
