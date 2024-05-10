@@ -546,6 +546,7 @@ function initializeCustomSelect() {
         and open/close the current select box: */
         if (this.nextSibling.classList.contains("select-hide") || shouldClose) {
           isReadyToEdit = true;
+          e.preventDefault();
           e.stopPropagation();
           closeAllSelect(this);
           this.nextSibling.classList.toggle("select-hide");
