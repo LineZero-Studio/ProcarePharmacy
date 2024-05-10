@@ -553,8 +553,8 @@ function initializeCustomSelect() {
     });
     a.addEventListener("mousedown", function (e) {
       if (!isReadyToEdit) {
-        e.preventDefault();
-        isReadyToEdit = true;
+        console.log("TEST", e)
+        // e.preventDefault();
       }
     });
     a.addEventListener("input", function (e) {
