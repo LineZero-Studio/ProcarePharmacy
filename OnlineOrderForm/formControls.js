@@ -458,7 +458,7 @@ function initializeCustomSelect() {
     dropdownArrow.classList.add("select-selected-arrow");
 
     a.setAttribute("placeholder", "Search Location");
-    a.setAttribute("value", selElmnt.options[selElmnt.selectedIndex].innerHTML == "Search Location" ? "" : selElmnt.options[selElmnt.selectedIndex].innerHTML);
+    a.value =  selElmnt.options[selElmnt.selectedIndex].innerHTML == "Search Location" ? "" : selElmnt.options[selElmnt.selectedIndex].innerHTML;
     x[i].appendChild(a);
 
     /* For each element, create a new DIV that will contain the option list: */
@@ -511,7 +511,7 @@ function initializeCustomSelect() {
             console.log(s.options[i].innerHTML);
             console.log(this.children[1].children[0].innerHTML);
             s.selectedIndex = i;
-            h.setAttribute("value", this.children[1].children[0].innerHTML == "Search Location" ? "" : this.children[1].children[0].innerHTML);
+            h.value = this.children[1].children[0].innerHTML == "Search Location" ? "" : this.children[1].children[0].innerHTML;
             y = this.parentNode.getElementsByClassName("same-as-selected");
             yl = y.length;
 
