@@ -568,11 +568,11 @@ function initializeCustomSelect() {
 function closeAllSelect(elmnt) {
   /* A function that will close all select boxes in the document,
     except the current select box: */
-    console.log(elmnt);
-  // if (elmnt.classList.contains("select-selected") || shouldClose) {
-  //   shouldClose = false;
-  //   return;
-  // }
+    // console.log(elmnt);
+  if (elmnt.hasOwnProperty("target") ? (elmnt.target.classList.contains("select-selected") || shouldClose) : (elmnt.classList.contains("select-selected") || shouldClose)) {
+    shouldClose = false;
+    return;
+  }
   var x,
     y,
     i,
