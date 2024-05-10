@@ -553,8 +553,7 @@ function initializeCustomSelect() {
     });
     a.addEventListener("mousedown", function (e) {
       if (!isReadyToEdit) {
-        console.log("TEST", e)
-        // e.preventDefault();
+        e.preventDefault();
       }
     });
     a.addEventListener("input", function (e) {
@@ -578,7 +577,7 @@ function closeAllSelect(elmnt) {
   if (elmnt.target) {
     elmnt = elmnt.target;
   }
-  if (elmnt.classList.contains("select-selected")) {
+  if (elmnt.classList.contains("select-selected") || !shouldClose) {
     return;
   }
   isReadyToEdit = false;
