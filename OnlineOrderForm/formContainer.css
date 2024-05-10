@@ -97,8 +97,8 @@ form {
 .select-selected-arrow {
     display: inline-block;
     position: absolute;
-    right: 4%;
-    top: 42%;
+    right: 3%;
+    top: 36%;
     pointer-events: none;
 }
 
