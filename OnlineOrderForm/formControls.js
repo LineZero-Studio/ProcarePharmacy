@@ -624,7 +624,9 @@ async function sendFormSubmission() {
 // Get locations data from the CMS and populate the form
 function retrieveLocationData() {
   locationElements = document.querySelectorAll("div[id^='LOCATIONID_");
-  locationElements.forEach((element) => {
+  locationElements.sort((a, b) => {
+    return a.dataset.loclabel > b.dataset.loclabel ? 1 : -1;
+  }).forEach((element) => {
     if (element.dataset.excludelocation == "false") {
       var location = document.createElement("option");
       location.value = element.dataset.loclabel;
