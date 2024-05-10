@@ -17,6 +17,8 @@ var visibleLocations = [];
 
 let filesToAppend = [];
 
+let isEditingSearchText = false;
+
 // variables for custom select box
 var x, i, j, l, ll, selElmnt, a, b, c, d, locIcon, dropdownArrow;
 var addressIterator;
@@ -445,8 +447,8 @@ function initializeCustomSelect() {
   for (i = 0; i < l; i++) {
     selElmnt = x[i].getElementsByTagName("select")[0];
     ll = selElmnt.length;
-    /* For each element, create a new DIV that will act as the selected item: */
-    a = document.createElement("DIV");
+    /* For each element, create a new input that will act as the selected item: */
+    a = document.createElement("input");
     a.setAttribute("class", "select-selected");
 
     dropdownArrow = document.createElement("img");
@@ -454,7 +456,8 @@ function initializeCustomSelect() {
       "https://uploads-ssl.webflow.com/60392b8b1c9914f4005be205/663d8fdb8c533be479592510_search.svg";
     dropdownArrow.classList.add("select-selected-arrow");
 
-    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    a.setAttribute("placeholder", "Select Location");
+    a.setAttribute("value", selElmnt.options[selElmnt.selectedIndex].innerHTML == "Select Location" ? "" : selElmnt.options[selElmnt.selectedIndex].innerHTML);
     x[i].appendChild(a);
 
     /* For each element, create a new DIV that will contain the option list: */
@@ -491,6 +494,7 @@ function initializeCustomSelect() {
       c.appendChild(d);
 
       c.addEventListener("click", function (e) {
+        isEditingSearchText = false;
         /* When an item is clicked, update the original select box,
             and the selected item: */
         var y, i, k, s, h, sl, yl;
@@ -538,10 +542,14 @@ function initializeCustomSelect() {
     a.addEventListener("click", function (e) {
       /* When the select box is clicked, close any other select boxes,
         and open/close the current select box: */
-      e.stopPropagation();
-      closeAllSelect(this);
-      this.nextSibling.classList.toggle("select-hide");
-      dropdownArrow.classList.toggle("select-arrow-active");
+      if (this.nextSibling.classList.contains("select-hide")) {
+        e.stopPropagation();
+        closeAllSelect(this);
+        this.nextSibling.classList.toggle("select-hide");
+        dropdownArrow.classList.toggle("select-arrow-active");
+      } else {
+        isEditingSearchText = true;
+      }
     });
   }
 }
