@@ -18,6 +18,7 @@ var visibleLocations = [];
 let filesToAppend = [];
 
 let isReadyToEdit = false;
+let shouldClose = false;
 
 // variables for custom select box
 var x, i, j, l, ll, selElmnt, a, b, c, d, locIcon, dropdownArrow;
@@ -533,6 +534,7 @@ function initializeCustomSelect() {
             break;
           }
         }
+        shouldClose = true;
         h.click();
       });
       b.appendChild(c);
@@ -542,8 +544,9 @@ function initializeCustomSelect() {
     a.addEventListener("click", function (e) {
       /* When the select box is clicked, close any other select boxes,
         and open/close the current select box: */
-        if (this.nextSibling.classList.contains("select-hide") || e.target.classList.contains("select-items-option")) {
+        if (this.nextSibling.classList.contains("select-hide") || shouldClose) {
           isReadyToEdit = true;
+          shouldClose = false;
           e.stopPropagation();
           closeAllSelect(this);
           this.nextSibling.classList.toggle("select-hide");
