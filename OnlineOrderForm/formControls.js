@@ -507,7 +507,7 @@ function initializeCustomSelect() {
             s.options[i].innerHTML == this.children[1].children[0].innerHTML
           ) {
             s.selectedIndex = i;
-            h.setAttribute("value", this.children[1].children[0].innerHTML);
+            h.setAttribute("value", this.children[1].children[0].innerHTML == "Select Location" ? "" : this.children[1].children[0].innerHTML);
             y = this.parentNode.getElementsByClassName("same-as-selected");
             yl = y.length;
 
