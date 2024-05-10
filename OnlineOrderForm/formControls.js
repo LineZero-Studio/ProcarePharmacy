@@ -506,6 +506,8 @@ function initializeCustomSelect() {
           if (
             s.options[i].innerHTML == this.children[1].children[0].innerHTML
           ) {
+            console.log(s.options[i]);
+            console.log(this);
             console.log(s.options[i].innerHTML);
             console.log(this.children[1].children[0].innerHTML);
             s.selectedIndex = i;
