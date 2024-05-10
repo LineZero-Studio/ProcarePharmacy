@@ -506,6 +506,8 @@ function initializeCustomSelect() {
           if (
             s.options[i].innerHTML == this.children[1].children[0].innerHTML
           ) {
+            console.log(s.options[i].innerHTML);
+            console.log(this.children[1].children[0].innerHTML);
             s.selectedIndex = i;
             h.setAttribute("value", this.children[1].children[0].innerHTML == "Search Location" ? "" : this.children[1].children[0].innerHTML);
             y = this.parentNode.getElementsByClassName("same-as-selected");
