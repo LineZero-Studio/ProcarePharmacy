@@ -553,7 +553,7 @@ function initializeCustomSelect() {
     });
     a.addEventListener("mousedown", function (e) {
       if (!isReadyToEdit) {
-        // e.preventDefault();
+        e.preventDefault();
       }
     });
     a.addEventListener("input", function (e) {
@@ -580,6 +580,7 @@ function closeAllSelect(elmnt) {
   if (elmnt.classList.contains("select-selected") || !shouldClose) {
     return;
   }
+  shouldClose = false;
   isReadyToEdit = false;
   var x,
     y,
