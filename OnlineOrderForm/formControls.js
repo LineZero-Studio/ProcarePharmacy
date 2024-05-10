@@ -545,14 +545,13 @@ function initializeCustomSelect() {
       /* When the select box is clicked, close any other select boxes,
         and open/close the current select box: */
         if (this.nextSibling.classList.contains("select-hide") || shouldClose) {
-          console.log("closing");
-          console.log(shouldClose);
-          console.log(this.nextSibling);
           isReadyToEdit = true;
           shouldClose = false;
           e.stopPropagation();
           closeAllSelect(this);
           this.nextSibling.classList.toggle("select-hide");
+        } else {
+          this.nextSibling.classList.remove("select-hide");
         }
     });
     a.addEventListener("input", function (e) {
