@@ -464,32 +464,6 @@ function initializeCustomSelect() {
     /* For each element, create a new DIV that will contain the option list: */
     b = document.createElement("DIV");
     b.setAttribute("class", "select-items select-hide");
-    a.addEventListener("click", function (e) {
-      /* When the select box is clicked, close any other select boxes,
-        and open/close the current select box: */
-        if (this.nextSibling && this.nextSibling.classList.contains("select-hide") || shouldClose) {
-          isReadyToEdit = true;
-          e.stopPropagation();
-          closeAllSelect(this);
-          this.nextSibling.classList.toggle("select-hide");
-        }
-    });
-    a.addEventListener("mousedown", function (e) {
-      if (!isReadyToEdit) {
-        e.preventDefault();
-      }
-    });
-    a.addEventListener("input", function (e) {
-      const options = document.querySelectorAll(".select-items-option");
-      const filteredOptions = Array.from(options).filter((option) => {
-        const optionName = option.querySelector('.optionName').textContent.toLowerCase();
-        const optionAddress = option.querySelector('.optionAddress').textContent.toLowerCase();
-        return optionName.includes(e.target.value.toLowerCase()) || optionAddress.includes(e.target.value.toLowerCase());
-      });
-      const hiddenOptions = Array.from(options).filter((option) => !filteredOptions.includes(option));
-      filteredOptions.forEach(option => option.classList.remove("select-hide"));
-      hiddenOptions.forEach(option => option.classList.add("select-hide"));
-    });
     for (j = 1; j < ll; j++) {
       /* For each option in the original select element,
         create a new DIV that will act as an option item: */
@@ -568,18 +542,38 @@ function initializeCustomSelect() {
         h.click();
       });
 
-      const urlParams = new URLSearchParams(window.location.search);
-      const locationParam = urlParams.get("location"); // If location is passed in URL, set it as the default
-
-      if (locationParam && locationParam === document.querySelectorAll("div[id^='LOCATIONID_")[j-1].id.split("_")[1]) {
-        a.click();
-        c.click();
-      }
-
       b.appendChild(c);
     }
     x[i].appendChild(b);
     x[i].appendChild(dropdownArrow);
+    a.addEventListener("click", function (e) {
+      /* When the select box is clicked, close any other select boxes,
+        and open/close the current select box: */
+        if (this.nextSibling.classList.contains("select-hide") || shouldClose) {
+          isReadyToEdit = true;
+          e.stopPropagation();
+          closeAllSelect(this);
+          this.nextSibling.classList.toggle("select-hide");
+        }
+    });
+    a.addEventListener("mousedown", function (e) {
+      if (!isReadyToEdit) {
+        e.preventDefault();
+      }
+    });
+    a.addEventListener("input", function (e) {
+      const options = document.querySelectorAll(".select-items-option");
+      const filteredOptions = Array.from(options).filter((option) => {
+        const optionName = option.querySelector('.optionName').textContent.toLowerCase();
+        const optionAddress = option.querySelector('.optionAddress').textContent.toLowerCase();
+        return optionName.includes(e.target.value.toLowerCase()) || optionAddress.includes(e.target.value.toLowerCase());
+      });
+      const hiddenOptions = Array.from(options).filter((option) => !filteredOptions.includes(option));
+      filteredOptions.forEach(option => option.classList.remove("select-hide"));
+      hiddenOptions.forEach(option => option.classList.add("select-hide"));
+    });
+
+    
   }
 }
 
