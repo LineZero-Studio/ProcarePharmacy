@@ -541,6 +541,15 @@ function initializeCustomSelect() {
         shouldClose = true;
         h.click();
       });
+
+      
+  const urlParams = new URLSearchParams(window.location.search);
+  const locationParam = urlParams.get("location"); // If location is passed in URL, set it as the default
+
+      if (locationParam && locationParam === selElmnt.options[j].innerHTML) {
+        c.click();
+      }
+
       b.appendChild(c);
     }
     x[i].appendChild(b);
