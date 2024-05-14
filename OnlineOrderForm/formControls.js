@@ -580,6 +580,7 @@ function initializeCustomSelect() {
         if (locationParam === visibleLocations[j].id.split("_")[1]) {
           a.click();
           b.children[j].click();
+          document.getElementsByClassName("nextButton")[0].click();
           break;
         }
       }
