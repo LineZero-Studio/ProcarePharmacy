@@ -525,9 +525,6 @@ function initializeCustomSelect() {
         /* When an item is clicked, update the original select box,
             and the selected item: */
         var y, i, k, s, h, sl, yl;
-        if (this.parentNode == null) {
-          return;
-        }
         s = this.parentNode.parentNode.getElementsByTagName("select")[0];
         sl = s.length;
         h = this.parentNode.previousSibling;
