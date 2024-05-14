@@ -467,7 +467,7 @@ function initializeCustomSelect() {
     a.addEventListener("click", function (e) {
       /* When the select box is clicked, close any other select boxes,
         and open/close the current select box: */
-        if (this.nextSibling.classList.contains("select-hide") || shouldClose) {
+        if (this.nextSibling && this.nextSibling.classList.contains("select-hide") || shouldClose) {
           isReadyToEdit = true;
           e.stopPropagation();
           closeAllSelect(this);
@@ -525,6 +525,9 @@ function initializeCustomSelect() {
         /* When an item is clicked, update the original select box,
             and the selected item: */
         var y, i, k, s, h, sl, yl;
+        if (this.parentNode == null) {
+          return;
+        }
         s = this.parentNode.parentNode.getElementsByTagName("select")[0];
         sl = s.length;
         h = this.parentNode.previousSibling;
