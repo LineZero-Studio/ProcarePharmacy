@@ -542,11 +542,10 @@ function initializeCustomSelect() {
         h.click();
       });
 
-      
-  const urlParams = new URLSearchParams(window.location.search);
-  const locationParam = urlParams.get("location"); // If location is passed in URL, set it as the default
+      const urlParams = new URLSearchParams(window.location.search);
+      const locationParam = urlParams.get("location"); // If location is passed in URL, set it as the default
 
-      if (locationParam && locationParam === selElmnt.options[j].innerHTML) {
+      if (locationParam === selElmnt.options[j].id.split("_")[1]) {
         c.click();
       }
 
