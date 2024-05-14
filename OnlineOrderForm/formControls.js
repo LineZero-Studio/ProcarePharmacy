@@ -545,9 +545,8 @@ function initializeCustomSelect() {
       const urlParams = new URLSearchParams(window.location.search);
       const locationParam = urlParams.get("location"); // If location is passed in URL, set it as the default
 
-      
-
-      if (locationParam && locationParam === document.querySelectorAll("div[id^='LOCATIONID_")[j].id.split("_")[1]) {
+      if (locationParam && locationParam === document.querySelectorAll("div[id^='LOCATIONID_")[j].id.split("_")[1]) {\
+        a.click();
         c.click();
       }
 
