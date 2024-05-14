@@ -577,7 +577,7 @@ function initializeCustomSelect() {
 
     if (locationParam) {
       for (let j = 0; j < ll; j++) {
-        if (locationParam === document.querySelectorAll("div[id^='LOCATIONID_")[j].id.split("_")[1]) {
+        if (locationParam === visibleLocations[j].id.split("_")[1]) {
           a.click();
           b.children[j].click();
           break;
