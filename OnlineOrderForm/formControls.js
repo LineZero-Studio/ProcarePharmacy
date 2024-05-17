@@ -585,7 +585,6 @@ function initializeCustomSelect() {
           b.children[j].click();
           document.getElementsByClassName("nextButton")[0].click();
           document.getElementsByClassName("prevButton")[0].remove();
-          document.getElementsByClassName("nextButton")[0].remove();
           break;
         }
       }
