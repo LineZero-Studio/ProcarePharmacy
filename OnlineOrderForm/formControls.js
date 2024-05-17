@@ -581,6 +581,7 @@ function initializeCustomSelect() {
     if (locationParam) {
       for (let j = 0; j < ll; j++) {
         if (locationParam === visibleLocations[j].id.split("_")[1]) {
+          document.getElementsByClassName("rx-location")[0].innerText = document.getElementsByClassName("rx-location")[0].innerText.replace("{location_name}", visibleLocations[j].getAttribute("data-loclabel"));
           a.click();
           b.children[j].click();
           document.getElementsByClassName("nextButton")[0].click();
