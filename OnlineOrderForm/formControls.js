@@ -588,6 +588,8 @@ function initializeCustomSelect() {
           break;
         }
       }
+    } else {
+      document.getElementsByClassName("rx-location")[0].remove();
     }
   }
 }
