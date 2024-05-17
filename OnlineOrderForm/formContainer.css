@@ -358,6 +358,11 @@ input[type="radio"] {
     justify-content: space-between;
 }
 
+.buttonSpacer {
+    display: flex;
+    flex: 1 1 0%;
+}
+
 button.nextButton {
     display: flex;
     background-color: #00AEEF;
