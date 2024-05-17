@@ -158,7 +158,10 @@ function initializeFormVariables() {
 
   /* If the user clicks anywhere outside the select box,
     then close all select boxes: */
-  document.addEventListener("click", closeAllSelect);
+  document.addEventListener("click", () => {
+    shouldClose = true;
+    closeAllSelect();
+  });
 }
 
 // Change the form page after clicking a navigation button
