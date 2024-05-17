@@ -559,11 +559,11 @@ function initializeCustomSelect() {
           this.nextSibling.classList.toggle("select-hide");
         }
     });
-    a.addEventListener("mousedown", function (e) {
-      if (!isReadyToEdit) {
-        e.preventDefault();
-      }
-    });
+    // a.addEventListener("mousedown", function (e) {
+    //   if (!isReadyToEdit) {
+    //     e.preventDefault();
+    //   }
+    // });
     a.addEventListener("input", function (e) {
       const options = document.querySelectorAll(".select-items-option");
       const filteredOptions = Array.from(options).filter((option) => {
