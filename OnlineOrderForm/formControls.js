@@ -582,6 +582,7 @@ function initializeCustomSelect() {
       for (let j = 0; j < ll; j++) {
         if (locationParam === visibleLocations[j].id.split("_")[1]) {
           document.getElementsByClassName("rx-location")[0].innerText = document.getElementsByClassName("rx-location")[0].innerText.replace("{location_name}", visibleLocations[j].getAttribute("data-loclabel"));
+          document.getElementsByClassName("rx-location")[0].style.display = "block";
           a.click();
           b.children[j].click();
           document.getElementsByClassName("nextButton")[0].click();
@@ -589,8 +590,6 @@ function initializeCustomSelect() {
           break;
         }
       }
-    } else {
-      document.getElementsByClassName("rx-location")[0].remove();
     }
   }
 }
