@@ -706,7 +706,7 @@ function populateLocationAddresses() {
     addressIterator++
   ) {
     addressFields[addressIterator].innerHTML =
-      locationElements[addressIterator].dataset.address;
+      visibleLocations[addressIterator].dataset.address;
   }
 }
 
